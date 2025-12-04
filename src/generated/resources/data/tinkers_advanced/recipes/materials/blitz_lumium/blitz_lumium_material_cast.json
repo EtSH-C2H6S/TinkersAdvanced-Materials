@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:material_fluid",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": true,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        }
+      ]
+    }
+  ],
+  "fluid": {
+    "amount": 90,
+    "fluid": "tinkers_advanced:molten_biltz_lumium"
+  },
+  "output": "tinkers_advanced:blitz_lumium",
+  "temperature": 995
+}

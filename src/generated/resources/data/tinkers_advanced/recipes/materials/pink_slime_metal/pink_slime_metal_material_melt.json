@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "industrialforegoing"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "industrialforegoing"
+        }
+      ]
+    }
+  ],
+  "input": "tinkers_advanced:pink_slime_metal",
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_advanced:molten_pink_slime"
+  },
+  "temperature": 980
+}

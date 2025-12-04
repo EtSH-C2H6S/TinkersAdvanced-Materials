@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": true,
+          "mod_id": "mekanism"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "mekanism"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "item": "tinkers_advanced:neutronite_ingot"
+  },
+  "material": "tinkers_advanced:neutronite",
+  "needed": 90,
+  "value": 1
+}

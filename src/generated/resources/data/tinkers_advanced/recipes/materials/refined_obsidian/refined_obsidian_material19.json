@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "mekanism"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "forge:storage_blocks/refined_obsidian"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/refined_obsidian"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/refined_obsidian"
+  },
+  "material": "tinkers_advanced:refined_obsidian",
+  "needed": 1,
+  "value": 9
+}

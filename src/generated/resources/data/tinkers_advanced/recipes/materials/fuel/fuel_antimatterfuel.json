@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting_fuel",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "mekanism"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "mekanism"
+        }
+      ]
+    }
+  ],
+  "duration": 50000,
+  "fluid": {
+    "amount": 10,
+    "fluid": "tinkers_advanced:molten_antimatter"
+  },
+  "rate": 327,
+  "temperature": 32768
+}

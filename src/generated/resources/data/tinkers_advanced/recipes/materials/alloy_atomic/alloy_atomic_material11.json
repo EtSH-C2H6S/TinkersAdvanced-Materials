@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "mekanism"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "mekanism:alloys/atomic"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "mekanism:alloys/atomic"
+  },
+  "material": "tinkers_advanced:alloy_atomic",
+  "needed": 1,
+  "value": 1
+}

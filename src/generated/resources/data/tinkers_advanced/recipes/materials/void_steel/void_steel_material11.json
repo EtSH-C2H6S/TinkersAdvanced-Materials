@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "createutilities"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "createutilities"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "item": "createutilities:void_steel_ingot"
+  },
+  "material": "tinkers_advanced:void_steel",
+  "needed": 1,
+  "value": 1
+}

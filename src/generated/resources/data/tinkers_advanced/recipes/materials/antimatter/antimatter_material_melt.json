@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "mekanism"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "forge:pellets/antimatter"
+        }
+      ]
+    }
+  ],
+  "input": "tinkers_advanced:antimatter",
+  "result": {
+    "amount": 250,
+    "tag": "forge:molten_antimatter"
+  },
+  "temperature": 4996
+}

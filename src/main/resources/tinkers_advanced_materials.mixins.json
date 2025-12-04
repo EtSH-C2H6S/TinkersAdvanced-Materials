@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.c2h6s.tinkers_advanced_materials.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "tinkers_advanced_materials.refmap.json",
+  "mixins": [
+    "mekanismMixin.FusionReactorMultiblockDataMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

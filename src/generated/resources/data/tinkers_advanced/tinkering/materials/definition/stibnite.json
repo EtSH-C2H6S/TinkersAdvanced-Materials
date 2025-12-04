@@ -1,0 +1,25 @@
+{
+  "condition": {
+    "type": "forge:and",
+    "values": [
+      {
+        "type": "forge:and",
+        "values": [
+          {
+            "type": "tinkers_advanced:compat_enabled",
+            "is_original": true,
+            "mod_id": "tinkers_advanced"
+          }
+        ]
+      },
+      {
+        "type": "tinkers_advanced:config",
+        "prop": "allow_original_materials"
+      }
+    ]
+  },
+  "craftable": true,
+  "hidden": false,
+  "sortOrder": 8,
+  "tier": 4
+}

@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": true,
+          "mod_id": "mekanism"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "mekanism"
+        }
+      ]
+    }
+  ],
+  "input": "tinkers_advanced:protocite",
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_advanced:molten_protocite"
+  },
+  "temperature": 2750
+}

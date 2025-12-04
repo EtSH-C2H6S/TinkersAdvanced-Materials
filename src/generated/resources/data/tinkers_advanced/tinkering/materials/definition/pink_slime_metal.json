@@ -1,0 +1,20 @@
+{
+  "condition": {
+    "type": "forge:and",
+    "values": [
+      {
+        "type": "tinkers_advanced:compat_enabled",
+        "is_original": true,
+        "mod_id": "industrialforegoing"
+      },
+      {
+        "type": "forge:mod_loaded",
+        "modid": "industrialforegoing"
+      }
+    ]
+  },
+  "craftable": false,
+  "hidden": false,
+  "sortOrder": 8,
+  "tier": 3
+}

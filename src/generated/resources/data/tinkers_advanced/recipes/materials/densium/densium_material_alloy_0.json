@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:alloy",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "mekanism"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": true,
+          "mod_id": "mekanism"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "amount": 30,
+      "fluid": "tinkers_advanced:molten_iridium"
+    },
+    {
+      "amount": 90,
+      "fluid": "tconstruct:molten_refined_obsidian"
+    },
+    {
+      "amount": 180,
+      "fluid": "tconstruct:molten_osmium"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_advanced:molten_densium"
+  },
+  "temperature": 1775
+}

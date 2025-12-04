@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:melting_fuel",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": true,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        }
+      ]
+    }
+  ],
+  "duration": 500,
+  "fluid": {
+    "amount": 10,
+    "fluid": "tinkers_advanced:pyrotheum"
+  },
+  "rate": 30,
+  "temperature": 3000
+}

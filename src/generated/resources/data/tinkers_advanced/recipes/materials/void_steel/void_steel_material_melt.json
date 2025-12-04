@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "createutilities"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "createutilities"
+        }
+      ]
+    }
+  ],
+  "input": "tinkers_advanced:void_steel",
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_void_steel"
+  },
+  "temperature": 1400
+}

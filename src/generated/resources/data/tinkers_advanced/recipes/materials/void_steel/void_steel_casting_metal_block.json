@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "createutilities"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "createutilities"
+        }
+      ]
+    }
+  ],
+  "cooling_time": 233,
+  "fluid": {
+    "amount": 810,
+    "tag": "forge:molten_void_steel"
+  },
+  "result": "createutilities:void_steel_block"
+}

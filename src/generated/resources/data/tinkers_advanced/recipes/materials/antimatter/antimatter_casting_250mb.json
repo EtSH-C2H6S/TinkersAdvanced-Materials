@@ -1,0 +1,27 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "mekanism"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "forge:pellets/antimatter"
+        }
+      ]
+    }
+  ],
+  "cooling_time": 251,
+  "fluid": {
+    "amount": 250,
+    "fluid": "tinkers_advanced:molten_antimatter"
+  },
+  "result": {
+    "tag": "forge:pellets/antimatter"
+  }
+}

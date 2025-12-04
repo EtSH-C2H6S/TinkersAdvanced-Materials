@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "pneumaticcraft"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "forge:storage_blocks/compressed_iron"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/compressed_iron"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/compressed_iron"
+  },
+  "material": "tinkers_advanced:compressed_iron",
+  "needed": 1,
+  "value": 9
+}

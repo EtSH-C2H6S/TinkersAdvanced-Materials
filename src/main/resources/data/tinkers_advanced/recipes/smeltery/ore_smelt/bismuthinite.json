@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:ore_melting",
+  "byproducts": [
+    {
+      "amount": 60,
+      "rate": "metal",
+      "fluid": "tinkers_advanced:molten_bismuth"
+    }
+  ],
+  "ingredient": {
+    "item": "tinkers_advanced:bismuthinite"
+  },
+  "rate": "metal",
+  "result": {
+    "amount": 750,
+    "fluid": "tconstruct:seared_stone"
+  },
+  "temperature": 1250,
+  "time": 20
+}

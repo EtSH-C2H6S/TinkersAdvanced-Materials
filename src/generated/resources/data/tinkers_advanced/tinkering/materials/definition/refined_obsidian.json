@@ -1,0 +1,20 @@
+{
+  "condition": {
+    "type": "forge:and",
+    "values": [
+      {
+        "type": "mantle:tag_filled",
+        "tag": "forge:ingots/refined_obsidian"
+      },
+      {
+        "type": "tinkers_advanced:compat_enabled",
+        "is_original": false,
+        "mod_id": "tinkers_advanced"
+      }
+    ]
+  },
+  "craftable": true,
+  "hidden": false,
+  "sortOrder": 8,
+  "tier": 4
+}

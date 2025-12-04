@@ -1,0 +1,34 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 60,
+      "fluid": "tinkers_advanced:molten_biltz_lumium"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": true,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "item": "tinkers_advanced:blitz_lumium"
+  },
+  "result": {
+    "amount": 30,
+    "fluid": "tconstruct:molten_lumium"
+  },
+  "temperature": 1000,
+  "time": 30
+}

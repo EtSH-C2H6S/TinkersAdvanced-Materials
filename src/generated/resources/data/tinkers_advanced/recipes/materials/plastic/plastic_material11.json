@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "tinkers_advanced"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "tinkers_advanced:plastic"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "tinkers_advanced:plastic"
+  },
+  "material": "tinkers_advanced:plastic",
+  "needed": 1,
+  "value": 1
+}

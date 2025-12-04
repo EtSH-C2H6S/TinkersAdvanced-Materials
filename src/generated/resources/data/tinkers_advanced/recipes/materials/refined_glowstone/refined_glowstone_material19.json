@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "mekanism"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "forge:storage_blocks/refined_glowstone"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/refined_glowstone"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/refined_glowstone"
+  },
+  "material": "tinkers_advanced:refined_glowstone",
+  "needed": 1,
+  "value": 9
+}
