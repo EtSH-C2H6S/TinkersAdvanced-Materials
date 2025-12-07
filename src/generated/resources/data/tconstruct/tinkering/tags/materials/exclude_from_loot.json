@@ -19,6 +19,10 @@
     {
       "id": "tinkers_advanced:protocite",
       "required": false
+    },
+    {
+      "id": "tinkers_advanced:anti_neutronium",
+      "required": false
     }
   ]
 }

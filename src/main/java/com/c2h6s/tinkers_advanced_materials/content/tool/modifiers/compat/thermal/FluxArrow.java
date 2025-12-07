@@ -31,6 +31,8 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import java.util.List;
 import java.util.function.Predicate;
 
+import static com.c2h6s.tinkers_advanced_materials.TiAcMeConfig.Common.*;
+
 public class FluxArrow extends FluxInfused implements BowAmmoModifierHook {
     public static final String KEY_ARROW_CHARGE = "tiac_key_arrow_charge";
 
@@ -70,7 +72,7 @@ public class FluxArrow extends FluxInfused implements BowAmmoModifierHook {
 
     @Override
     public ItemStack findAmmo(IToolStackView tool, ModifierEntry modifier, LivingEntity livingEntity, ItemStack stack, Predicate<ItemStack> predicate) {
-        int basicConsumption = TiAcMeConfig.COMMON.FLUX_ARROW_CONSUMPTION.get();
+        int basicConsumption = FLUX_ARROW_CONSUMPTION.get();
         if (getMode(tool)>0&& ToolEnergyUtil.extractEnergy(tool,basicConsumption*2,true)>=basicConsumption*2&&stack.isEmpty()){
             ToolEnergyUtil.extractEnergy(tool,basicConsumption*2,false);
             return new ItemStack(Items.ARROW,64);
@@ -80,7 +82,7 @@ public class FluxArrow extends FluxInfused implements BowAmmoModifierHook {
 
     @Override
     public void shrinkAmmo(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, ItemStack ammo, int needed) {
-        int basicConsumption = TiAcMeConfig.COMMON.FLUX_ARROW_CONSUMPTION.get();
+        int basicConsumption = FLUX_ARROW_CONSUMPTION.get();
         if (!ammo.is(Items.ARROW)&&ToolEnergyUtil.extractEnergy(tool,basicConsumption*4,true)>=basicConsumption*4&&getMode(tool)>1){
             ToolEnergyUtil.extractEnergy(tool,basicConsumption*4,false);
             return;
@@ -91,7 +93,7 @@ public class FluxArrow extends FluxInfused implements BowAmmoModifierHook {
     @Override
     public void modifierProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
         if (arrow!=null) {
-            int basicConsumption = TiAcMeConfig.COMMON.FLUX_ARROW_CONSUMPTION.get();
+            int basicConsumption = FLUX_ARROW_CONSUMPTION.get();
             switch (getMode(tool)) {
                 case 1 -> {
                     if (ToolEnergyUtil.extractEnergy(tool,basicConsumption,true)>=basicConsumption) {
@@ -132,6 +134,6 @@ public class FluxArrow extends FluxInfused implements BowAmmoModifierHook {
     }
 
     public static float getExplosionDamage(AbstractArrow arrow){
-        return (float) (TiAcMeConfig.COMMON.FLUX_ARROW_BASE_EXPLOSION_DAMAGE.get().floatValue()+TiAcMeConfig.COMMON.FLUX_ARROW_EXPLOSION_DAMAGE_FROM_DAMAGE.get().floatValue()*arrow.getBaseDamage()*arrow.getDeltaMovement().length());
+        return (float) (FLUX_ARROW_BASE_EXPLOSION_DAMAGE.get().floatValue()+FLUX_ARROW_EXPLOSION_DAMAGE_FROM_DAMAGE.get().floatValue()*arrow.getBaseDamage()*arrow.getDeltaMovement().length());
     }
 }

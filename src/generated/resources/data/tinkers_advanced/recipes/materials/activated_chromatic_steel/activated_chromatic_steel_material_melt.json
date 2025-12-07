@@ -18,7 +18,7 @@
   ],
   "input": "tinkers_advanced:activated_chromatic_steel",
   "result": {
-    "amount": 90,
+    "amount": 180,
     "fluid": "tinkers_advanced:molten_activated_chromatic_steel"
   },
   "temperature": 2720

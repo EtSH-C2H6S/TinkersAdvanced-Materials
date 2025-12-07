@@ -37,7 +37,7 @@ public enum EnumMaterial {
     BLIZZ_ENDERIUM(true,TiAcMeMaterialIds.Thermal.BLIZZ_ENDERIUM,4,false,false,EnumMaterialStats.BLIZZ_ENDERIUM,modLoaded("thermal",true),BLIZZ_ENDERIUM_ARMOR,BLIZZ_ENDERIUM_DEFAULT),
     ACTIVATED_CHROMATIC_STEEL(true,TiAcMeMaterialIds.Thermal.ACTIVATED_CHROMATIC_STEEL,4,false,false,EnumMaterialStats.ACTIVATED_CHROMA_STEEL,modLoaded("thermal",true),ACTIVATED_CHROMA_STEEL_MELEE,ACTIVATED_CHROMA_STEEL_ARMOR,ACTIVATED_CHROMA_STEEL_RANGED),
     BLAZE_NETHERITE(true,TiAcMeMaterialIds.BLAZE_NETHERITE,4,false,false,EnumMaterialStats.BLAZE_NETHERITE,noopCompat(true),EnumMaterialModifier.BLAZE_NETHERITE),
-    IRIDIUM(true,TiAcMeMaterialIds.IRIDIUM,4,false,false,EnumMaterialStats.IRIDIUM,tagFilled(TiAcMeTagkeys.Items.IRIDIUM_INGOT,TinkersAdvanced.MODID,true), IRIDIUM_DEFAULT,IRIDIUM_ARMOR,IRIDIUM_FLUX_CORE),
+    IRIDIUM(true,TiAcMeMaterialIds.IRIDIUM,4,false,false,EnumMaterialStats.IRIDIUM,noopCompat(true), IRIDIUM_DEFAULT,IRIDIUM_ARMOR,IRIDIUM_FLUX_CORE),
     NEUTRONITE(true,TiAcMeMaterialIds.Mekanism.NEUTRONITE,128,false,true,EnumMaterialStats.NEUTRONITE,modLoaded("mekanism",true), NEUTRONITE_DEFAULT,NEUTRONITE_ARMOR),
     OSGLOGLAS(true,TiAcMeMaterialIds.Mekanism.OSGLOGLAS,4,false,false,EnumMaterialStats.OSGLOGLAS,modLoaded("mekanism",true), OSGLOGLAS_DEFAULT),
     DISINTEGRATE_CRYSTAL(true,TiAcMeMaterialIds.DISINTEGRATE_CRYSTAL,4,true,false,EnumMaterialStats.DISINTEGRATE_CRYSTAL,modLoaded("tinkers_advanced_tools",true),DISINTEGRATE_CRYSTAL_DEFAULT),
@@ -76,7 +76,7 @@ public enum EnumMaterial {
         return new AndCondition(new CompatConfigCondition(modId,isOriginal),new ModLoadedCondition(modId));
     }
     public static ICondition tagFilled(TagKey<Item> tagKey,String modId,boolean isOriginal){
-        return new AndCondition( new TagFilledCondition<>(tagKey),new CompatConfigCondition(TinkersAdvanced.MODID,isOriginal));
+        return new AndCondition( new TagFilledCondition<>(tagKey),new CompatConfigCondition(modId,isOriginal));
     }
     public static ICondition noopCompat(boolean isOriginal){
         return new AndCondition(new CompatConfigCondition(TinkersAdvanced.MODID,isOriginal));

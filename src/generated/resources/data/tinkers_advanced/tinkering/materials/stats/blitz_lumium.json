@@ -9,39 +9,39 @@
     "tconstruct:handle": {
       "durability": -0.15,
       "melee_damage": -0.1,
-      "melee_speed": 0.25,
+      "melee_speed": 0.8,
       "mining_speed": 0.0
     },
     "tconstruct:head": {
       "durability": 470,
-      "melee_attack": 2.5,
+      "melee_attack": 4.65,
       "mining_speed": 4.5,
       "mining_tier": "minecraft:diamond"
     },
     "tconstruct:limb": {
       "accuracy": -0.01,
-      "draw_speed": 0.25,
+      "draw_speed": 0.75,
       "durability": 470,
-      "velocity": -0.1
+      "velocity": 0.25
     },
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {
-      "armor": 1.25,
+      "armor": 3.0,
       "durability": 299,
       "toughness": 3.0
     },
     "tconstruct:plating_chestplate": {
-      "armor": 5.75,
+      "armor": 7.5,
       "durability": 368,
       "toughness": 3.0
     },
     "tconstruct:plating_helmet": {
-      "armor": 1.25,
+      "armor": 3.0,
       "durability": 253,
       "toughness": 3.0
     },
     "tconstruct:plating_leggings": {
-      "armor": 4.25,
+      "armor": 5.5,
       "durability": 345,
       "toughness": 3.0
     },
@@ -50,8 +50,8 @@
       "toughness": 3.0
     },
     "tinkers_advanced:flux_core": {
-      "capacity": 1.4,
-      "generate": 4.1
+      "capacity": 0.94,
+      "generate": 14.1
     }
   }
 }

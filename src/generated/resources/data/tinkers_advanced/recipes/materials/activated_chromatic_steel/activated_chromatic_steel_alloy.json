@@ -18,19 +18,19 @@
   ],
   "inputs": [
     {
-      "amount": 270,
+      "amount": 90,
       "fluid": "tinkers_advanced:molten_basalz_signalum"
     },
     {
-      "amount": 270,
+      "amount": 90,
       "fluid": "tinkers_advanced:molten_biltz_lumium"
     },
     {
-      "amount": 270,
+      "amount": 90,
       "fluid": "tinkers_advanced:molten_blizz_enderium"
     },
     {
-      "amount": 270,
+      "amount": 90,
       "fluid": "tinkers_advanced:molten_blaze_netherite"
     }
   ],

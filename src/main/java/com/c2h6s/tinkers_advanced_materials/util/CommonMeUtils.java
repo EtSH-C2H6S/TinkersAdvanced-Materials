@@ -6,6 +6,7 @@ import com.c2h6s.tinkers_advanced.core.library.registry.SimpleMaterialObject;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeFluids;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeItems;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.phys.Vec2;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.RegistryObject;
 import slimeknights.mantle.registration.object.FluidObject;
@@ -49,5 +50,12 @@ public class CommonMeUtils {
         if (mInfo==null) return false;
         if (mInfo.isOriginal()&&!allowOriginal) return true;
         return mInfo.isOriginal()? listCpO.contains(mInfo.getCompatModId()):listCp.contains(mInfo.getCompatModId());
+    }
+
+    public static int getBarLength(float amount, float max){
+        return max > 0.0F ? (int) Math.min(13.0F, 13.0F * amount / max) : 0;
+    }
+    public static Vec2 getBarVec2(float amount, float max){
+        return new Vec2(getBarLength(amount,max),1);
     }
 }

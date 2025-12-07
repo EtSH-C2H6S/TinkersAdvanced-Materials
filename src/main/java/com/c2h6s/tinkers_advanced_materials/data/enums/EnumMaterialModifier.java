@@ -15,7 +15,7 @@ import slimeknights.tconstruct.tools.stats.*;
 
 public enum EnumMaterialModifier {
     ALLOY_ATOMIC(StatlessMaterialStats.BINDING.getIdentifier(),entry(EtSTLibModifierIds.ATOMIC_DECOMPOSE)),
-    BISMUTH(null,entry(TiAcMeModifiers.TETANUS.getId()),entry(ModifierIds.heavy)),
+    BISMUTH(null,entry(TiAcMeModifiers.TETANUS.getId()),entry(TiAcMeModifiers.HEAVY_MATERIAL.getId())),
     BISMUTHINITE(null,entry(TiAcMeModifiers.FRAGILE.getId()),entry(EtSTLibModifier.ANISOTROPY.getId())),
     BISMUTHINITE_FLUX_CORE(FluxCoreMaterialStat.ID,entry(TiAcTModifiers.PIEZOELECTRIC_EFFECT.getId(),3)),
 
@@ -66,10 +66,10 @@ public enum EnumMaterialModifier {
 
     DENSIUM_DEFAULT(null,entry(EtSTLibModifier.EXTRA_DENSE.getId())),
     DENSIUM_HEAD(HeadMaterialStats.ID,entry(EtSTLibModifier.EXTRA_DENSE.getId()),entry(EtSTLibModifierIds.RUDE)),
-    DENSIUM_HANDLE(HandleMaterialStats.ID,entry(EtSTLibModifier.EXTRA_DENSE.getId()),entry(EtSTLibModifier.momentum_accelerate.getId(),5),entry(ModifierIds.heavy)),
+    DENSIUM_HANDLE(HandleMaterialStats.ID,entry(EtSTLibModifier.EXTRA_DENSE.getId()),entry(EtSTLibModifier.momentum_accelerate.getId(),5),entry(TiAcMeModifiers.HEAVY_MATERIAL.getId())),
     DENSIUM_BINDING(StatlessMaterialStats.BINDING.getIdentifier(),entry(EtSTLibModifier.EXTRA_DENSE.getId()),entry(EtSTLibModifier.momentum_accelerate.getId())),
     DENSIUM_ARMOR(MaterialRegistry.ARMOR,entry(EtSTLibModifier.EXTRA_DENSE.getId()),entry(EtSTLibModifier.HYPER_DENSITY.getId())),
-    DENSIUM_RANGED(MaterialRegistry.RANGED,entry(EtSTLibModifier.EXTRA_DENSE.getId()),entry(TinkerModifiers.momentum.getId(),5),entry(ModifierIds.heavy)),
+    DENSIUM_RANGED(MaterialRegistry.RANGED,entry(EtSTLibModifier.EXTRA_DENSE.getId()),entry(TinkerModifiers.momentum.getId(),5),entry(TiAcMeModifiers.HEAVY_MATERIAL.getId())),
 
     NEUTRONITE_DEFAULT(null,entry(TiAcMeModifiers.SUPREME_DENSITY.getId()),entry(TiAcMeModifiers.IONIZED.getId())),
     NEUTRONITE_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.SUPREME_DENSITY_ARMOR.getId()),entry(TiAcMeModifiers.IONIZED.getId())),

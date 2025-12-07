@@ -15,5 +15,7 @@ public class TiAcMeMateriaRecipes {
                         .addInput(TinkerFluids.moltenRefinedObsidian.get(), 90)
                         .addInput(TinkerFluids.moltenOsmium.get(), 180)
         );
+
+        recipeInfo = ANTI_NEUTRONIUM.addRecipeInfo().setFluidAmount(90).setTemp(14273).setIngot().build().getRecipeInfo();
     }
 }

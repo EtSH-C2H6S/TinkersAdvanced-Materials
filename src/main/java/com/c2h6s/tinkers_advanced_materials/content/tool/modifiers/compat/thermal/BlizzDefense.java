@@ -10,16 +10,17 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.armor.ModifyDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class BlizzDefense extends EtSTBaseModifier implements OnAttackedModifierHook {
+public class BlizzDefense extends EtSTBaseModifier implements OnAttackedModifierHook, ModifyDamageModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.ON_ATTACKED);
+        hookBuilder.addHook(this, ModifierHooks.ON_ATTACKED,ModifierHooks.MODIFY_HURT);
     }
 
     @Override
@@ -34,5 +35,15 @@ public class BlizzDefense extends EtSTBaseModifier implements OnAttackedModifier
         if (damageSource.getEntity() instanceof LivingEntity living){
             living.addEffect(new MobEffectInstance(CoreMobEffects.CHILLED.get(),100+50*modifierEntry.getLevel(),modifierEntry.getLevel()-1));
         }
+    }
+
+    @Override
+    public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
+        var direct = source.getDirectEntity();
+        var indirect = source.getEntity();
+        if ((direct!=null&&direct.isOnFire())||(indirect!=null&&indirect.isOnFire())){
+            amount*=0.5f;
+        }
+        return amount;
     }
 }

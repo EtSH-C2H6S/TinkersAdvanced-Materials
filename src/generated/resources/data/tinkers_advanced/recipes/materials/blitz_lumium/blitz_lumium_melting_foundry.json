@@ -27,7 +27,7 @@
   },
   "result": {
     "amount": 30,
-    "fluid": "tconstruct:molten_lumium"
+    "fluid": "tinkers_advanced:molten_biltz_lumium"
   },
   "temperature": 1000,
   "time": 30

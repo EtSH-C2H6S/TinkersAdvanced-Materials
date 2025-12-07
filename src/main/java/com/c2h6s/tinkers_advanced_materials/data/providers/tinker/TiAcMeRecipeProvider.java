@@ -12,8 +12,11 @@ import com.c2h6s.tinkers_advanced_materials.init.TiAcMeMaterials;
 import com.c2h6s.tinkers_advanced_tools.init.TiAcTItems;
 import me.desht.pneumaticcraft.api.data.PneumaticCraftTags;
 import mekanism.api.datagen.recipe.builder.CombinerRecipeBuilder;
+import mekanism.api.datagen.recipe.builder.NucleosynthesizingRecipeBuilder;
+import mekanism.common.recipe.ingredient.creator.GasStackIngredientCreator;
 import mekanism.common.recipe.ingredient.creator.ItemStackIngredientCreator;
 import mekanism.common.registries.MekanismFluids;
+import mekanism.common.registries.MekanismGases;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.tags.MekanismTags;
 import mekanism.generators.common.registries.GeneratorsFluids;
@@ -239,6 +242,12 @@ public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRec
         MeltingRecipeBuilder.melting(Ingredient.of(TiAcMeItems.NEUTRONITE_INGOT.get()), FluidOutput.fromFluid(TiAcMeFluids.MOLTEN_NEUTRONITE.get(), 1), 16384, 1).save(conditional, new ResourceLocation(folder + "_melting_1mb"));
         ItemCastingRecipeBuilder.tableRecipe(TiAcMeItems.NEUTRONITE_INGOT.get()).setCoolingTime(1).setFluid(TiAcMeFluids.MOLTEN_NEUTRONITE.get(), 1).save(conditional, new ResourceLocation(folder + "_casting_1mb"));
         materialRecipe(TiAcMeMaterialIds.Mekanism.NEUTRONITE, Ingredient.of(TiAcMeItems.NEUTRONITE_INGOT.get()), 90, 1, conditional, folder);
+        folder = namedFolder("anti_neutronium");
+        NucleosynthesizingRecipeBuilder.nucleosynthesizing(
+                ItemStackIngredientCreator.INSTANCE
+                        .from(TiAcMeMaterials.DENSIUM.getItemObject()),
+                GasStackIngredientCreator.INSTANCE.from(MekanismGases.ANTIMATTER,100),
+                new ItemStack(TiAcMeMaterials.ANTI_NEUTRONIUM.getItemObject()),200).build(consumer,new ResourceLocation(folder+"_creation"));
         //PnC
         conditional = withCondition(consumer, modLoaded("pneumaticcraft",false));
         folder = namedFolder("compressed_iron");
@@ -260,7 +269,7 @@ public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRec
         materialRecipe(TiAcMeMaterialIds.Thermal.BLITZ_LUMIUM, Ingredient.of(TiAcMeItems.BLITZ_LUMIUM.get()), 1, 1, conditional, folder);
         cast1Ingot(TiAcMeFluids.MOLTEN_BILTZ_LUMIUM.get(), TiAcMeItems.BLITZ_LUMIUM.get(), 995, conditional, folder);
         meltMaterial(TiAcMeFluids.MOLTEN_BILTZ_LUMIUM.get(), 90, TiAcMeMaterialIds.Thermal.BLITZ_LUMIUM, 995, conditional, folder);
-        MeltingRecipeBuilder.melting(Ingredient.of(TiAcMeItems.BLITZ_LUMIUM.get()), FluidOutput.fromFluid(TinkerFluids.moltenLumium.get(), 30), 1000, 30).addByproduct(new FluidStack(TiAcMeFluids.MOLTEN_BILTZ_LUMIUM.get(), 60)).save(conditional, new ResourceLocation(folder + "_melting_foundry"));
+        MeltingRecipeBuilder.melting(Ingredient.of(TiAcMeItems.BLITZ_LUMIUM.get()), FluidOutput.fromFluid(TiAcMeFluids.MOLTEN_BILTZ_LUMIUM.get(), 30), 1000, 30).addByproduct(new FluidStack(TiAcMeFluids.MOLTEN_BILTZ_LUMIUM.get(), 60)).save(conditional, new ResourceLocation(folder + "_melting_foundry"));
         tableNugget(TiAcMeItems.BLITZ_LUMIUM.get(), TiAcMeItems.BLITZ_LUMIUM_NUGGET.get(), consumer, folder);
         cast1Nugget(TiAcMeFluids.MOLTEN_BILTZ_LUMIUM.get(), TiAcMeItems.BLITZ_LUMIUM_NUGGET.get(), 995, conditional, folder);
         folder = namedFolder("blizz_enderium");
@@ -270,12 +279,12 @@ public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRec
         folder = namedFolder("activated_chromatic_steel");
         materialRecipe(TiAcMeMaterialIds.Thermal.ACTIVATED_CHROMATIC_STEEL, Ingredient.of(TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get()), 1, 1, conditional, folder);
         melt1Plate(TiAcMeFluids.MOLTEN_ACTIVATED_CHROMATIC_STEEL.get(), TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get(), 2720, conditional, folder);
-        meltMaterial(TiAcMeFluids.MOLTEN_ACTIVATED_CHROMATIC_STEEL.get(), 90, TiAcMeMaterialIds.Thermal.ACTIVATED_CHROMATIC_STEEL, 2720, conditional, folder);
+        meltMaterial(TiAcMeFluids.MOLTEN_ACTIVATED_CHROMATIC_STEEL.get(), 180, TiAcMeMaterialIds.Thermal.ACTIVATED_CHROMATIC_STEEL, 2720, conditional, folder);
         AlloyRecipeBuilder.alloy(FluidOutput.fromStack(new FluidStack(TiAcMeFluids.MOLTEN_ACTIVATED_CHROMATIC_STEEL.get(), 90)), 2720)
-                .addInput(TiAcMeFluids.MOLTEN_BASALZ_SIGNALUM.get(), 270)
-                .addInput(TiAcMeFluids.MOLTEN_BILTZ_LUMIUM.get(), 270)
-                .addInput(TiAcMeFluids.MOLTEN_BLIZZ_ENDERIUM.get(), 270)
-                .addInput(TiAcMeFluids.MOLTEN_BLAZE_NETHERITE.get(), 270)
+                .addInput(TiAcMeFluids.MOLTEN_BASALZ_SIGNALUM.get(), 90)
+                .addInput(TiAcMeFluids.MOLTEN_BILTZ_LUMIUM.get(), 90)
+                .addInput(TiAcMeFluids.MOLTEN_BLIZZ_ENDERIUM.get(), 90)
+                .addInput(TiAcMeFluids.MOLTEN_BLAZE_NETHERITE.get(), 90)
                 .save(conditional, new ResourceLocation(folder + "_alloy"));
         //IndustrialForgoing
         conditional = withCondition(consumer, modLoaded("industrialforegoing",false));

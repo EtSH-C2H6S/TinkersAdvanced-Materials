@@ -38,7 +38,7 @@
 
   "modifier.tinkers_advanced.radioactive_armor": "Radioactive Armor",
   "modifier.tinkers_advanced.radioactive_armor.flavor": "Have you worn a lead pants?",
-  "modifier.tinkers_advanced.radioactive_armor.description": "Inflicts radiation to attacker, take less damage from radiated attackers. \nGain 25% radiation resistance each level.",
+  "modifier.tinkers_advanced.radioactive_armor.description": "Inflicts radiation to attacker, take less damage from radiated attackers. \nGain 50% radiation resistance each level.",
 
   "modifier.tinkers_advanced.air_slash": "Air Slash",
   "modifier.tinkers_advanced.air_slash.flavor": "Pressurized air ejection.",
@@ -176,6 +176,30 @@
   "modifier.tinkers_advanced.stabilize.flavor": "Still handle it carefully.",
   "modifier.tinkers_advanced.stabilize.description": "Slightly increase melee damage or armor. Stabilize nearby stibnite ore after mining.",
 
+  "modifier.tinkers_advanced.iso_chrome": "Iso Chrome",
+  "modifier.tinkers_advanced.iso_chrome.flavor": "Magical material.",
+  "modifier.tinkers_advanced.iso_chrome.description": "+1 Upgrade, Ability and Defense slot.",
+
+  "modifier.tinkers_advanced.extra_enhance": "Extra Enhance",
+  "modifier.tinkers_advanced.extra_enhance.flavor": "Deep infused !",
+  "modifier.tinkers_advanced.extra_enhance.description": "+1 Ability slot.",
+
+  "modifier.tinkers_advanced.annihilating_slime": "Annihilating Slime",
+  "modifier.tinkers_advanced.annihilating_slime.flavor": "Impossible slime !",
+  "modifier.tinkers_advanced.annihilating_slime.description": "Max overslime x%1$s. Consumes %2$s overslime and release Annihilate Explosion at x%3$s damage each level.",
+
+  "modifier.tinkers_advanced.annihilating_slime_armor": "Annihilating Slime",
+  "modifier.tinkers_advanced.annihilating_slime_armor.flavor": "Impossible slime !",
+  "modifier.tinkers_advanced.annihilating_slime_armor.description": "Max overslime x%1$s. Gains 100%% damage reduction when overslime is over %2$s and consume it.",
+
+  "modifier.tinkers_advanced.neutronium_assemble": "Neutronium Assemble",
+  "modifier.tinkers_advanced.neutronium_assemble.flavor": "It can self duplicate...",
+  "modifier.tinkers_advanced.neutronium_assemble.description": "R-Click your tool with Anti-Neutronium in inventory to charge. Gains %1$s charge per ingot. Your tool will consumes charge to regenerate overslime, %2$s per charge。",
+
+  "modifier.tinkers_advanced.heavy_material": "Heavy Material",
+  "modifier.tinkers_advanced.heavy_material.flavor": "Can you lift it ?",
+  "modifier.tinkers_advanced.heavy_material.description": "+%1$s Attack Damage, -%2$s Movement Speed, -%3$s Attack Speed each level.",
+
 
 
   "material.tinkers_advanced.bismuth": "Bismuth",
@@ -303,6 +327,10 @@
   "material.tinkers_advanced.void_steel.armor": "Each damage tool taken has a 10% chance to increase most stats.With maximum amplifier of 25%. 25% chance for dodging arrow.",
   "material.tinkers_advanced.void_steel.ranged": "Each damage tool taken has a 10% chance to increase most stats.With maximum amplifier of 25%.",
 
+  "material.tinkers_advanced.anti_neutronium": "Anti-Neutronium",
+  "material.tinkers_advanced.anti_neutronium.flavor": "Be careful, don't drop it !",
+
+
 
   "item.tinkers_advanced.bismuth_ingot": "Bismuth Ingot",
   "item.tinkers_advanced.bismuthinite": "Bismuthinite",
@@ -325,6 +353,7 @@
   "item.tinkers_advanced.blitz_lumium_nugget": "Blitz Lumium Nugget",
   "item.tinkers_advanced.antimony_nugget": "Antimony Nugget",
   "item.tinkers_advanced.bismuth_nugget": "Bismuth nugget",
+  "item.tinkers_advanced.anti_neutronium_ingot": "Anti-Neutronium Ingot",
 
   "block.tinkers_advanced.iridium_lean_ore": "Iridium Lean Ore",
   "block.tinkers_advanced.bismuthinite_ore": "Bismuthinite Ore",
@@ -411,6 +440,9 @@
 
   "fluid.tinkers_advanced.molten_void_steel": "Molten Void Steel",
   "item.tinkers_advanced.molten_void_steel_bucket": "Molten Void Steel Bucket",
+
+  "fluid.tinkers_advanced.molten_anti_neutronium": "Molten Anti-Neutronium",
+  "item.tinkers_advanced.molten_anti_neutronium_bucket": "Molten Anti-Neutronium Bucket",
 
 
 

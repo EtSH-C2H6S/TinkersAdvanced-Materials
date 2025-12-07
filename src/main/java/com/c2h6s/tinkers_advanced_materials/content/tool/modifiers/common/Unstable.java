@@ -72,12 +72,12 @@ public class Unstable extends EtSTBaseModifier implements BreakSpeedModifierHook
 
     @Override
     public float onGetArrowDamage(ModDataNBT persistentData, ModifierEntry entry, ModifierNBT modifiers, AbstractArrow arrow, @Nullable LivingEntity attacker, @NotNull Entity target, float baseDamage, float damage) {
-        return damage+baseDamage*persistentData.getFloat(TinkersAdvanced.getLocation("unstable_damage"));
+        return damage+damage*persistentData.getFloat(TinkersAdvanced.getLocation("unstable_damage"));
     }
 
     @Override
     public float onGetMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
-        return damage+baseDamage*getDamageMultiplier(tool,modifier);
+        return damage+damage*getDamageMultiplier(tool,modifier);
     }
 
     @Override

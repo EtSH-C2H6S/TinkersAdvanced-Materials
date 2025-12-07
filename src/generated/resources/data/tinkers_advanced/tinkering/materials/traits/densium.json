@@ -37,7 +37,7 @@
       },
       {
         "level": 1,
-        "name": "tconstruct:heavy"
+        "name": "tinkers_advanced:heavy_material"
       }
     ],
     "tconstruct:head": [
@@ -61,7 +61,7 @@
       },
       {
         "level": 1,
-        "name": "tconstruct:heavy"
+        "name": "tinkers_advanced:heavy_material"
       }
     ]
   }

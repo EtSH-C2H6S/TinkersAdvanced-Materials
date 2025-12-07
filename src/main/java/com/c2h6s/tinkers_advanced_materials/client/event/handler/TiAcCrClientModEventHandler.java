@@ -1,6 +1,7 @@
 package com.c2h6s.tinkers_advanced_materials.client.event.handler;
 
 import com.c2h6s.tinkers_advanced_materials.client.renderer.entity.AirSlashRenderer;
+import com.c2h6s.tinkers_advanced_materials.client.renderer.entity.AnnihilateExplosionRenderer;
 import com.c2h6s.tinkers_advanced_materials.client.renderer.entity.RenderThermalSlash;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeEntities;
 import net.minecraftforge.api.distmarker.Dist;
@@ -14,6 +15,7 @@ public class TiAcCrClientModEventHandler {
     @SubscribeEvent
     public static void registerEntityRenderer(EntityRenderersEvent.RegisterRenderers event){
         event.registerEntityRenderer(TiAcMeEntities.AIR_SLASH.get(), AirSlashRenderer::new);
+        event.registerEntityRenderer(TiAcMeEntities.ANNIHILATE_EXPLOSION.get(), AnnihilateExplosionRenderer::new);
         if (ModList.get().isLoaded("thermal")){
             event.registerEntityRenderer(TiAcMeEntities.THERMAL_SLASH.get(), RenderThermalSlash::new);
         }

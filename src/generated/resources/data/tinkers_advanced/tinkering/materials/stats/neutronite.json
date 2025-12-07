@@ -26,25 +26,25 @@
     },
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {
-      "armor": 5.0,
+      "armor": 20.0,
       "durability": 3328,
       "knockback_resistance": 10.0,
       "toughness": 10.0
     },
     "tconstruct:plating_chestplate": {
-      "armor": 9.0,
+      "armor": 30.0,
       "durability": 4096,
       "knockback_resistance": 10.0,
       "toughness": 10.0
     },
     "tconstruct:plating_helmet": {
-      "armor": 5.0,
+      "armor": 20.0,
       "durability": 2816,
       "knockback_resistance": 10.0,
       "toughness": 10.0
     },
     "tconstruct:plating_leggings": {
-      "armor": 7.0,
+      "armor": 25.0,
       "durability": 3840,
       "knockback_resistance": 10.0,
       "toughness": 10.0
@@ -55,8 +55,8 @@
       "toughness": 10.0
     },
     "tinkers_advanced:flux_core": {
-      "capacity": 65535.0,
-      "generate": 65535.0
+      "capacity": 350234.0,
+      "generate": 350235.0
     }
   }
 }

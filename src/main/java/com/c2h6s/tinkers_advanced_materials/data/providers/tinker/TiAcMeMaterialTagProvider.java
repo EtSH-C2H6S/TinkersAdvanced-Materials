@@ -2,6 +2,7 @@ package com.c2h6s.tinkers_advanced_materials.data.providers.tinker;
 
 import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import com.c2h6s.tinkers_advanced_materials.data.TiAcMeMaterialIds;
+import com.c2h6s.tinkers_advanced_materials.init.TiAcMeMaterials;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -14,7 +15,14 @@ public class TiAcMeMaterialTagProvider extends AbstractMaterialTagProvider {
 
     @Override
     protected void addTags() {
-        this.tag(TinkerTags.Materials.EXCLUDE_FROM_LOOT).addOptional(TiAcMeMaterialIds.Mekanism.IRRADIUM,TiAcMeMaterialIds.Mekanism.ANTIMATTER,TiAcMeMaterialIds.Mekanism.NEUTRONITE,TiAcMeMaterialIds.Thermal.ACTIVATED_CHROMATIC_STEEL,TiAcMeMaterialIds.Mekanism.PROTOCITE);
+        this.tag(TinkerTags.Materials.EXCLUDE_FROM_LOOT).addOptional(
+                TiAcMeMaterialIds.Mekanism.IRRADIUM,
+                TiAcMeMaterialIds.Mekanism.ANTIMATTER,
+                TiAcMeMaterialIds.Mekanism.NEUTRONITE,
+                TiAcMeMaterialIds.Thermal.ACTIVATED_CHROMATIC_STEEL,
+                TiAcMeMaterialIds.Mekanism.PROTOCITE,
+                TiAcMeMaterials.ANTI_NEUTRONIUM.getMaterialId()
+        );
         this.tag(TinkerTags.Materials.NETHER).add(TiAcMeMaterialIds.ANTIMONY,TiAcMeMaterialIds.STIBNITE,TiAcMeMaterialIds.BLAZE_NETHERITE);
     }
 

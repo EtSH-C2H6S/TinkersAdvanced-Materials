@@ -1,9 +1,5 @@
 {
   "values": [
-    "tinkers_advanced:molten_iridium",
-    "tinkers_advanced:molten_blaze_netherite",
-    "tinkers_advanced:molten_antimony",
-    "tinkers_advanced:molten_bismuth",
     {
       "id": "tinkers_advanced:molten_irradium",
       "required": false
@@ -22,6 +18,46 @@
     },
     {
       "id": "tinkers_advanced:molten_biltz_lumium",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_blaze_netherite",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_void_steel",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_antimony",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_bismuth",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_activated_chromatic_steel",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_iridium",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_nutritive_slime",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_osgloglas",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_protocite",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_pink_slime",
       "required": false
     }
   ]

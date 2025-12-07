@@ -16,9 +16,12 @@ public class TiAcMeModifierTagProvider extends AbstractModifierTagProvider {
     @Override
     protected void addTags() {
         this.tag(TinkerTags.Modifiers.OVERSLIME_FRIEND)
-                .add(
+                .addOptionalTag(
                         RETURN_TO_SLIME.getId(),
-                        NUTRITIVE_SLIME.getId()
+                        NUTRITIVE_SLIME.getId(),
+                        NEUTRONIUM_ASSEMBLE.getId(),
+                        ANNIHILATING_SLIME.getId(),
+                        ANNIHILATING_SLIME_ARMOR.getId()
                 );
     }
 

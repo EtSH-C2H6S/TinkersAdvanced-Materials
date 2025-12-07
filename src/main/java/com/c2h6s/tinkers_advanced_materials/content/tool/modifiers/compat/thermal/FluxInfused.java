@@ -2,12 +2,13 @@ package com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.compat.therm
 
 import cofh.core.client.CoreKeys;
 import com.c2h6s.etstlib.tool.modifiers.base.BasicFEModifier;
+import com.c2h6s.etstlib.util.MathUtil;
 import com.c2h6s.etstlib.util.ToolEnergyUtil;
-import com.c2h6s.tinkers_advanced_materials.TiAcMeConfig;
 import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import com.c2h6s.tinkers_advanced_materials.network.TiAcMePacketHandler;
 import com.c2h6s.tinkers_advanced_materials.network.packets.PCofhModSwitchC2S;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeModifiers;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -22,19 +23,23 @@ import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.library.tools.nbt.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static cofh.core.client.CoreKeys.MULTIMODE_DECREMENT;
 import static cofh.core.client.CoreKeys.MULTIMODE_INCREMENT;
+import static com.c2h6s.tinkers_advanced_materials.TiAcMeConfig.Common.*;
 import static net.minecraft.ChatFormatting.*;
 import static cofh.lib.util.helpers.StringHelper.*;
 
 public class FluxInfused extends BasicFEModifier {
     public static final ResourceLocation MODE_LOCATION = TinkersAdvanced.getLocation("cofh_mode");
+
+
+
     public FluxInfused(){
         MinecraftForge.EVENT_BUS.addListener(this::onKeyInput);
     }
-
 
     private void onKeyInput(InputEvent.Key event) {
         if (CoreKeys.MULTIMODE_DECREMENT.consumeClick()){
@@ -44,7 +49,18 @@ public class FluxInfused extends BasicFEModifier {
         }
     }
 
-    public static void switchMode(ServerPlayer player,boolean increment){
+    @Override
+    public List<Component> getDescriptionList() {
+        if (descriptionList == null) {
+            descriptionList = Arrays.asList(
+                    Component.translatable(getTranslationKey() + ".flavor").withStyle(ChatFormatting.ITALIC),
+                    Component.translatable(getTranslationKey() + ".description",
+                            MathUtil.getEnergyString(FLUX_INFUSE_CONSUMPTION.get())).withStyle(ChatFormatting.GRAY));
+        }
+        return descriptionList;
+    }
+
+    public static void switchMode(ServerPlayer player, boolean increment){
         ToolStack tool = null;
         if (player.getMainHandItem().getItem() instanceof IModifiable){
             tool = ToolStack.from(player.getMainHandItem());
@@ -101,7 +117,7 @@ public class FluxInfused extends BasicFEModifier {
 
     @Override
     public int modifierDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity holder) {
-        int basicConsumption = TiAcMeConfig.COMMON.FLUX_INFUSE_CONSUMPTION.get();
+        int basicConsumption = FLUX_INFUSE_CONSUMPTION.get();
         if (ToolEnergyUtil.extractEnergy(tool,basicConsumption*amount,true)>=basicConsumption){
             int reduce = ToolEnergyUtil.extractEnergy(tool,basicConsumption*amount,false)/basicConsumption;
             if (reduce>=amount) return 0;

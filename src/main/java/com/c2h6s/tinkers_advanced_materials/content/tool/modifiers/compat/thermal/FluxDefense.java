@@ -29,7 +29,8 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import java.util.List;
 
 import static com.c2h6s.etstlib.util.ToolEnergyUtil.extractEnergy;
-import static com.c2h6s.tinkers_advanced_materials.TiAcMeConfig.COMMON;
+
+import static com.c2h6s.tinkers_advanced_materials.TiAcMeConfig.Common.*;
 
 public class FluxDefense extends FluxInfused implements DamageBlockModifierHook , ModifyDamageModifierHook {
     @Override
@@ -62,7 +63,7 @@ public class FluxDefense extends FluxInfused implements DamageBlockModifierHook 
 
     @Override
     public boolean isDamageBlocked(IToolStackView tool, ModifierEntry modifierEntry, EquipmentContext context, EquipmentSlot equipmentSlot, DamageSource damageSource, float amount) {
-        float rate = COMMON.FLUX_ARMOR_DODGE_RATE.get().floatValue();
+        float rate = FLUX_ARMOR_DODGE_RATE.get().floatValue();
         LivingEntity living = context.getEntity();
         if (damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) return false;
         if (living.invulnerableTime>0){
@@ -81,7 +82,7 @@ public class FluxDefense extends FluxInfused implements DamageBlockModifierHook 
 
     @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifierEntry, EquipmentContext context, EquipmentSlot equipmentSlot, DamageSource damageSource, float amount, boolean direct) {
-        float rate = COMMON.FLUX_ARMOR_DAMAGE_REDUCTION.get().floatValue();
+        float rate = FLUX_ARMOR_DAMAGE_REDUCTION.get().floatValue();
         if (damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) return amount;
         if (getMode(tool)>=2&&amount>0){
             int toReduce = (int) (amount*rate);
@@ -95,7 +96,7 @@ public class FluxDefense extends FluxInfused implements DamageBlockModifierHook 
     }
 
     public static int getConsumption(){
-        return COMMON.FLUX_ARMOR_CONSUMPTION.get();
+        return FLUX_ARMOR_CONSUMPTION.get();
     }
 
 }

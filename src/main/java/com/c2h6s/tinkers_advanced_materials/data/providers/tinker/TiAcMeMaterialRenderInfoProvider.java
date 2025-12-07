@@ -1,6 +1,7 @@
 package com.c2h6s.tinkers_advanced_materials.data.providers.tinker;
 
 import com.c2h6s.tinkers_advanced_materials.data.TiAcMeMaterialIds;
+import com.c2h6s.tinkers_advanced_materials.init.TiAcMeMaterials;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -14,6 +15,13 @@ public class TiAcMeMaterialRenderInfoProvider extends AbstractMaterialRenderInfo
 
     @Override
     protected void addMaterialRenderInfo() {
+        TiAcMeMaterials.MATERIALS.getEntryMap().values().forEach(object -> {
+            var renderInfo = object.getRenderInfo();
+            if (renderInfo!=null){
+                buildRenderInfo(object.getMaterialId()).color(renderInfo.vertexColor())
+                        .fallbacks(renderInfo.fallbacks()).luminosity(renderInfo.luminosity());
+            }
+        });
         buildRenderInfo(TiAcMeMaterialIds.BISMUTH).color(0xFFCFBFD1).fallbacks("metal");
         buildRenderInfo(TiAcMeMaterialIds.BISMUTHINITE).color(0xFF424242).fallbacks("crystal", "rock", "stick");
         buildRenderInfo(TiAcMeMaterialIds.ANTIMONY).color(0xFFC7D6CC).fallbacks("metal");
@@ -34,7 +42,6 @@ public class TiAcMeMaterialRenderInfoProvider extends AbstractMaterialRenderInfo
         buildRenderInfo(TiAcMeMaterialIds.Thermal.Variant.ACTIVATED_CHROMATIC_STEEL_ACTIVATED).color(0xFFFFC7E7).fallbacks("metal").luminosity(6);
         buildRenderInfo(TiAcMeMaterialIds.Thermal.Variant.ACTIVATED_CHROMATIC_STEEL_EMPOWERED).color(0xFFFFC7E7).fallbacks("metal").luminosity(15);
         buildRenderInfo(TiAcMeMaterialIds.IRIDIUM).color(0xFFE0D6FF).fallbacks("metal").luminosity(6);
-        buildRenderInfo(TiAcMeMaterialIds.Mekanism.DENSIUM).color(0xFF270053).fallbacks("metal").luminosity(15);
         buildRenderInfo(TiAcMeMaterialIds.Mekanism.NEUTRONITE).color(0xFF30003E).fallbacks("metal").luminosity(15);
         buildRenderInfo(TiAcMeMaterialIds.Mekanism.OSGLOGLAS).color(0xFF72FF7B).fallbacks("metal").luminosity(15);
         buildRenderInfo(TiAcMeMaterialIds.DISINTEGRATE_CRYSTAL).color(0xFFFFB968).fallbacks("crystal", "rock").luminosity(10);

@@ -1,0 +1,24 @@
+{
+  "condition": {
+    "type": "forge:and",
+    "values": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "mekanism"
+      },
+      {
+        "type": "tinkers_advanced:compat_enabled",
+        "is_original": true,
+        "mod_id": "mekanism"
+      },
+      {
+        "type": "tinkers_advanced:config",
+        "prop": "allow_original_materials"
+      }
+    ]
+  },
+  "craftable": false,
+  "hidden": false,
+  "sortOrder": 30,
+  "tier": 4
+}

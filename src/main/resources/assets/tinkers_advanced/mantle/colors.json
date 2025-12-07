@@ -47,7 +47,13 @@
     "poison_defense": "#314D24",
     "player_locating": "#007773",
     "void_dodging": "#007773",
-    "stabilize": "#B5DBBB"
+    "stabilize": "#B5DBBB",
+    "extra_enhance": "#79FFCA",
+    "iso_chrome": "#91AFFF",
+    "annihilating_slime": "#E30000",
+    "annihilating_slime_armor": "#E30000",
+    "neutronium_assemble": "#E30000",
+    "heavy_material": "#626C80"
   },
   "material.tinkers_advanced": {
     "bismuth": "#83798A",

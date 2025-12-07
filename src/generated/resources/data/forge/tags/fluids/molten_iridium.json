@@ -1,5 +1,8 @@
 {
   "values": [
-    "tinkers_advanced:molten_iridium"
+    {
+      "id": "tinkers_advanced:molten_iridium",
+      "required": false
+    }
   ]
 }

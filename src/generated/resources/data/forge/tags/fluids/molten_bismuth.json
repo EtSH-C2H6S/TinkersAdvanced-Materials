@@ -1,5 +1,8 @@
 {
   "values": [
-    "tinkers_advanced:molten_bismuth"
+    {
+      "id": "tinkers_advanced:molten_bismuth",
+      "required": false
+    }
   ]
 }

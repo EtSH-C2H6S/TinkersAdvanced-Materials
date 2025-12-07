@@ -7,10 +7,10 @@
       "melee_damage": 0.5
     },
     "tconstruct:handle": {
-      "durability": 0.1,
-      "melee_damage": -0.1,
-      "melee_speed": 0.1,
-      "mining_speed": -0.1
+      "durability": -0.25,
+      "melee_damage": -0.25,
+      "melee_speed": 0.75,
+      "mining_speed": -0.25
     },
     "tconstruct:head": {
       "durability": 255,
@@ -20,9 +20,9 @@
     },
     "tconstruct:limb": {
       "accuracy": -0.05,
-      "draw_speed": 0.2,
+      "draw_speed": 0.75,
       "durability": 255,
-      "velocity": -0.1
+      "velocity": -0.25
     },
     "tconstruct:maille": {},
     "tconstruct:shield_core": {},

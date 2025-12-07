@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:nucleosynthesizing",
+  "duration": 200,
+  "gasInput": {
+    "amount": 100,
+    "gas": "mekanism:antimatter"
+  },
+  "itemInput": {
+    "ingredient": {
+      "item": "tinkers_advanced:densium_ingot"
+    }
+  },
+  "output": {
+    "item": "tinkers_advanced:anti_neutronium_ingot"
+  }
+}

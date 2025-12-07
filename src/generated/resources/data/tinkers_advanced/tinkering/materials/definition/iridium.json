@@ -6,10 +6,6 @@
         "type": "forge:and",
         "values": [
           {
-            "type": "mantle:tag_filled",
-            "tag": "forge:ingots/iridium"
-          },
-          {
             "type": "tinkers_advanced:compat_enabled",
             "is_original": true,
             "mod_id": "tinkers_advanced"

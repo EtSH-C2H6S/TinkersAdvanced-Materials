@@ -1,5 +1,8 @@
 {
   "values": [
-    "tinkers_advanced:molten_antimony"
+    {
+      "id": "tinkers_advanced:molten_antimony",
+      "required": false
+    }
   ]
 }

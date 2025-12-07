@@ -54,7 +54,7 @@
 
   "modifier.tinkers_advanced.radioactive_armor": "镭光护甲",
   "modifier.tinkers_advanced.radioactive_armor.flavor": "既产生辐射，也消除辐射",
-  "modifier.tinkers_advanced.radioactive_armor.description": "对攻击者施加辐射，受到带辐射生物的伤害减少，每级获得25%辐射抗性。",
+  "modifier.tinkers_advanced.radioactive_armor.description": "对攻击者施加辐射，受到带辐射生物的伤害减少，每级获得50%辐射抗性。",
 
   "modifier.tinkers_advanced.air_slash": "空气斩",
   "modifier.tinkers_advanced.air_slash.flavor": "压缩空气抛射",
@@ -94,7 +94,7 @@
 
   "modifier.tinkers_advanced.blizz_defense": "坚冰",
   "modifier.tinkers_advanced.blizz_defense.flavor": "冰冷的外表，坚硬的芯",
-  "modifier.tinkers_advanced.blizz_defense.description": "获得冰霜抗性，冻结攻击者。",
+  "modifier.tinkers_advanced.blizz_defense.description": "获得冰霜抗性，冻结攻击者，受到着火生物的伤害减半。",
 
   "modifier.tinkers_advanced.over_hold": "超容",
   "modifier.tinkers_advanced.over_hold.flavor": "这是非法改装！",
@@ -106,7 +106,7 @@
 
   "modifier.tinkers_advanced.flux_infused": "通量注入",
   "modifier.tinkers_advanced.flux_infused.flavor": "来一次与红石通量的邂逅",
-  "modifier.tinkers_advanced.flux_infused.description": "每级获得1MFE的能量存储，工具使用时优先消耗能量存储而非耐久。按CoFH-循环模式键可以切换工具的模式。",
+  "modifier.tinkers_advanced.flux_infused.description": "每级获得1MFE的能量存储，工具使用时优先消耗%1$s抵消耐久损耗。按CoFH-循环模式键可以切换工具的模式。",
 
   "modifier.tinkers_advanced.thermal_enhance": "元素之力",
   "modifier.tinkers_advanced.thermal_enhance.flavor": "四元素的力量在你的工具中显现...",
@@ -118,7 +118,7 @@
 
   "modifier.tinkers_advanced.thermal_slash": "通量赋能-近战",
   "modifier.tinkers_advanced.thermal_slash.flavor": "把通量附加在工具上，红石能转化为机械能！",
-  "modifier.tinkers_advanced.thermal_slash.description": "+1时运、抢夺等级。激活模式下消耗能量增加挖掘速度并在攻击时附加4点穿甲伤害；注能模式下攻速+50%，挥舞时释放元素剑气。",
+  "modifier.tinkers_advanced.thermal_slash.description": "每级+1时运、抢夺等级。激活模式下消耗能量增加挖掘速度并在攻击时附加4点穿甲伤害；注能模式下攻速+50%，挥舞时释放元素剑气。",
 
   "modifier.tinkers_advanced.flux_defense": "通量赋能-装甲",
   "modifier.tinkers_advanced.flux_defense.flavor": "把通量附加在工具上，红石能转化为机械能！",
@@ -251,6 +251,30 @@
   "modifier.tinkers_advanced.stabilize": "稳定化",
   "modifier.tinkers_advanced.stabilize.flavor": "此面向上！",
   "modifier.tinkers_advanced.stabilize.description": "每级+1.5近战伤害/护甲值，挖掘方块时稳定化附近的辉锑矿。但是每级降低10%移动速度。",
+
+  "modifier.tinkers_advanced.iso_chrome": "奇彩",
+  "modifier.tinkers_advanced.iso_chrome.flavor": "材料学+1",
+  "modifier.tinkers_advanced.iso_chrome.description": "每级增加能力、升级、防御槽各一个。",
+
+  "modifier.tinkers_advanced.extra_enhance": "赋能",
+  "modifier.tinkers_advanced.extra_enhance.flavor": "深度强化！",
+  "modifier.tinkers_advanced.extra_enhance.description": "每级增加能力槽一个。",
+
+  "modifier.tinkers_advanced.annihilating_slime": "湮灭态黏液",
+  "modifier.tinkers_advanced.annihilating_slime.flavor": "不可能的黏液！",
+  "modifier.tinkers_advanced.annihilating_slime.description": "黏液覆层上限变为%1$s倍，攻击时消耗每级%2$s点黏液覆层附加每级%3$s倍伤害的湮灭爆炸。",
+
+  "modifier.tinkers_advanced.annihilating_slime_armor": "湮灭态黏液",
+  "modifier.tinkers_advanced.annihilating_slime_armor.flavor": "不可能的黏液！",
+  "modifier.tinkers_advanced.annihilating_slime_armor.description": "黏液覆层上限变为%1$s倍，当黏液覆层超过%2$s时获得100%%伤害减免并根据伤害消耗黏液覆层。",
+
+  "modifier.tinkers_advanced.neutronium_assemble": "分型自组装",
+  "modifier.tinkers_advanced.neutronium_assemble.flavor": "它似乎能将自己复制一份...",
+  "modifier.tinkers_advanced.neutronium_assemble.description": "使用反中子锭右键工具以充能，每锭获得%1$s点充能。工具会消耗充能恢复黏液覆层，每点充能恢复%2$s点黏液覆层。",
+
+  "modifier.tinkers_advanced.heavy_material": "重质",
+  "modifier.tinkers_advanced.heavy_material.flavor": "你举得起来吗？",
+  "modifier.tinkers_advanced.heavy_material.description": "每级+%1$s近战伤害，-%2$s移动速度，-%3$s攻击速度",
 
 
 
@@ -385,6 +409,9 @@
   "material.tinkers_advanced.void_steel.armor": "每次磨损工具有10%的概率使工具获得属性增幅，最高增幅25%属性。每级有25%的概率闪避箭矢，不同件之间独立运算。",
   "material.tinkers_advanced.void_steel.ranged": "每次磨损工具有10%的概率使工具获得属性增幅，最高增幅25%属性。",
 
+  "material.tinkers_advanced.anti_neutronium": "反中子",
+  "material.tinkers_advanced.anti_neutronium.flavor": "小心点，这玩意很沉，别drop了！",
+
 
 
   "material.tinkers_advanced.silicon": "硅",
@@ -416,7 +443,7 @@
   "item.tinkers_advanced.antimony_nugget": "锑粒",
   "item.tinkers_advanced.bismuth_nugget": "铋粒",
   "item.tinkers_advanced.nutrition_slime_ingot": "营养黏液浸钢",
-  "item.tinkers_advanced.ultra_dense_book": "超致密书",
+  "item.tinkers_advanced.anti_neutronium_ingot": "反中子锭",
 
 
   "block.tinkers_advanced.bismuthinite_ore": "辉铋矿",
@@ -501,6 +528,9 @@
 
   "fluid.tinkers_advanced.molten_void_steel": "熔融虚空钢",
   "item.tinkers_advanced.molten_void_steel_bucket": "熔融虚空钢桶",
+
+  "fluid.tinkers_advanced.molten_anti_neutronium": "熔融反中子",
+  "item.tinkers_advanced.molten_anti_neutronium_bucket": "熔融反中子桶",
 
 
 

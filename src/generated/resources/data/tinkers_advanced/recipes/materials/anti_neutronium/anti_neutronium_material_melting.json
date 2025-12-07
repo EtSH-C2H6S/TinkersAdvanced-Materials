@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "mekanism"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": true,
+          "mod_id": "mekanism"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "input": "tinkers_advanced:anti_neutronium",
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_advanced:molten_anti_neutronium"
+  },
+  "temperature": 14273
+}

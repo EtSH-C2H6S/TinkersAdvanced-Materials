@@ -2,13 +2,13 @@ package com.c2h6s.tinkers_advanced_materials.data;
 
 import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import com.c2h6s.tinkers_advanced_materials.data.providers.tinker.*;
-import com.c2h6s.tinkers_advanced_tools.data.providers.TiAcTPartSpriteProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import slimeknights.tconstruct.fluids.data.FluidBucketModelProvider;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
@@ -37,7 +37,8 @@ public class TiAcMeDataGenerator {
         generator.addProvider(event.includeClient(),new FluidBucketModelProvider(output,TinkersAdvanced.MODID));
         generator.addProvider(event.includeClient(),new TiAcMeMaterialRenderInfoProvider(output,new TiAcMeMaterialSpriteProvider(),helper));
         generator.addProvider(event.includeClient(),new MaterialPartTextureGenerator(output,helper,new TinkerPartSpriteProvider(),new TiAcMeMaterialSpriteProvider()));
-        generator.addProvider(event.includeClient(),new MaterialPartTextureGenerator(output,helper,new TiAcTPartSpriteProvider(),new TiAcMeMaterialSpriteProvider()));
+        if (ModList.get().isLoaded("tinkers_advanced_tools"))
+            generator.addProvider(event.includeClient(),new MaterialPartTextureGenerator(output,helper, new TiAcMeToolPartSpriteProvider(),new TiAcMeMaterialSpriteProvider()));
 
         generator.addProvider(event.includeClient(),new TiAcMeBlockStateProvider(output,TinkersAdvanced.MODID,helper));
         generator.addProvider(event.includeClient(),new TiAcMeItemModelProvider(output,helper));

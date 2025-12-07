@@ -1,5 +1,6 @@
 package com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.compat.mekanism;
 
+import com.c2h6s.etstlib.register.EtSTLibToolStat;
 import com.c2h6s.etstlib.tool.modifiers.base.EtSTBaseModifier;
 import com.c2h6s.etstlib.util.CommonConstants;
 import com.c2h6s.tinkers_advanced_materials.TiAcMeConfig;
@@ -13,12 +14,17 @@ import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.build.ToolStatsModifierHook;
+import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
+import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 
-public class RadiationBurning extends EtSTBaseModifier {
+public class RadiationBurning extends EtSTBaseModifier implements ToolStatsModifierHook {
     public static final IRadiationManager RADIATION_MANAGER = IRadiationManager.INSTANCE;
     @Override
     public float onGetMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
@@ -34,6 +40,13 @@ public class RadiationBurning extends EtSTBaseModifier {
         }
         return damage;
     }
+
+    @Override
+    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder.addHook(this, ModifierHooks.TOOL_STATS);
+    }
+
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (context.getTarget() instanceof LivingEntity living&&context.isFullyCharged()){
@@ -58,5 +71,10 @@ public class RadiationBurning extends EtSTBaseModifier {
     @Override
     public void afterArrowHit(ModDataNBT persistentData, ModifierEntry entry, ModifierNBT modifiers, AbstractArrow arrow, @Nullable LivingEntity attacker, @NotNull LivingEntity target, float damageDealt) {
         if (arrow.getTags().contains(CommonConstants.KEY_CRITARROW)) RADIATION_MANAGER.radiate(target,entry.getLevel()*TiAcMeConfig.COMMON.IRRADIUM_RADIATION_INFLICT.get());
+    }
+
+    @Override
+    public void addToolStats(IToolContext iToolContext, ModifierEntry modifierEntry, ModifierStatsBuilder modifierStatsBuilder) {
+        EtSTLibToolStat.RADIATION_PROTECT.add(modifierStatsBuilder,modifierEntry.getLevel()*0.5);
     }
 }

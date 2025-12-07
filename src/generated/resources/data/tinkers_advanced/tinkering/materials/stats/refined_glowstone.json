@@ -4,7 +4,7 @@
     "tconstruct:grip": {
       "accuracy": 0.05,
       "durability": 0.05,
-      "melee_damage": 1.8
+      "melee_damage": 2.2
     },
     "tconstruct:handle": {
       "durability": 0.0,
@@ -14,7 +14,7 @@
     },
     "tconstruct:head": {
       "durability": 790,
-      "melee_attack": 1.85,
+      "melee_attack": 2.2,
       "mining_speed": 5.5,
       "mining_tier": "minecraft:diamond"
     },
@@ -22,7 +22,7 @@
       "accuracy": 0.1,
       "draw_speed": 0.05,
       "durability": 790,
-      "velocity": -0.05
+      "velocity": 0.25
     },
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {
@@ -45,7 +45,7 @@
       "durability": 540
     },
     "tinkers_advanced:flux_core": {
-      "capacity": 5.0,
+      "capacity": 25.0,
       "generate": 1.0
     }
   }

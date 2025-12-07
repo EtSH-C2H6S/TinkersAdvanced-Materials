@@ -1,6 +1,24 @@
 {
   "values": [
-    "tinkers_advanced:return_to_slime",
-    "tinkers_advanced:nutritive_slime"
+    {
+      "id": "#tinkers_advanced:return_to_slime",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:nutritive_slime",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:neutronium_assemble",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:annihilating_slime",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:annihilating_slime_armor",
+      "required": false
+    }
   ]
 }

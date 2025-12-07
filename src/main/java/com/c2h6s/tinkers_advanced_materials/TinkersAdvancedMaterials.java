@@ -4,6 +4,7 @@ import com.c2h6s.tinkers_advanced.core.init.TiAcCrItem;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeItems;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeMaterials;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeTabs;
+import com.c2h6s.tinkers_advanced_materials.network.TiAcMePacketHandler;
 import com.c2h6s.tinkers_advanced_materials.util.CommonMeUtils;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -48,20 +49,20 @@ public class TinkersAdvancedMaterials {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
-        TiAcMeConfig.init();
         TiAcMeModule.register(modEventBus);
+        TiAcMeConfig.init();
+        TiAcMePacketHandler.init();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+
     }
     @SubscribeEvent
     public static void addTabs(BuildCreativeModeTabContentsEvent event){
         if (event.getTabKey()== TiAcMeTabs.MATERIAL_TAB.getKey()){
             TiAcMeMaterials.MATERIALS.getEntryMap().values().forEach(object -> {
                 if (!CommonMeUtils.shouldHide(object)&&object.getItemObject()!=null){
-                    try {
-                       event.accept(object.getItemObject().get());
-                    } catch (Exception ignored){};
+                    event.accept(object.getItemObject().get());
                 }
             });
             TiAcCrItem.getListMaterial(MODID).forEach(object -> {
