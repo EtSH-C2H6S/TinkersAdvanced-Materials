@@ -1,0 +1,34 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:protection",
+      "damage_source": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:protection/magic"
+      },
+      "each_level": 10.0
+    },
+    {
+      "type": "tconstruct:block_damage",
+      "damage_source": {
+        "type": "mantle:or",
+        "predicates": [
+          {
+            "type": "mantle:tag",
+            "tag": "minecraft:is_fire"
+          },
+          {
+            "type": "mantle:tag",
+            "tag": "minecraft:is_explosion"
+          },
+          {
+            "type": "mantle:tag",
+            "tag": "minecraft:is_lightning"
+          }
+        ]
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

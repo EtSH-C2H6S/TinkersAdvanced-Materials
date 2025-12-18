@@ -7,6 +7,7 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierTagProvider;
 
 import static com.c2h6s.tinkers_advanced_materials.init.TiAcMeModifiers.*;
+import static com.c2h6s.tinkers_advanced_materials.data.providers.tinker.TiAcMeModifierProvider.ModifierIds.*;
 
 public class TiAcMeModifierTagProvider extends AbstractModifierTagProvider {
     public TiAcMeModifierTagProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
@@ -22,6 +23,18 @@ public class TiAcMeModifierTagProvider extends AbstractModifierTagProvider {
                         NEUTRONIUM_ASSEMBLE.getId(),
                         ANNIHILATING_SLIME.getId(),
                         ANNIHILATING_SLIME_ARMOR.getId()
+                );
+        this.tag(TinkerTags.Modifiers.SLOTLESS)
+                .addOptionalTag(
+                        THERMAL_FOUNDATION,
+                        BASALZ_ENHANCE,
+                        BLITZ_ENHANCE,
+                        BLIZZ_ENHANCE
+                );
+        this.tag(TinkerTags.Modifiers.UPGRADES)
+                .addOptionalTag(
+                        OBSIDIANITE,
+                        RAINBOW_KIT
                 );
     }
 

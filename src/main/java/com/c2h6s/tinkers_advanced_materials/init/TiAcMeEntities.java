@@ -37,6 +37,13 @@ public class TiAcMeEntities {
                     .setTrackingRange(8)
                     .setShouldReceiveVelocityUpdates(false)
                     .setUpdateInterval(4));
+    public static final RegistryObject<EntityType<EffectStarEntity>> EFFECT_STAR = TiAcCrModule.ENTITIES
+            .register("effect_star",()-> EntityType.Builder.<EffectStarEntity>of(EffectStarEntity::new, MobCategory.MISC)
+                    .sized(0.25f,0.25f)
+                    .setCustomClientFactory(((spawnEntity, level) -> new EffectStarEntity(level)))
+                    .setTrackingRange(6)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setUpdateInterval(20));
     @SubscribeEvent
     public static void init(TiAcLoadRegistryClassEvent event){}
 }

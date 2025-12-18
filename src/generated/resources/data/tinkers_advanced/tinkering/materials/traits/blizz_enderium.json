@@ -2,6 +2,10 @@
   "default": [
     {
       "level": 1,
+      "name": "tconstruct:enderference"
+    },
+    {
+      "level": 1,
       "name": "tinkers_advanced:metamorphium"
     },
     {
@@ -18,6 +22,10 @@
       {
         "level": 1,
         "name": "tinkers_advanced:blizz_defense"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_advanced:void_dodging"
       }
     ]
   }

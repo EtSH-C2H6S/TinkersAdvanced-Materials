@@ -1,0 +1,33 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/ingot"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "rainbowcompound"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "rainbowcompound"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "cooling_time": 93,
+  "fluid": {
+    "amount": 90,
+    "fluid": "tinkers_advanced:molten_netherstar_alloy"
+  },
+  "result": "rainbowcompound:netherstar_ingot"
+}

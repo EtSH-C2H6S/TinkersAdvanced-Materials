@@ -30,6 +30,7 @@ public enum EnumMaterialStats {
             null,
             false,
             StatlessMaterialStats.BINDING,
+            StatlessMaterialStats.SHIELD_CORE,
             new HandleMaterialStats(-0.1f,-0.12f,-0.1f,0.2f),
             new HeadMaterialStats(379,4.5f, Tiers.DIAMOND,2.75f),
             new GripMaterialStats(-0.05f,0.1f,2.75f),
@@ -51,6 +52,7 @@ public enum EnumMaterialStats {
             null,
             false,
             StatlessMaterialStats.BINDING,
+            StatlessMaterialStats.SHIELD_CORE,
             new HandleMaterialStats(0.1f,-0.2f,0.25f,-0.1f),
             new HeadMaterialStats(325,4.5f, Tiers.DIAMOND,4.5f),
             new GripMaterialStats(-0.05f,0.1f,4.5f),
@@ -88,7 +90,7 @@ public enum EnumMaterialStats {
             StatlessMaterialStats.MAILLE,
             new HandleMaterialStats(-0.5f,1.75f,-0.5f,1.75f),
             new FluxCoreMaterialStat(10000,1000000),
-            new HeadMaterialStats(590,22.5f, Tiers.NETHERITE,20f)
+            new HeadMaterialStats(590,22.5f, Tiers.NETHERITE,16.5f)
     ),
     REFINED_GLOWSTONE(
             armor(30,2f,7,5,2),
@@ -107,7 +109,7 @@ public enum EnumMaterialStats {
             StatlessMaterialStats.BINDING,
             StatlessMaterialStats.MAILLE,
             new HandleMaterialStats(-0.1f,-0.25f,0.25f,0.1f),
-            new HeadMaterialStats(1020,3.0f, Tiers.NETHERITE,16.5f),
+            new HeadMaterialStats(1020,3.0f, Tiers.NETHERITE,13.5f),
             new GripMaterialStats(-0.1f,0.05f,16.5f),
             new FluxCoreMaterialStat(9f,128f),
             new LimbMaterialStats(1020,1.25f,0.75f,0.1f)
@@ -125,6 +127,8 @@ public enum EnumMaterialStats {
             armor(40,4f,8.5f,6.5f,4f).toughness(7).knockbackResistance(0.1F),
             true,
             StatlessMaterialStats.BINDING,
+            StatlessMaterialStats.SHIELD_CORE,
+            StatlessMaterialStats.MAILLE,
             new FluxCoreMaterialStat(4.6f,6.6f),
             new HandleMaterialStats(0.2f,-0.1f,0.25f,0.25f),
             new HeadMaterialStats(1105,9.5f, Tiers.NETHERITE,4.75f)
@@ -152,14 +156,14 @@ public enum EnumMaterialStats {
             new LimbMaterialStats(470,0.75f,0.25f,-0.01f)
     ),
     BLIZZ_ENDERIUM(
-            armor(45,5.5f,7.5f,6.5f,5.5f).toughness(7).knockbackResistance(0.05f),
+            armor(45,4.5f,7.5f,6.5f,4.5f).toughness(7).knockbackResistance(0.05f),
             true,
             StatlessMaterialStats.BINDING,
             StatlessMaterialStats.MAILLE,
             new FluxCoreMaterialStat(12.5f,14.0f),
             new HandleMaterialStats(0.2f,0.2f,0.2f,0.2f),
-            new HeadMaterialStats(1210,6.5f, Tiers.NETHERITE,7f),
-            new GripMaterialStats(0.1f,0.05f,7f),
+            new HeadMaterialStats(1210,6.5f, Tiers.NETHERITE,5.5f),
+            new GripMaterialStats(0.1f,0.05f,5.5f),
             new LimbMaterialStats(1210,0.5f,0.5f,0.05f)
     ),
     ACTIVATED_CHROMA_STEEL(
@@ -312,7 +316,7 @@ public enum EnumMaterialStats {
             true,
             StatlessMaterialStats.BINDING,
             StatlessMaterialStats.MAILLE,
-            new HandleMaterialStats(0.15f,0.1f,0.15f,0.1f),
+            new HandleMaterialStats(0.15f,0.1f,0.08f,0.15f),
             new FluxCoreMaterialStat(2.5F,4.9F),
             new HeadMaterialStats(1592,6.5f, Tiers.NETHERITE,4f),
             new GripMaterialStats(0.15f,0.01f,4f),

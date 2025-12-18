@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:material_fluid",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_signalum"
+  },
+  "output": "tinkers_advanced:signalum",
+  "temperature": 999
+}

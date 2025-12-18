@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "forge:ingots/signalum"
+    },
+    {
+      "tag": "forge:ingots/lumium"
+    },
+    {
+      "tag": "forge:ingots/enderium"
+    },
+    {
+      "tag": "forge:ingots/invar"
+    },
+    {
+      "tag": "forge:ingots/steel"
+    }
+  ],
+  "level": 1,
+  "result": "tinkers_advanced:thermal_foundation",
+  "tools": {
+    "tag": "tconstruct:modifiable/bonus_slots"
+  }
+}

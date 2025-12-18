@@ -1,0 +1,25 @@
+{
+  "condition": {
+    "type": "forge:and",
+    "values": [
+      {
+        "type": "tinkers_advanced:compat_enabled",
+        "is_original": false,
+        "mod_id": "thermal"
+      },
+      {
+        "type": "forge:mod_loaded",
+        "modid": "thermal"
+      }
+    ]
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:modifier_slot",
+      "each_level": 1,
+      "name": "abilities"
+    }
+  ],
+  "tooltip_display": "always"
+}

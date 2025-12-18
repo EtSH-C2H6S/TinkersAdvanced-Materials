@@ -1,0 +1,32 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tinkers_advanced:star_gazing"
+    },
+    {
+      "level": 1,
+      "name": "tinkers_advanced:rainbow_kit"
+    },
+    {
+      "level": 1,
+      "name": "tconstruct:shiny"
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_advanced:netherstar_blessing"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_advanced:rainbow_kit"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:shiny"
+      }
+    ]
+  }
+}

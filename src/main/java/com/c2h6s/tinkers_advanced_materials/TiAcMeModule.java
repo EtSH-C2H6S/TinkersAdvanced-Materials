@@ -9,6 +9,7 @@ public class TiAcMeModule {
     public static void register(IEventBus modEventBus){
         TiAcMePlacementModifier.PLACEMENT_MODIFIER.register(modEventBus);
         TiAcMeMaterials.MATERIALS.register(modEventBus);
+        TiAcMeItems.EFFECT_STARS.register(modEventBus);
         if (ModListConstants.MekLoaded){
             TiAcMeItems.MEK_ITEMS.register(modEventBus);
             TiAcMeFluids.MEK_FLUIDS.register(modEventBus);

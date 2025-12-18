@@ -1,0 +1,46 @@
+{
+  "stats": {
+    "tconstruct:binding": {},
+    "tconstruct:handle": {
+      "durability": 0.1,
+      "melee_damage": 0.05,
+      "melee_speed": 0.05,
+      "mining_speed": 0.1
+    },
+    "tconstruct:head": {
+      "durability": 1090,
+      "melee_attack": 3.0,
+      "mining_speed": 6.0,
+      "mining_tier": "minecraft:diamond"
+    },
+    "tconstruct:maille": {},
+    "tconstruct:plating_boots": {
+      "armor": 2.0,
+      "durability": 858,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_chestplate": {
+      "armor": 7.0,
+      "durability": 1056,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_helmet": {
+      "armor": 2.0,
+      "durability": 726,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_leggings": {
+      "armor": 5.0,
+      "durability": 990,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_shield": {
+      "durability": 1188,
+      "toughness": 2.0
+    },
+    "tinkers_advanced:flux_core": {
+      "capacity": 4.0,
+      "generate": 3.0
+    }
+  }
+}

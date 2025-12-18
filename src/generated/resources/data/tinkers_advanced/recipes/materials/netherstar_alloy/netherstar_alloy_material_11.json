@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "rainbowcompound"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "rainbowcompound"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "item": "rainbowcompound:netherstar_ingot"
+  },
+  "material": "tinkers_advanced:netherstar_alloy",
+  "needed": 1,
+  "value": 1
+}

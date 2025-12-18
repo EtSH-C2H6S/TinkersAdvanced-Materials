@@ -1,6 +1,8 @@
 package com.c2h6s.tinkers_advanced_materials.data.providers.tinker;
 
 import appeng.datagen.providers.tags.ConventionTags;
+import cofh.lib.init.tags.ItemTagsCoFH;
+import com.LunaGlaze.rainbowcompound.Projects.Items.Basic.ItemsItemRegistry;
 import com.buuz135.industrial.module.ModuleCore;
 import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import com.c2h6s.tinkers_advanced.core.data.condition.CompatConfigCondition;
@@ -9,6 +11,7 @@ import com.c2h6s.tinkers_advanced_materials.data.TiAcMeTagkeys;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeFluids;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeItems;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeMaterials;
+import com.c2h6s.tinkers_advanced_materials.init.TiAcMeModifiers;
 import com.c2h6s.tinkers_advanced_tools.init.TiAcTItems;
 import me.desht.pneumaticcraft.api.data.PneumaticCraftTags;
 import mekanism.api.datagen.recipe.builder.CombinerRecipeBuilder;
@@ -44,9 +47,11 @@ import slimeknights.mantle.recipe.helper.FluidOutput;
 import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.mantle.recipe.ingredient.FluidIngredient;
 import slimeknights.tconstruct.TConstruct;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.casting.material.MaterialFluidRecipeBuilder;
@@ -55,9 +60,14 @@ import slimeknights.tconstruct.library.recipe.material.MaterialRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe;
 import slimeknights.tconstruct.library.recipe.melting.MaterialMeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
+import slimeknights.tconstruct.library.tools.SlotType;
+import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.shared.TinkerMaterials;
 
 import java.util.function.Consumer;
+
+import static com.c2h6s.tinkers_advanced_materials.data.providers.tinker.TiAcMeModifierProvider.ModifierIds.*;
 
 public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRecipeHelper {
     public TiAcMeRecipeProvider(PackOutput generator) {
@@ -79,8 +89,14 @@ public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRec
     public static ResourceLocation modifierFolder(String name){
         return ResourceLocation.tryParse(TinkersAdvanced.getLocation("modifiers/")+name);
     }
+    public static ResourceLocation modifierFolder(ModifierId modifierId){
+        return modifierFolder(modifierId.getPath());
+    }
     public static ResourceLocation salvageFolder(String name){
         return ResourceLocation.tryParse(TinkersAdvanced.getLocation("modifiers/salvage/")+name);
+    }
+    public static ResourceLocation salvageFolder(ModifierId modifierId){
+        return salvageFolder(modifierId.getPath());
     }
 
     @Override
@@ -246,7 +262,7 @@ public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRec
         NucleosynthesizingRecipeBuilder.nucleosynthesizing(
                 ItemStackIngredientCreator.INSTANCE
                         .from(TiAcMeMaterials.DENSIUM.getItemObject()),
-                GasStackIngredientCreator.INSTANCE.from(MekanismGases.ANTIMATTER,100),
+                GasStackIngredientCreator.INSTANCE.from(MekanismGases.ANTIMATTER,250),
                 new ItemStack(TiAcMeMaterials.ANTI_NEUTRONIUM.getItemObject()),200).build(consumer,new ResourceLocation(folder+"_creation"));
         //PnC
         conditional = withCondition(consumer, modLoaded("pneumaticcraft",false));
@@ -286,6 +302,11 @@ public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRec
                 .addInput(TiAcMeFluids.MOLTEN_BLIZZ_ENDERIUM.get(), 90)
                 .addInput(TiAcMeFluids.MOLTEN_BLAZE_NETHERITE.get(), 90)
                 .save(conditional, new ResourceLocation(folder + "_alloy"));
+        conditional = withCondition(consumer,modLoaded("thermal",false));
+        ItemCastingRecipeBuilder.tableRecipe(TiAcMeItems.SIGNALUM_REINFORCEMENT.get())
+                .setCast(TinkerCommons.obsidianPane.asItem(),true)
+                .setCoolingTime(999,90).setFluid(TinkerFluids.moltenSignalum.getCommonTag(),90)
+                .save(consumer,new ResourceLocation(namedFolder("signalum")+"_reinforcement"));
         //IndustrialForgoing
         conditional = withCondition(consumer, modLoaded("industrialforegoing",false));
         folder = namedFolder("pink_slime_metal");
@@ -304,6 +325,41 @@ public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRec
         folder = namedFolder("plastic");
         conditional = withCondition(consumer, tagFilled(TiAcMeTagkeys.Items.PLASTIC,TinkersAdvanced.MODID,false));
         materialRecipe(TiAcMeMaterialIds.CommonIntegration.PLASTIC, Ingredient.of(TiAcMeTagkeys.Items.PLASTIC), 1, 1, conditional, folder);
+
+        //Modifiers
+        folder = modifierFolder("thermal_foundation");
+        conditional = withCondition(consumer,modLoaded("thermal",false));
+        ModifierRecipeBuilder.modifier(THERMAL_FOUNDATION).addInput(ItemTagsCoFH.INGOTS_SIGNALUM)
+                .addInput(ItemTagsCoFH.INGOTS_LUMIUM).addInput(ItemTagsCoFH.INGOTS_ENDERIUM)
+                .addInput(ItemTagsCoFH.INGOTS_INVAR).addInput(ItemTagsCoFH.INGOTS_STEEL).allowCrystal()
+                .setTools(TinkerTags.Items.BONUS_SLOTS).setMaxLevel(1).save(conditional,folder);
+        folder = modifierFolder("energy_reinforced");
+        ModifierRecipeBuilder.modifier(TiAcMeModifiers.ENERGY_REINFORCED.getId())
+                .addInput(TiAcMeItems.SIGNALUM_REINFORCEMENT.get(),4).setSlots(SlotType.UPGRADE,1).setMaxLevel(5).setTools(TinkerTags.Items.DURABILITY)
+                .allowCrystal().save(consumer,folder);
+        conditional = withCondition(consumer,modLoaded("thermal",true));
+        folder = modifierFolder("iso_chrome");
+        ModifierRecipeBuilder.modifier(TiAcMeModifiers.ISO_CHROME)
+                .addInput(TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get())
+                .addInput(TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get())
+                .addInput(TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get())
+                .addInput(TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get())
+                .addInput(TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get()).allowCrystal()
+                .setTools(TinkerTags.Items.BONUS_SLOTS).setMaxLevel(1).save(conditional,folder);
+
+        conditional = withCondition(consumer,modLoaded("rainbowcompound",false));
+        folder = modifierFolder("obsidianite");
+        ModifierRecipeBuilder.modifier(OBSIDIANITE)
+                .addInput(ItemsItemRegistry.obsidianiteingot.get())
+                .addInput(ItemsItemRegistry.obsidianiteupgradekit.get())
+                .setSlots(SlotType.UPGRADE,1).allowCrystal().setMaxLevel(1)
+                .setTools(TinkerTags.Items.DURABILITY).save(conditional,folder);
+        folder = modifierFolder("rainbow_kit");
+        ModifierRecipeBuilder.modifier(RAINBOW_KIT)
+                .addInput(ItemsItemRegistry.rainbowcompound.get())
+                .addInput(ItemsItemRegistry.rainbowupgradekit.get())
+                .setSlots(SlotType.UPGRADE,1).allowCrystal().setMaxLevel(1)
+                .setTools(TinkerTags.Items.DURABILITY).save(conditional,folder);
     }
 
     public void melt1B(Fluid fluid, ItemLike ingredient, int temperature, Consumer<FinishedRecipe> consumer, ResourceLocation location){

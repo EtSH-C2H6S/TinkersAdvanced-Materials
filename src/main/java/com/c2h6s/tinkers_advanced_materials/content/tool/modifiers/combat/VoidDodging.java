@@ -24,7 +24,7 @@ public class VoidDodging extends EtSTBaseModifier implements DamageBlockModifier
     @Override
     public boolean isDamageBlocked(IToolStackView tool, ModifierEntry entry, EquipmentContext context, EquipmentSlot slot, DamageSource source, float damage) {
         Random random = new Random();
-        if (random.nextFloat()<= TiAcMeConfig.COMMON.VOID_DODGING_CHANCE.get()) {
+        if (random.nextFloat()<= TiAcMeConfig.COMMON.VOID_DODGING_CHANCE.get()*entry.getLevel()) {
             if (source.getDirectEntity() instanceof Projectile projectile){
                 projectile.discard();
                 return true;

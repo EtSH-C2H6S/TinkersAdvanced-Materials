@@ -22,7 +22,7 @@
 
   "modifier.tinkers_advanced.annihilate": "湮灭反应",
   "modifier.tinkers_advanced.annihilate.flavor": "灰都不剩！",
-  "modifier.tinkers_advanced.annihilate.description": "对目标造成5倍的爆炸伤害，对自己造成2.5倍的爆炸伤害，随后造成不破坏地形的爆炸。\n你的攻击无视大部分原版防御手段。",
+  "modifier.tinkers_advanced.annihilate.description": "对目标造成%2$s倍的爆炸伤害，对自己造成%1$s倍的爆炸伤害，随后造成不破坏地形的爆炸。\n你的攻击无视大部分原版防御手段。",
 
   "modifier.tinkers_advanced.reactive_explosive_armor": "爆炸反应装甲",
   "modifier.tinkers_advanced.reactive_explosive_armor.flavor": "爆炸反应装甲",
@@ -74,15 +74,15 @@
 
   "modifier.tinkers_advanced.basalz_defense": "石肤",
   "modifier.tinkers_advanced.basalz_defense.flavor": "岩石的能量让你更加坚固",
-  "modifier.tinkers_advanced.basalz_defense.description": "每级护甲值、护甲韧性+1，获得爆裂抗性效果。",
+  "modifier.tinkers_advanced.basalz_defense.description": "每级护甲值、护甲韧性+1，增加10%对可减免伤害的保护，获得爆裂抗性效果。",
 
   "modifier.tinkers_advanced.basalz_inflict": "碎裂",
   "modifier.tinkers_advanced.basalz_inflict.flavor": "震碎护甲！",
-  "modifier.tinkers_advanced.basalz_inflict.description": "全力打击时对目标施加割裂效果，减少目标护甲。",
+  "modifier.tinkers_advanced.basalz_inflict.description": "全力打击时对目标施加割裂效果，减少目标护甲。近战攻击会额外永久削减目标护甲。",
 
   "modifier.tinkers_advanced.blitz_defense": "涌流",
   "modifier.tinkers_advanced.blitz_defense.flavor": "如闪电般灵活",
-  "modifier.tinkers_advanced.blitz_defense.description": "获得闪电抗性效果，被攻击时有5%概率闪避并电击攻击者。",
+  "modifier.tinkers_advanced.blitz_defense.description": "获得闪电抗性效果，被攻击时有10%各件独立的概率闪避并电击攻击者。",
 
   "modifier.tinkers_advanced.blitz_inflict": "震荡",
   "modifier.tinkers_advanced.blitz_inflict.flavor": "你知道吗：击穿1mm空气需要1000~2000V的高压",
@@ -244,8 +244,8 @@
   "modifier.tinkers_advanced.energy_distributor.flavor": "就像一个充电宝。",
   "modifier.tinkers_advanced.energy_distributor.description": "将工具存储的能量分配到玩家的快捷栏、副手物品和护甲栏。",
 
-  "modifier.tinkers_advanced.void_dodging": "虚无闪避",
-  "modifier.tinkers_advanced.void_dodging.flavor": "把它们送进虚空！",
+  "modifier.tinkers_advanced.void_dodging": "末影闪避",
+  "modifier.tinkers_advanced.void_dodging.flavor": "身上装了个末影人？",
   "modifier.tinkers_advanced.void_dodging.description": "有概率闪避箭矢的攻击，并将其摧毁。",
 
   "modifier.tinkers_advanced.stabilize": "稳定化",
@@ -275,6 +275,124 @@
   "modifier.tinkers_advanced.heavy_material": "重质",
   "modifier.tinkers_advanced.heavy_material.flavor": "你举得起来吗？",
   "modifier.tinkers_advanced.heavy_material.description": "每级+%1$s近战伤害，-%2$s移动速度，-%3$s攻击速度",
+
+  "modifier.tinkers_advanced.thermal_foundation": "热力基础",
+  "modifier.tinkers_advanced.thermal_foundation.flavor": "为什么热力是神？",
+  "modifier.tinkers_advanced.thermal_foundation.description": "增加一个升级槽。",
+
+  "modifier.tinkers_advanced.basalz_enhance": "地岩增强",
+  "modifier.tinkers_advanced.basalz_enhance.flavor": "大地元素调谐！",
+  "modifier.tinkers_advanced.basalz_enhance.description": "增加一个防御槽。",
+
+  "modifier.tinkers_advanced.blitz_enhance": "狂风增强",
+  "modifier.tinkers_advanced.blitz_enhance.flavor": "大气元素调谐！",
+  "modifier.tinkers_advanced.blitz_enhance.description": "增加一个升级槽。",
+
+  "modifier.tinkers_advanced.blizz_enhance": "暴雪增强",
+  "modifier.tinkers_advanced.blizz_enhance.flavor": "凛冰元素调谐！",
+  "modifier.tinkers_advanced.blizz_enhance.description": "增加一个能力槽。",
+
+  "modifier.tinkers_advanced.energy_reinforced": "通量加固",
+  "modifier.tinkers_advanced.energy_reinforced.flavor": "凝红石定通量！",
+  "modifier.tinkers_advanced.energy_reinforced.description": "增加%2$s能量容量。工具受损时消耗能量抵消%3$s耐久消耗，每%1$s抵消1耐久。",
+
+  "modifier.tinkers_advanced.super_conduct": "超导",
+  "modifier.tinkers_advanced.super_conduct.flavor": "室！温！超！导！",
+  "modifier.tinkers_advanced.super_conduct.description": "攻击时每级消耗%1$s增加%2$s护甲穿透。",
+
+  "modifier.tinkers_advanced.add_invulnerable_time.description": "受到伤害后延长%1$s秒无敌帧。",
+
+  "modifier.tinkers_advanced.add_mob_effect.description": "攻击时附加%1$s效果。",
+
+  "modifier.tinkers_advanced.life_melody": "生命旋律",
+  "modifier.tinkers_advanced.life_melody.flavor": "一曲终...",
+  "modifier.tinkers_advanced.life_melody.description": "攻击时根据目标已损血量的%1$s造成伤害。",
+
+  "modifier.tinkers_advanced.blazing": "烈焰",
+  "modifier.tinkers_advanced.blazing.flavor": "着火了！",
+  "modifier.tinkers_advanced.blazing.description": "在物品栏内时不时点燃自己和%1$s格内的最近生物。",
+
+  "modifier.tinkers_advanced.obsidianite": "黑曜石合金",
+  "modifier.tinkers_advanced.obsidianite.flavor": "工艺增强！",
+  "modifier.tinkers_advanced.obsidianite.description": "小幅增加部分攻防属性，大幅增加耐久，令工具能使用黑曜石修复。",
+
+  "modifier.tinkers_advanced.rainbow_kit": "虹彩",
+  "modifier.tinkers_advanced.rainbow_kit.flavor": "超·尖端增强！",
+  "modifier.tinkers_advanced.rainbow_kit.description": "增加部分攻防属性，使工具不会被火烧毁，战斗时给敌人施加发光效果，防具获得彩虹套装的虹彩共鸣的能力。",
+
+  "modifier.tinkers_advanced.frosted_attack": "结霜打击",
+  "modifier.tinkers_advanced.frosted_attack.flavor": "越冷越坚固！",
+  "modifier.tinkers_advanced.frosted_attack.description": "持有者被冰冻时，工具会吸收部分冰冻时间并造成越来越高的冰冻伤害，最高每级附加%1$s的伤害。",
+
+  "modifier.tinkers_advanced.frosted_shield": "结霜防护",
+  "modifier.tinkers_advanced.frosted_shield.flavor": "越冷越坚固！",
+  "modifier.tinkers_advanced.frosted_shield.description": "持有者被冰冻时，工具会吸收部分冰冻时间并提供越来越高的护甲后格挡，最高每级格挡%1$s点伤害。",
+
+  "modifier.tinkers_advanced.oceanic_whirl": "大洋漩涡",
+  "modifier.tinkers_advanced.oceanic_whirl.flavor": "海神助我！",
+  "modifier.tinkers_advanced.oceanic_whirl.description": "蓄力后进行激流突进，工具的攻击速度越高蓄力越快。",
+
+  "modifier.tinkers_advanced.prismatic": "棱彩折射",
+  "modifier.tinkers_advanced.prismatic.flavor": "与水融为一体",
+  "modifier.tinkers_advanced.prismatic.description": "泡在水中时不会被怪物发现，怪物泡在水中时不会发现你。",
+
+  "modifier.tinkers_advanced.defense_melody": "防守旋律",
+  "modifier.tinkers_advanced.defense_melody.flavor": "躲闪摇！",
+
+  "modifier.tinkers_advanced.ender_supress": "末影压制",
+  "modifier.tinkers_advanced.ender_supress.flavor": "你不准走",
+  "modifier.tinkers_advanced.ender_supress.description": "阻止对你有敌意的生物的瞬移。若你主手上有近战武器，则会在它尝试瞬移时反击。",
+
+  "modifier.tinkers_advanced.respiration_enhanced": "水下呼吸吸吸吸",
+  "modifier.tinkers_advanced.respiration_enhanced.flavor": "疑似是在用生物电电解水",
+  "modifier.tinkers_advanced.respiration_enhanced.description": "于头盔时相当于水下呼吸V。",
+
+  "modifier.tinkers_advanced.ender_pearl": "末影珍珠",
+  "modifier.tinkers_advanced.ender_pearl.flavor": "就是字面意思",
+  "modifier.tinkers_advanced.ender_pearl.description": "右键扔出一个末影珍珠，消耗10耐久。",
+
+  "modifier.tinkers_advanced.ender_protocol": "末影协议",
+  "modifier.tinkers_advanced.ender_protocol.flavor": "与末影人和解",
+  "modifier.tinkers_advanced.ender_protocol.description": "与末影人强制中立，即便与其对视。",
+
+  "modifier.tinkers_advanced.flash_attack": "闪击",
+  "modifier.tinkers_advanced.flash_attack.flavor": "闪击什么？！",
+  "modifier.tinkers_advanced.flash_attack.description": "切换本工具时不会重置主手的攻击冷却。",
+
+  "modifier.tinkers_advanced.neuro_excitement": "刺激",
+  "modifier.tinkers_advanced.neuro_excitement.flavor": "神经兴奋！",
+  "modifier.tinkers_advanced.neuro_excitement.description": "从非同类物品切换到本工具后%1$s秒内必定暴击且暴击伤害每级增加%2$s。",
+
+  "modifier.tinkers_advanced.star_gazing": "星语",
+  "modifier.tinkers_advanced.star_gazing.flavor": "如落星般坠入你的灵魂",
+  "modifier.tinkers_advanced.star_gazing.description": "攻击时有%1$s的概率掉落碎星，拾取碎星会获得不同增益。",
+
+  "modifier.tinkers_advanced.netherstar_blessing": "狱星守护",
+  "modifier.tinkers_advanced.netherstar_blessing.flavor": "下界之星的一小点力量",
+  "modifier.tinkers_advanced.netherstar_blessing.description": "免疫火、雷、爆炸伤害，提供魔法保护X。",
+  "modifier.tinkers_advanced.netherstar_blessing.resistance": "魔法抗性",
+
+  "modifier.tinkers_advanced.night_slayer": "暗夜克星",
+  "modifier.tinkers_advanced.night_slayer.flavor": "躲藏在黑暗中的刺客",
+  "modifier.tinkers_advanced.night_slayer.description": "随环境亮度降低而增加伤害和保护等级。",
+  "modifier.tinkers_advanced.night_slayer.resistance": "暗处伤害抗性",
+
+  "modifier.tinkers_advanced.luminous_piercer": "耀日穿刺",
+  "modifier.tinkers_advanced.luminous_piercer.flavor": "侦测到致命光子流",
+  "modifier.tinkers_advanced.luminous_piercer.description": "随环境亮度增加而增加穿甲和保护等级。",
+  "modifier.tinkers_advanced.luminous_piercer.resistance": "亮处伤害抗性",
+
+  "modifier.tinkers_advanced.ender_breathe": "末影之息",
+  "modifier.tinkers_advanced.ender_breathe.flavor": "龙息散射！",
+  "modifier.tinkers_advanced.ender_breathe.description": "攻击时释放龙息，对周围敌人造成伤害。",
+
+  "modifier.tinkers_advanced.star_heal": "星愈",
+  "modifier.tinkers_advanced.star_heal.flavor": "如落星般坠入你的灵魂",
+  "modifier.tinkers_advanced.star_heal.description": "受到超过%1$s伤害时有概率掉落出治疗星，拾取后恢复血量。受到致命伤害时免死一次并生成更多星，%2$s秒冷却。",
+
+  "modifier.tinkers_advanced.slimeful": "黏液富集",
+  "modifier.tinkers_advanced.slimeful.flavor": "富含史莱姆！",
+  "modifier.tinkers_advanced.slimeful.description": "使用工具有概率额外掉落粘液球。",
 
 
 
@@ -412,6 +530,32 @@
   "material.tinkers_advanced.anti_neutronium": "反中子",
   "material.tinkers_advanced.anti_neutronium.flavor": "小心点，这玩意很沉，别drop了！",
 
+  "material.tinkers_advanced.signalum": "信素",
+  "material.tinkers_advanced.signalum.flavor": "由导电性最强的金属与红石复合而成，有着远远强于已知金属的导电导热能力。",
+  "material.tinkers_advanced.lumium": "流明",
+  "material.tinkers_advanced.lumium.flavor": "锭如其名，在黑暗中发出明亮光芒。",
+  "material.tinkers_advanced.enderium": "末影",
+  "material.tinkers_advanced.enderium.flavor": "一种高强度材料，广泛用于制作机器组件。",
+
+  "material.tinkers_advanced.prismalic_alloy": "海晶",
+  "material.tinkers_advanced.prismalic_alloy.flavor": "凝聚了海洋之力的工业材料。",
+  "material.tinkers_advanced.melodic_alloy": "旋律",
+  "material.tinkers_advanced.melodic_alloy.flavor": "其中蕴含的能量有规律地跳动。",
+  "material.tinkers_advanced.stellar_alloy": "恒星",
+  "material.tinkers_advanced.stellar_alloy.flavor": "更为坚固的材料，是你所期望的产物吗？",
+
+  "material.tinkers_advanced.frostite": "霜冻合金",
+  "material.tinkers_advanced.glowstoneite": "荧石合金",
+  "material.tinkers_advanced.blazeite": "烈焰合金",
+  "material.tinkers_advanced.enderite": "末影合金",
+  "material.tinkers_advanced.netherwartite": "下界疣合金",
+  "material.tinkers_advanced.warpedite": "诡异疣合金",
+  "material.tinkers_advanced.netherstar_alloy": "下界之星合金",
+  "material.tinkers_advanced.shadow_steel": "暗影钢",
+  "material.tinkers_advanced.refined_radiance": "光辉石",
+  "material.tinkers_advanced.chorusite": "紫颂合金",
+  "material.tinkers_advanced.slimeite": "粘性合金",
+
 
 
   "material.tinkers_advanced.silicon": "硅",
@@ -444,6 +588,7 @@
   "item.tinkers_advanced.bismuth_nugget": "铋粒",
   "item.tinkers_advanced.nutrition_slime_ingot": "营养黏液浸钢",
   "item.tinkers_advanced.anti_neutronium_ingot": "反中子锭",
+  "item.tinkers_advanced.signalum_reinforcement": "信素加固板",
 
 
   "block.tinkers_advanced.bismuthinite_ore": "辉铋矿",
@@ -532,6 +677,42 @@
   "fluid.tinkers_advanced.molten_anti_neutronium": "熔融反中子",
   "item.tinkers_advanced.molten_anti_neutronium_bucket": "熔融反中子桶",
 
+  "fluid.tinkers_advanced.molten_melodic_alloy": "熔融旋律合金",
+  "item.tinkers_advanced.molten_melodic_alloy_bucket": "熔融旋律合金桶",
+
+  "fluid.tinkers_advanced.molten_prismalic_alloy": "熔融海晶合金",
+  "item.tinkers_advanced.molten_prismalic_alloy_bucket": "熔融海晶合金桶",
+
+  "fluid.tinkers_advanced.molten_frostite": "熔融霜冻合金",
+  "item.tinkers_advanced.molten_frostite_bucket": "熔融霜冻合金桶",
+
+  "fluid.tinkers_advanced.molten_blazeite": "熔融烈焰合金",
+  "item.tinkers_advanced.molten_blazeite_bucket": "熔融烈焰合金桶",
+
+  "fluid.tinkers_advanced.molten_glowstoneite": "熔融荧石合金",
+  "item.tinkers_advanced.molten_glowstoneite_bucket": "熔融荧石合金桶",
+
+  "fluid.tinkers_advanced.molten_enderite": "熔融末影合金",
+  "item.tinkers_advanced.molten_enderite_bucket": "熔融末影合金桶",
+
+  "fluid.tinkers_advanced.molten_slimeite": "熔融粘性合金",
+  "item.tinkers_advanced.molten_slimeite_bucket": "熔融粘性合金桶",
+
+  "fluid.tinkers_advanced.molten_chorusite": "熔融紫颂合金",
+  "item.tinkers_advanced.molten_chorusite_bucket": "熔融紫颂合金桶",
+
+  "fluid.tinkers_advanced.molten_refined_radiance": "熔融光辉石",
+  "item.tinkers_advanced.molten_refined_radiance_bucket": "熔融光辉石桶",
+
+  "fluid.tinkers_advanced.molten_shadow_steel": "熔融暗影钢",
+  "item.tinkers_advanced.molten_shadow_steel_bucket": "熔融暗影钢桶",
+
+  "fluid.tinkers_advanced.molten_netherstar_alloy": "熔融下界之星合金",
+  "item.tinkers_advanced.molten_netherstar_alloy_bucket": "熔融下界之星合金桶",
+
+  "fluid.tinkers_advanced.molten_stellar_alloy": "熔融恒星合金",
+  "item.tinkers_advanced.molten_stellar_alloy_bucket": "熔融恒星合金桶",
+
 
 
 
@@ -539,44 +720,7 @@
   "effect.tinkers_advanced.ionized": "电离",
   "effect.tinkers_advanced.proto_poison": "原毒",
   "effect.tinkers_advanced.plague": "疫毒",
-
-
-
-  "item.tinkers_advanced.ionize_chamber": "离子化腔",
-  "item.tinkers_advanced.ionized_cannon": "等离子射线炮",
-  "item.tinkers_advanced.ionized_cannon.description": "等离子射线炮是一种中距离近战武器。经过长时间蓄力后消耗流体发射一道等离子束，击中目标后造成声波伤害并对一定范围内的敌人施加流体效果（类似于喷溅强化）。\n古代文明的高新科技（确信）",
-  "tooltip.tinkers_advanced.fluid_consumption": "流体消耗",
-  "tooltip.tinkers_advanced.range": "有效射程",
-  "tooltip.tinkers_advanced.scale": "范围倍率",
-  "tooltip.tinkers_advanced.pierce": "穿透次数",
-  "pattern.tinkers_advanced.ionize_chamber": "离子化腔",
-
-  "item.tinkers_advanced.particle_container": "粒子容器",
-  "item.tinkers_advanced.matter_manipulator": "物质操纵器",
-  "item.tinkers_advanced.matter_manipulator.description": "物质操纵器是一种十分高效的挖掘工具，使用时它会消耗流体释放一束挖掘激光并远距离挖掘方块。它既能挖掘方块也能将流体效果施加在方块上用于战斗。在背包中右键以切换范围模式，用工具手柄右键切换作用模式。",
-  "tooltip.tinkers_advanced.speed_addup": "挖掘速度增幅",
-  "tooltip.tinkers_advanced.expand_mining": "范围模式-范围：",
-  "tooltip.tinkers_advanced.single_mining": "范围模式-单格",
-  "tooltip.tinkers_advanced.mining_mode": "作用模式-挖掘",
-  "tooltip.tinkers_advanced.splashing_mode": "作用模式-喷溅",
-  "tooltip.tinkers_advanced.primary_mode_info": "用工具手柄右键以切换作用模式",
-  "tooltip.tinkers_advanced.secondary_mode_info": "右键以切换范围模式",
-  "pattern.tinkers_advanced.particle_container": "粒子容器",
-
-  "item.tinkers_advanced.flux_core": "通量核心",
-  "stat.tinkers_advanced.flux_core": "通量核心",
-  "item.tinkers_advanced.electron_tuner": "环流电子调谐剑",
-  "item.tinkers_advanced.electron_tuner.description": "环流电子调谐剑是一种可调的近战武器，Shift-右键打开后可以配置其攻速和伤害，但是造价十分不菲且进行攻击要消耗能量。自带8格物品输入+8格物品输出，在强化了能量模块类强化后可以产能或者耗能。",
-  "tooltip.tinkers_advanced.energy": "最大能量",
-  "tooltip.tinkers_advanced.power_multiplier": "产出倍率",
-  "tool_stat.tinkers_advanced.flux_core.capacity_factor.description": "能量容量的倍率，会乘以工具的能量容量。",
-  "tool_stat.tinkers_advanced.flux_core.generate_factor.description": "能量模块类词条产能/耗能的倍率，消耗/产出的原料也会相应增加。",
-  "tool_stat.tinkers_advanced.capacity_factor": "最大能量：",
-  "tool_stat.tinkers_advanced.generate_factor": "产出倍率：",
-  "tooltip.tinkers_advanced.energy_gen_remain": "剩余产能：",
-  "tooltip.tinkers_advanced.energy_cost_remain": "剩余耗能：",
-  "tooltip.tinkers_advanced.disallow_insert": "能量接收已禁用，在物品栏中右键以切换",
-  "tooltip.tinkers_advanced.allow_insert": "能量接收已启用，在物品栏中右键以切换",
+  "effect.tinkers_advanced.frozen": "冻结",
 
 
   "pattern.tinkers_advanced.ae2_circuit": "电路板",
@@ -616,6 +760,7 @@
 
 
   "tooltip.tinkers_advanced.modifiers.shaping": "增加的槽位数量：",
+  "tooltip.tinkers_advanced.modifiers.frosted_charge": "结霜：",
 
 
   "info.tinkers_advanced.electron_tuner.rapier": "轻剑形态",

@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "rainbowcompound"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "rainbowcompound"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "item": "rainbowcompound:enderite_ingot"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_advanced:molten_enderite"
+  },
+  "temperature": 1000,
+  "time": 66
+}

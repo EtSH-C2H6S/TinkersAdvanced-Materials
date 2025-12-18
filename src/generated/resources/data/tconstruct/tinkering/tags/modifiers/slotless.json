@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "#tinkers_advanced:thermal_foundation",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:basalz_enhance",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:blitz_enhance",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:blizz_enhance",
+      "required": false
+    }
+  ]
+}

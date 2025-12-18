@@ -5,11 +5,16 @@ import com.c2h6s.etstlib.tool.modifiers.Combat.RealityBreaker;
 import com.c2h6s.tinkers_advanced_materials.TiAcMeConfig;
 import com.c2h6s.tinkers_advanced.core.util.FakeExplosionUtil;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Annihilate extends RealityBreaker {
 
@@ -29,5 +34,18 @@ public class Annihilate extends RealityBreaker {
             FakeExplosionUtil.fakeExplode((float) (damage * TiAcMeConfig.COMMON.ANNIHILATE_EXPLOSION_ATTACK_MULTIPLIER.get()),attacker,living.level(),living.position().add(new Vec3(0,living.getBbHeight()/2,0)),set,false);
         }
         super.postMeleeHit(tool,modifier,context,damageDealt,damage);
+    }
+
+    @Override
+    public List<Component> getDescriptionList() {
+        if (descriptionList == null) {
+            descriptionList = Arrays.asList(
+                    Component.translatable(getTranslationKey() + ".flavor").withStyle(ChatFormatting.ITALIC),
+                    Component.translatable(getTranslationKey() + ".description",
+                                    String.format("%.1f",TiAcMeConfig.COMMON.ANNIHILATE_EXPLOSION_SELF_MULTIPLIER.get()),
+                                    String.format("%.1f",TiAcMeConfig.COMMON.ANNIHILATE_EXPLOSION_ATTACK_MULTIPLIER.get()))
+                            .withStyle(ChatFormatting.GRAY));
+        }
+        return descriptionList;
     }
 }

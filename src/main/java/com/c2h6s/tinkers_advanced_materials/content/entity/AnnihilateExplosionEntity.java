@@ -4,6 +4,7 @@ import com.c2h6s.etstlib.entity.specialDamageSources.LegacyDamageSource;
 import com.c2h6s.etstlib.util.AttackUtil;
 import com.c2h6s.tinkers_advanced.core.content.entity.VisualScaledProjectile;
 import com.c2h6s.tinkers_advanced.core.util.CommonUtil;
+import com.c2h6s.tinkers_advanced_materials.TiAcMeConfig;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeEntities;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -20,6 +21,7 @@ public class AnnihilateExplosionEntity extends VisualScaledProjectile {
     }
     public AnnihilateExplosionEntity(Level level){
         this(TiAcMeEntities.ANNIHILATE_EXPLOSION.get(),level);
+        CONFIG_BYPASS_INVULNERABLE = TiAcMeConfig.COMMON.ANTI_NEUTRONIUM_EXPLOSION_BYPASS_INVUL.get();
     }
     protected static boolean CONFIG_BYPASS_INVULNERABLE = false;
 
@@ -36,7 +38,7 @@ public class AnnihilateExplosionEntity extends VisualScaledProjectile {
     @Override
     public void tick() {
         super.tick();
-        if (this.tickCount<4||this.tickCount%2==0)
+        if (this.tickCount<2||this.tickCount%4==0)
             this.level().getEntitiesOfClass(LivingEntity.class,this.getBoundingBoxForCulling(),this::canHitEntity)
                 .forEach(this::hitEntity);
         if (this.tickCount>=9) this.discard();
@@ -51,6 +53,7 @@ public class AnnihilateExplosionEntity extends VisualScaledProjectile {
                     .setMsgId("attack.player_"+random.nextInt(4))
                     .setBypassInvulnerableTime().setBypassArmor().setBypassMagic().setBypassEnchantment().setBypassShield()
                     ,this.baseDamage);
+        living.invulnerableTime = 0;
     }
 
     @Override

@@ -24,6 +24,7 @@
       "durability": 376,
       "velocity": 0.15
     },
+    "tconstruct:shield_core": {},
     "tinkers_advanced:flux_core": {
       "capacity": 0.35,
       "generate": 1.25

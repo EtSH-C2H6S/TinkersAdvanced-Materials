@@ -5,6 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "tinkers_advanced_materials.refmap.json",
   "mixins": [
+    "crcMixin.RadianceRingMixin",
+    "crcMixin.ShadowRingMixin",
     "mekanismMixin.FusionReactorMultiblockDataMixin"
   ],
   "client": [

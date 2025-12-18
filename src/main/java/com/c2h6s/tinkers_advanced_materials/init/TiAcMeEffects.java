@@ -16,4 +16,5 @@ public class TiAcMeEffects {
     public static final RegistryObject<MobEffect> IONIZED = TiAcCrModule.EFFECTS.register("ionized", Ionized::new);
     public static final RegistryObject<MobEffect> PROTO_POISON = TiAcCrModule.EFFECTS.register("proto_poison", ProtoPoison::new);
     public static final RegistryObject<MobEffect> PLAGUE = TiAcCrModule.EFFECTS.register("plague", Plague::new);
+    public static final RegistryObject<MobEffect> FROZEN = TiAcCrModule.EFFECTS.register("frozen", Frozen::new);
 }

@@ -49,6 +49,7 @@ public class AnnihilatingSlimeArmor extends MultiArgsDescModifier implements Mod
             OSModule.removeAmount(tool,consume);
             return 0;
         }
+        NeutroniumAssemble.consumeAntiNeutronium(tool);
         return amount;
     }
 

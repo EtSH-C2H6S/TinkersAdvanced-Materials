@@ -24,7 +24,7 @@ public class AnnihilatingSlime extends MultiArgsDescModifier implements ToolStat
 
     protected static float CONFIG_OVERSLIME_MULTIPLIER = 10;
     protected static int CONFIG_OVERSLIME_MAX_CONSUMPTION = 2000;
-    protected static float CONFIG_MAX_DAMAGE_MUL = 1;
+    protected static float CONFIG_MAX_DAMAGE_MUL = 2;
 
     @Override
     public void addToolStats(IToolContext context, ModifierEntry modifier, ModifierStatsBuilder builder) {
@@ -34,12 +34,12 @@ public class AnnihilatingSlime extends MultiArgsDescModifier implements ToolStat
     @Override
     public void postMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt, float damage) {
         if (!(context.getTarget() instanceof LivingEntity living)||context.isExtraAttack()||!context.isFullyCharged()) return;
+        NeutroniumAssemble.consumeAntiNeutronium(tool);
         var OSModule = OverslimeModule.INSTANCE;
         var overslime = OSModule.getAmount(tool);
         int toConsume = (int) Math.min(overslime,CONFIG_OVERSLIME_MAX_CONSUMPTION*CONFIG_MAX_DAMAGE_MUL*modifier.getLevel());
         float mul = (float) toConsume /CONFIG_OVERSLIME_MAX_CONSUMPTION;
         if (mul>0.1){
-            NeutroniumAssemble.consumeAntiNeutronium(tool);
             OSModule.removeAmount(tool,modifier,toConsume);
             AnnihilateExplosionEntity entity = new AnnihilateExplosionEntity(context.getLevel());
             entity.setOwner(context.getAttacker());
@@ -47,6 +47,7 @@ public class AnnihilatingSlime extends MultiArgsDescModifier implements ToolStat
             entity.setScale(2+RANDOM.nextFloat());
             entity.setPos(living.position().add(0,0.5*living.getBbHeight(),0));
             context.getLevel().addFreshEntity(entity);
+            NeutroniumAssemble.consumeAntiNeutronium(tool);
         }
     }
 

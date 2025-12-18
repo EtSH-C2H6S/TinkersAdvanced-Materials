@@ -48,11 +48,11 @@ public enum EnumMaterialModifier {
     BASALZ_SIGNALUM_DEFAULT(null,entry(EtSTLibModifier.SHORT_CIRCUIT.getId()),entry(TiAcMeModifiers.BASALZ_INFLICT.getId())),
     BASALZ_SIGNALUM_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.SENSOR_INTERRUPT.getId()),entry(TiAcMeModifiers.BASALZ_DEFENSE.getId())),
 
-    BLITZ_LUMIUM_DEFAULT(null,entry(EtSTLibModifier.glowing.getId()),entry(TiAcMeModifiers.Blitz_INFLICT.getId())),
+    BLITZ_LUMIUM_DEFAULT(null,entry(EtSTLibModifier.glowing.getId()),entry(TiAcMeModifiers.Blitz_INFLICT.getId()),entry(new ModifierId("etstlib:static_discharge"))),
     BLITZ_LUMIUM_ARMOR(MaterialRegistry.ARMOR,entry(EtSTLibModifier.glowing.getId()),entry(TiAcMeModifiers.Blitz_DEFENSE.getId())),
 
-    BLIZZ_ENDERIUM_DEFAULT(null,entry(TiAcMeModifiers.METAMORPHIUM.getId()),entry(TiAcMeModifiers.BLIZZ_INFLICT.getId())),
-    BLIZZ_ENDERIUM_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.METAMORPHIUM.getId()),entry(TiAcMeModifiers.BLIZZ_DEFENSE.getId())),
+    BLIZZ_ENDERIUM_DEFAULT(null,entry(TinkerModifiers.enderference.getId()),entry(TiAcMeModifiers.METAMORPHIUM.getId()),entry(TiAcMeModifiers.BLIZZ_INFLICT.getId())),
+    BLIZZ_ENDERIUM_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.METAMORPHIUM.getId()),entry(TiAcMeModifiers.BLIZZ_DEFENSE.getId()),entry(TiAcMeModifiers.VOID_DODGING.getId())),
 
     ACTIVATED_CHROMA_STEEL_MELEE(MaterialRegistry.MELEE_HARVEST,entry(TiAcMeModifiers.FLUX_INFUSED.getId()),entry(TiAcMeModifiers.THERMAL_ENHANCE.getId()),entry(TiAcMeModifiers.THERMAL_SLASH.getId())),
     ACTIVATED_CHROMA_STEEL_RANGED(MaterialRegistry.RANGED,entry(TiAcMeModifiers.FLUX_INFUSED.getId()),entry(TiAcMeModifiers.THERMAL_ENHANCE.getId()),entry(TiAcMeModifiers.FLUX_ARROW.getId())),
@@ -102,7 +102,7 @@ public enum EnumMaterialModifier {
     COBALT_FLUX_CORE(FluxCoreMaterialStat.ID,entry(ModifierIds.lightweight),entry(TiAcTModifiers.TRANSITION_CATALYST.getId())),
 
     STIBNITE_FLUX_CORE(FluxCoreMaterialStat.ID,entry(TiAcMeModifiers.UNSTABLE.getId()),entry(TiAcTModifiers.PIEZOELECTRIC_EFFECT.getId(),4)),
-    STIBNITE_DEFAULT(null,entry(TiAcMeModifiers.UNSTABLE.getId()),entry(EtSTLibModifier.ANISOTROPY.getId())),
+    STIBNITE_DEFAULT(null,entry(TiAcMeModifiers.UNSTABLE.getId()),entry(EtSTLibModifier.ANISOTROPY.getId(),2)),
 
     ANTIMONY_DEFAULT(null,entry(TiAcMeModifiers.PLAGUE.getId()),entry(TiAcMeModifiers.STABILIZE.getId())),
     ANTIMONY_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.POISON_DEFENSE.getId()),entry(TiAcMeModifiers.STABILIZE.getId())),

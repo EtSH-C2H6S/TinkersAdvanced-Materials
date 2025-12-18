@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/nugget"
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermalendergy"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "thermalendergy"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "cooling_time": 25,
+  "fluid": {
+    "amount": 90,
+    "fluid": "tinkers_advanced:molten_prismalic_alloy"
+  },
+  "result": "thermalendergy:prismalium_nugget"
+}

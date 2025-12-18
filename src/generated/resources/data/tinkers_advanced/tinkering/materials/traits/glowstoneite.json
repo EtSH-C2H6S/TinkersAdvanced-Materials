@@ -1,0 +1,28 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tconstruct:glowing"
+    },
+    {
+      "level": 1,
+      "name": "tconstruct:smite"
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tconstruct:golden"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:glowing"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:consecrated"
+      }
+    ]
+  }
+}

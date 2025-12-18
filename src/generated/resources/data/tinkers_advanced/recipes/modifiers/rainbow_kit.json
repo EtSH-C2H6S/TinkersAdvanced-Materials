@@ -1,0 +1,36 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "rainbowcompound"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "rainbowcompound"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "item": "rainbowcompound:rainbow_compound"
+    },
+    {
+      "item": "rainbowcompound:rainbow_upgrade_kit"
+    }
+  ],
+  "level": 1,
+  "result": "tinkers_advanced:rainbow_kit",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/durability"
+  }
+}

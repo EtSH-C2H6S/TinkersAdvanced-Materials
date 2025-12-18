@@ -1,0 +1,32 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tinkers_advanced:life_melody"
+    },
+    {
+      "level": 1,
+      "name": "tinkers_advanced:metamorphium"
+    },
+    {
+      "level": 1,
+      "name": "tconstruct:enderference"
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_advanced:defense_melody"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_advanced:metamorphium"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_advanced:ender_supress"
+      }
+    ]
+  }
+}

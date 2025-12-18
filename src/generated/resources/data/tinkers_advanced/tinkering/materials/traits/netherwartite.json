@@ -1,0 +1,12 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tinkers_advanced:flash_attack"
+    },
+    {
+      "level": 1,
+      "name": "tconstruct:flamestance"
+    }
+  ]
+}

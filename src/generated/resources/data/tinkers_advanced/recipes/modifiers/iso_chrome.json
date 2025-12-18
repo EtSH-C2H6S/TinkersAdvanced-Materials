@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": true,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "item": "tinkers_advanced:activated_chromatic_steel"
+    },
+    {
+      "item": "tinkers_advanced:activated_chromatic_steel"
+    },
+    {
+      "item": "tinkers_advanced:activated_chromatic_steel"
+    },
+    {
+      "item": "tinkers_advanced:activated_chromatic_steel"
+    },
+    {
+      "item": "tinkers_advanced:activated_chromatic_steel"
+    }
+  ],
+  "level": 1,
+  "result": "tinkers_advanced:iso_chrome",
+  "tools": {
+    "tag": "tconstruct:modifiable/bonus_slots"
+  }
+}

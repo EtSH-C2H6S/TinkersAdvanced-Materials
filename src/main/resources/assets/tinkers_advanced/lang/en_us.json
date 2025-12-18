@@ -200,6 +200,124 @@
   "modifier.tinkers_advanced.heavy_material.flavor": "Can you lift it ?",
   "modifier.tinkers_advanced.heavy_material.description": "+%1$s Attack Damage, -%2$s Movement Speed, -%3$s Attack Speed each level.",
 
+  "modifier.tinkers_advanced.thermal_foundation": "Thermal Foundation",
+  "modifier.tinkers_advanced.thermal_foundation.flavor": "Thermal is the best !",
+  "modifier.tinkers_advanced.thermal_foundation.description": "Add 1 upgrade slot.",
+
+  "modifier.tinkers_advanced.basalz_enhance": "Basalz Enhance",
+  "modifier.tinkers_advanced.basalz_enhance.flavor": "Earth elemental.",
+  "modifier.tinkers_advanced.basalz_enhance.description": "Add 1 defense slot.",
+
+  "modifier.tinkers_advanced.blitz_enhance": "Blitz Enhance",
+  "modifier.tinkers_advanced.blitz_enhance.flavor": "Air elemental.",
+  "modifier.tinkers_advanced.blitz_enhance.description": "Add 1 upgrade slot.",
+
+  "modifier.tinkers_advanced.blizz_enhance": "Blizz Enhance",
+  "modifier.tinkers_advanced.blizz_enhance.flavor": "Ice elemental.",
+  "modifier.tinkers_advanced.blizz_enhance.description": "Add 1 ability slot.",
+
+  "modifier.tinkers_advanced.energy_reinforced": "Energy Reinforced",
+  "modifier.tinkers_advanced.energy_reinforced.flavor": "Reinforced, but Redstone Flux.",
+  "modifier.tinkers_advanced.energy_reinforced.description": "Consume energy to reduce durability loss.",
+
+  "modifier.tinkers_advanced.super_conduct": "Superconduct",
+  "modifier.tinkers_advanced.super_conduct.flavor": "Superconduct at RT!",
+  "modifier.tinkers_advanced.super_conduct.description": "Consume energy to increase armor-piercing ability.",
+
+  "modifier.tinkers_advanced.add_invulnerable_time.description": "Increase %1$ss of Invulnerable Time after hit by others.",
+
+  "modifier.tinkers_advanced.add_mob_effect.description": "Inflict %1$s on attacking.",
+
+  "modifier.tinkers_advanced.life_melody": "Life Melody",
+  "modifier.tinkers_advanced.life_melody.flavor": "The end has come ~",
+  "modifier.tinkers_advanced.life_melody.description": "Boost damage from %1$s of target's health loss.",
+
+  "modifier.tinkers_advanced.blazing": "Blazing",
+  "modifier.tinkers_advanced.blazing.flavor": "I'm on fire!",
+  "modifier.tinkers_advanced.blazing.description": "Self ignites and set mobs nearby on fire. Works while in inventory.",
+
+  "modifier.tinkers_advanced.obsidianite": "Obsidianite",
+  "modifier.tinkers_advanced.obsidianite.flavor": "Stronger obsidian.",
+  "modifier.tinkers_advanced.obsidianite.description": "Increase stats slightly. Allow repairing with obsidian.",
+
+  "modifier.tinkers_advanced.rainbow_kit": "Rainbow",
+  "modifier.tinkers_advanced.rainbow_kit.flavor": "Rainbow enhanced",
+  "modifier.tinkers_advanced.rainbow_kit.description": "Increase stats, inflict glowing when combating, allow armor to act as Rainbow Kit.",
+
+  "modifier.tinkers_advanced.frosted_attack": "Frosted Attack",
+  "modifier.tinkers_advanced.frosted_attack.flavor": "Solidifies when cooling.",
+  "modifier.tinkers_advanced.frosted_attack.description": "When user is freeze, tool will inflict more Freezing damage overtime.",
+
+  "modifier.tinkers_advanced.frosted_shield": "Frosted Shield",
+  "modifier.tinkers_advanced.frosted_shield.flavor": "Solidifies when cooling.",
+  "modifier.tinkers_advanced.frosted_shield.description": "When user is freeze, armor will block more damage overtime.",
+
+  "modifier.tinkers_advanced.oceanic_whirl": "Oceanic Whirl",
+  "modifier.tinkers_advanced.oceanic_whirl.flavor": "Ocean bless me!",
+  "modifier.tinkers_advanced.oceanic_whirl.description": "Gain stronger Rip Tide Effect.",
+
+  "modifier.tinkers_advanced.prismatic": "Prismatic",
+  "modifier.tinkers_advanced.prismatic.flavor": "Be water, my friend.",
+  "modifier.tinkers_advanced.prismatic.description": "Won't attract attention from mobs in water.",
+
+  "modifier.tinkers_advanced.defense_melody": "Defense Melody",
+  "modifier.tinkers_advanced.defense_melody.flavor": "Roll and roll.",
+
+  "modifier.tinkers_advanced.ender_supress": "Ender Supress",
+  "modifier.tinkers_advanced.ender_supress.flavor": "",
+  "modifier.tinkers_advanced.ender_supress.description": "Stop ender enemies targeting you from teleporting and fight back.",
+
+  "modifier.tinkers_advanced.respiration_enhanced": "Respiration Enhance",
+  "modifier.tinkers_advanced.respiration_enhanced.flavor": "Breath water.",
+  "modifier.tinkers_advanced.respiration_enhanced.description": "Equals to Respiration V.",
+
+  "modifier.tinkers_advanced.ender_pearl": "Ender Pearl",
+  "modifier.tinkers_advanced.ender_pearl.flavor": "Literally ender pearl.",
+  "modifier.tinkers_advanced.ender_pearl.description": "R-Click to throw an ender pearl, costs 10 durability.",
+
+  "modifier.tinkers_advanced.ender_protocol": "Ender Protocol",
+  "modifier.tinkers_advanced.ender_protocol.flavor": "Compromise with enderman",
+  "modifier.tinkers_advanced.ender_protocol.description": "Stay neutral with enderman, even if staring at its eyes.",
+
+  "modifier.tinkers_advanced.flash_attack": "Flash Attack",
+  "modifier.tinkers_advanced.flash_attack.flavor": "Attack in a flash.",
+  "modifier.tinkers_advanced.flash_attack.description": "Won't reset attack strength when swapped.",
+
+  "modifier.tinkers_advanced.neuro_excitement": "Neuro Excitement",
+  "modifier.tinkers_advanced.neuro_excitement.flavor": "Bio electric.",
+  "modifier.tinkers_advanced.neuro_excitement.description": "Make your attack critical shortly after equipped.",
+
+  "modifier.tinkers_advanced.star_gazing": "Star Gazing",
+  "modifier.tinkers_advanced.star_gazing.flavor": "Watch the stars falling",
+  "modifier.tinkers_advanced.star_gazing.description": "Sometimes drops stars on attack, picking up them will gain certain effect.",
+
+  "modifier.tinkers_advanced.netherstar_blessing": "Nether Blessing",
+  "modifier.tinkers_advanced.netherstar_blessing.flavor": "A little power from nether.",
+  "modifier.tinkers_advanced.netherstar_blessing.description": "Grant immunity to fire, lightning and explosion damage. Provides Magic Protection X.",
+  "modifier.tinkers_advanced.netherstar_blessing.resistance": "Magic Protection",
+
+  "modifier.tinkers_advanced.night_slayer": "Night Slayer",
+  "modifier.tinkers_advanced.night_slayer.flavor": "Assassin in the dark",
+  "modifier.tinkers_advanced.night_slayer.description": "Boost damage and protection when is dark.",
+  "modifier.tinkers_advanced.night_slayer.resistance": "In Dark Resistance",
+
+  "modifier.tinkers_advanced.luminous_piercer": "Luminous Piercer",
+  "modifier.tinkers_advanced.luminous_piercer.flavor": "Lethal photons",
+  "modifier.tinkers_advanced.luminous_piercer.description": "Boost damage and protection when is bright.",
+  "modifier.tinkers_advanced.luminous_piercer.resistance": "In Light Resistance",
+
+  "modifier.tinkers_advanced.ender_breathe": "Ender Breathe",
+  "modifier.tinkers_advanced.ender_breathe.flavor": "Triple breathe splash!",
+  "modifier.tinkers_advanced.ender_breathe.description": "Deals AOE magic damage on attack.",
+
+  "modifier.tinkers_advanced.star_heal": "Star Heal",
+  "modifier.tinkers_advanced.star_heal.flavor": "Watch the stars falling",
+  "modifier.tinkers_advanced.star_heal.description": "Scatters healing stars when taken high damage. Grant a revival chance.",
+
+  "modifier.tinkers_advanced.slimeful": "Slimeful",
+  "modifier.tinkers_advanced.slimeful.flavor": "Full of SLIME!!!",
+  "modifier.tinkers_advanced.slimeful.description": "Drops extra slime ball on use.",
+
 
 
   "material.tinkers_advanced.bismuth": "Bismuth",
@@ -330,6 +448,25 @@
   "material.tinkers_advanced.anti_neutronium": "Anti-Neutronium",
   "material.tinkers_advanced.anti_neutronium.flavor": "Be careful, don't drop it !",
 
+  "material.tinkers_advanced.signalum": "Signalum",
+  "material.tinkers_advanced.lumium": "Lumium",
+  "material.tinkers_advanced.enderium": "Enderium",
+
+  "material.tinkers_advanced.prismalic_alloy": "Prismalium",
+  "material.tinkers_advanced.melodic_alloy": "Melodium",
+  "material.tinkers_advanced.stellar_alloy": "Stellarium",
+
+  "material.tinkers_advanced.frostite": "Frostite",
+  "material.tinkers_advanced.glowstoneite": "Glowstoneite",
+  "material.tinkers_advanced.blazeite": "Blazeite",
+  "material.tinkers_advanced.enderite": "Enderite",
+  "material.tinkers_advanced.netherwartite": "Netherwartite",
+  "material.tinkers_advanced.warpedite": "Warpedite",
+  "material.tinkers_advanced.netherstar_alloy": "Netherstar Alloy",
+  "material.tinkers_advanced.shadow_steel": "Shadow Steel",
+  "material.tinkers_advanced.refined_radiance": "Refined Radiance",
+  "material.tinkers_advanced.chorusite": "Chorusite",
+  "material.tinkers_advanced.slimeite": "Slimeite",
 
 
   "item.tinkers_advanced.bismuth_ingot": "Bismuth Ingot",
@@ -354,6 +491,7 @@
   "item.tinkers_advanced.antimony_nugget": "Antimony Nugget",
   "item.tinkers_advanced.bismuth_nugget": "Bismuth nugget",
   "item.tinkers_advanced.anti_neutronium_ingot": "Anti-Neutronium Ingot",
+  "item.tinkers_advanced.signalum_reinforcement": "Signalum Reinforcement",
 
   "block.tinkers_advanced.iridium_lean_ore": "Iridium Lean Ore",
   "block.tinkers_advanced.bismuthinite_ore": "Bismuthinite Ore",
@@ -444,23 +582,51 @@
   "fluid.tinkers_advanced.molten_anti_neutronium": "Molten Anti-Neutronium",
   "item.tinkers_advanced.molten_anti_neutronium_bucket": "Molten Anti-Neutronium Bucket",
 
+  "fluid.tinkers_advanced.molten_melodic_alloy": "Molten Melodium",
+  "item.tinkers_advanced.molten_melodic_alloy_bucket": "Molten Melodium Bucket",
+
+  "fluid.tinkers_advanced.molten_prismalic_alloy": "Molten Prismalium",
+  "item.tinkers_advanced.molten_prismalic_alloy_bucket": "Molten Prismalium Bucket",
+
+  "fluid.tinkers_advanced.molten_frostite": "Molten Frostite",
+  "item.tinkers_advanced.molten_frostite_bucket": "Molten Frostite Bucket",
+
+  "fluid.tinkers_advanced.molten_blazeite": "Molten Blazeite",
+  "item.tinkers_advanced.molten_blazeite_bucket": "Molten Blazeite Bucket",
+
+  "fluid.tinkers_advanced.molten_glowstoneite": "Molten Glowstoneite",
+  "item.tinkers_advanced.molten_glowstoneite_bucket": "Molten Glowstoneite Bucket",
+
+  "fluid.tinkers_advanced.molten_enderite": "Molten Enderite",
+  "item.tinkers_advanced.molten_enderite_bucket": "Molten Enderite Bucket",
+
+  "fluid.tinkers_advanced.molten_slimeite": "Molten Slimeite",
+  "item.tinkers_advanced.molten_slimeite_bucket": "Molten Slimeite Bucket",
+
+  "fluid.tinkers_advanced.molten_chorusite": "Molten Chorusite",
+  "item.tinkers_advanced.molten_chorusite_bucket": "Molten Chorusite Bucket",
+
+  "fluid.tinkers_advanced.molten_refined_radiance": "Molten Refined Radiance",
+  "item.tinkers_advanced.molten_refined_radiance_bucket": "Molten Refined Radiance Bucket",
+
+  "fluid.tinkers_advanced.molten_shadow_steel": "Molten Shadow Steel",
+  "item.tinkers_advanced.molten_shadow_steel_bucket": "Molten Shadow Steel Bucket",
+
+  "fluid.tinkers_advanced.molten_netherstar_alloy": "Molten Netherstar Alloy",
+  "item.tinkers_advanced.molten_netherstar_alloy_bucket": "Molten Netherstar Alloy Bucket",
+
+  "fluid.tinkers_advanced.molten_stellar_alloy": "Molten Stellar Alloy",
+  "item.tinkers_advanced.molten_stellar_alloy_bucket": "Molten Stellar Alloy Bucket",
+
 
 
   "effect.tinkers_advanced.tetanus": "Tetanus",
   "effect.tinkers_advanced.ionized": "Ionized",
   "effect.tinkers_advanced.proto_poison": "Proto Poison",
   "effect.tinkers_advanced.plague": "Plague",
+  "effect.tinkers_advanced.frozen": "Frozen",
 
 
-
-  "item.tinkers_advanced.ionize_chamber": "Ion Chamber",
-  "item.tinkers_advanced.ionized_cannon": "Ionized Cannon",
-  "item.tinkers_advanced.ionized_cannon.description": "Ionized Cannon is a middle-ranged melee weapon that consume fluid to attack.Shoots plasma ray that deals sonic damage after charging.Cast fluid effects to nearby targets on hit (Effects similar to spilling modifier).",
-  "tooltip.tinkers_advanced.fluid_consumption": "Fluid Drain",
-  "tooltip.tinkers_advanced.range": "Attack Range",
-  "tooltip.tinkers_advanced.scale": "Effect Range",
-  "tooltip.tinkers_advanced.pierce": "Pierce Level",
-  "pattern.tinkers_advanced.ionize_chamber": "Ion Chamber",
 
   "pattern.tinkers_advanced.ae2_circuit": "Printed Processor",
 
@@ -490,6 +656,7 @@
 
 
   "tooltip.tinkers_advanced.modifiers.shaping": "Current slot bonus :",
+  "tooltip.tinkers_advanced.modifiers.frosted_charge": "Frost Charge: ",
 
 
 

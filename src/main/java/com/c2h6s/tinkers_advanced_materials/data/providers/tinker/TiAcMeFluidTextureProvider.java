@@ -11,6 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import slimeknights.mantle.fluid.texture.AbstractFluidTextureProvider;
 import slimeknights.mantle.fluid.texture.FluidTexture;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.TConstruct;
 
 
 public class TiAcMeFluidTextureProvider extends AbstractFluidTextureProvider {
@@ -24,7 +25,11 @@ public class TiAcMeFluidTextureProvider extends AbstractFluidTextureProvider {
         }
         for (SimpleMaterialObject object: TiAcMeMaterials.MATERIALS.getEntryMap().values()){
             if (object.getFluidObject()!=null){
-                this.commonFluid(object.getFluidObject().getType());
+                if (object.isFluidTextureCustom())
+                    this.commonFluid(object.getFluidObject().getType());
+                else if (object.getRenderInfo()!=null) texture(object.getFluidObject())
+                        .root(TConstruct.getResource("fluid/molten/"))
+                        .flowing().still().color(object.getRenderInfo().vertexColor());
             }
         }
     }

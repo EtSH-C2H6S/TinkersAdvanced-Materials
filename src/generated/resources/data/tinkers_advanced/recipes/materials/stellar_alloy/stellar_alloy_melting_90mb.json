@@ -1,0 +1,32 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermalendergy"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "thermalendergy"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "item": "thermalendergy:stellarium_ingot"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_advanced:molten_stellar_alloy"
+  },
+  "temperature": 2000,
+  "time": 93
+}

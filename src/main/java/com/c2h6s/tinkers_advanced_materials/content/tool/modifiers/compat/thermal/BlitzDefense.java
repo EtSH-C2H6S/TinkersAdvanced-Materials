@@ -36,7 +36,7 @@ public class BlitzDefense extends EtSTBaseModifier implements DamageBlockModifie
 
     @Override
     public boolean isDamageBlocked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slot, DamageSource source, float amount) {
-        if (RANDOM.nextInt(20)<modifier.getLevel()&&source.getEntity() instanceof LivingEntity living){
+        if (RANDOM.nextInt(10)<modifier.getLevel()&&source.getEntity() instanceof LivingEntity living){
             living.addEffect(new MobEffectInstance( CoreMobEffects.SHOCKED.get(),100,modifier.getLevel()-1));
             if (!source.is(DamageTypeTags.AVOIDS_GUARDIAN_THORNS)){
                 LegacyDamageSource damageSource = LegacyDamageSource.any(new DamageSource(living.damageSources().lightningBolt().typeHolder(),context.getEntity())).setBypassArmor().setBypassInvulnerableTime().setThorn();

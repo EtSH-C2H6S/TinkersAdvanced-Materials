@@ -1,7 +1,13 @@
 {
   "values": [
-    "tinkers_advanced:antimony_ingot",
-    "tinkers_advanced:bismuth_ingot",
+    {
+      "id": "tinkers_advanced:antimony_ingot",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:bismuth_ingot",
+      "required": false
+    },
     {
       "id": "tinkers_advanced:densium_ingot",
       "required": false

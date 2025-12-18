@@ -59,6 +59,58 @@
     {
       "id": "tinkers_advanced:molten_pink_slime",
       "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_frostite",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_chorusite",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_refined_radiance",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_anti_neutronium",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_stellar_alloy",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_netherstar_alloy",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_melodic_alloy",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_densium",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_prismalic_alloy",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_blazeite",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_shadow_steel",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_glowstoneite",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_enderite",
+      "required": false
     }
   ]
 }

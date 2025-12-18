@@ -1,0 +1,32 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tinkers_advanced:star_gazing"
+    },
+    {
+      "level": 1,
+      "name": "tinkers_advanced:metamorphium"
+    },
+    {
+      "level": 1,
+      "name": "etstlib:extra_dense"
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_advanced:star_heal"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_advanced:metamorphium"
+      },
+      {
+        "level": 1,
+        "name": "etstlib:extra_dense"
+      }
+    ]
+  }
+}

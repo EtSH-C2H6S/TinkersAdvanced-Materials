@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/lumium"
+  },
+  "material": "tinkers_advanced:lumium",
+  "needed": 9,
+  "value": 1
+}

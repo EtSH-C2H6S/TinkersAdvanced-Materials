@@ -1,0 +1,24 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tinkers_advanced:oceanic_whirl"
+    },
+    {
+      "level": 5,
+      "name": "tconstruct:antiaquatic"
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_advanced:prismatic"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_advanced:respiration_enhanced"
+      }
+    ]
+  }
+}

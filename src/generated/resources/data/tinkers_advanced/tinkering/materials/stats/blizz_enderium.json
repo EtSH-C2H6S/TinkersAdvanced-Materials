@@ -4,7 +4,7 @@
     "tconstruct:grip": {
       "accuracy": 0.05,
       "durability": 0.1,
-      "melee_damage": 7.0
+      "melee_damage": 5.5
     },
     "tconstruct:handle": {
       "durability": 0.2,
@@ -14,7 +14,7 @@
     },
     "tconstruct:head": {
       "durability": 1210,
-      "melee_attack": 7.0,
+      "melee_attack": 5.5,
       "mining_speed": 6.5,
       "mining_tier": "minecraft:netherite"
     },
@@ -26,7 +26,7 @@
     },
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {
-      "armor": 5.5,
+      "armor": 4.5,
       "durability": 585,
       "knockback_resistance": 0.05,
       "toughness": 7.0
@@ -38,7 +38,7 @@
       "toughness": 7.0
     },
     "tconstruct:plating_helmet": {
-      "armor": 5.5,
+      "armor": 4.5,
       "durability": 495,
       "knockback_resistance": 0.05,
       "toughness": 7.0

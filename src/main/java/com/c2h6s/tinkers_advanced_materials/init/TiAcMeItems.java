@@ -5,8 +5,10 @@ import com.c2h6s.tinkers_advanced_materials.TiAcMeConfig;
 import com.c2h6s.tinkers_advanced.core.content.event.TiAcLoadRegistryClassEvent;
 import com.c2h6s.tinkers_advanced.core.content.item.HiddenMaterial;
 import com.c2h6s.tinkers_advanced_materials.TinkersAdvancedMaterials;
+import com.c2h6s.tinkers_advanced_materials.content.item.EffectStarItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -35,6 +37,8 @@ public class TiAcMeItems {
     public static final DeferredRegister<Item> THERMAL_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     public static final DeferredRegister<Item> IF_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
+    public static final DeferredRegister<Item> EFFECT_STARS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+
     public static Map<RegistryObject<? extends Item>,String> ITEM_MODID_MAP = new HashMap<>();
     public static Map<RegistryObject<? extends Item>,Boolean> ITEM_ORIGINAL_MAP = new HashMap<>();
 
@@ -58,6 +62,15 @@ public class TiAcMeItems {
     public static final RegistryObject<Item> ANTIMONY_INGOT = registerMaterial(MODID,true,TinkersAdvancedMaterials.MODID,ITEMS,"antimony_ingot",()->new Item(new Item.Properties().rarity(Rarity.UNCOMMON)),true);
     public static final RegistryObject<Item> ANTIMONY_NUGGET = registerMaterial(MODID,true,TinkersAdvancedMaterials.MODID,ITEMS,"antimony_nugget",()->new Item(new Item.Properties().rarity(Rarity.UNCOMMON)),true);
     public static final RegistryObject<Item> STIBNITE = registerMaterial(MODID,true,TinkersAdvancedMaterials.MODID,ITEMS,"stibnite",()->new Item(new Item.Properties().rarity(Rarity.UNCOMMON)),true);
+
+    public static final RegistryObject<EffectStarItem> RESISTANCE_STAR = EFFECT_STARS.register("resistance_star",()->new EffectStarItem(MobEffects.DAMAGE_RESISTANCE,200,2));
+    public static final RegistryObject<EffectStarItem> HASTE_STAR = EFFECT_STARS.register("haste_star",()->new EffectStarItem(MobEffects.DIG_SPEED,200,2));
+    public static final RegistryObject<EffectStarItem> REGENERATION_STAR = EFFECT_STARS.register("regeneration_star",()->new EffectStarItem(MobEffects.REGENERATION,200,2));
+    public static final RegistryObject<EffectStarItem> SATURATION_STAR = EFFECT_STARS.register("saturation_star",()->new EffectStarItem(MobEffects.SATURATION,200,2));
+    public static final RegistryObject<EffectStarItem> POWER_STAR = EFFECT_STARS.register("power_star",()->new EffectStarItem(MobEffects.DAMAGE_BOOST,200,9));
+    public static final RegistryObject<EffectStarItem> HEAL_STAR = EFFECT_STARS.register("heal_star",()->new EffectStarItem(MobEffects.HEAL,1,1));
+    public static final RegistryObject<EffectStarItem> HEAL_STAR_1 = EFFECT_STARS.register("heal_star_1",()->new EffectStarItem(MobEffects.HEAL,1,3));
+
 
 
     public static final RegistryObject<Item> IRRADIUM_INGOT = registerMaterial("mekanism",true,TinkersAdvancedMaterials.MODID,MEK_ITEMS,"irradium_ingot",()->new Item(new Item.Properties().rarity(Rarity.RARE)),true);
@@ -83,4 +96,7 @@ public class TiAcMeItems {
     public static final RegistryObject<Item> BLITZ_LUMIUM_NUGGET = registerMaterial("thermal",true,TinkersAdvancedMaterials.MODID,THERMAL_ITEMS,"blitz_lumium_nugget",()->new Item(new Item.Properties()),true);
     public static final RegistryObject<Item> BLIZZ_ENDERIUM = registerMaterial("thermal",true,TinkersAdvancedMaterials.MODID,THERMAL_ITEMS,"blizz_enderium",()->new Item(new Item.Properties()),true);
     public static final RegistryObject<Item> ACTIVATED_CHROMATIC_STEEL = registerMaterial("thermal",true,TinkersAdvancedMaterials.MODID,THERMAL_ITEMS,"activated_chromatic_steel",()->new Item(new Item.Properties().rarity(Rarity.EPIC).fireResistant()),true);
+
+
+    public static final RegistryObject<Item> SIGNALUM_REINFORCEMENT = registerMaterial("thermal",true,TinkersAdvancedMaterials.MODID,THERMAL_ITEMS,"signalum_reinforcement",()->new Item(new Item.Properties()),true);
 }

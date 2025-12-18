@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "amount_needed": 4,
+      "item": "tinkers_advanced:signalum_reinforcement"
+    }
+  ],
+  "level": {
+    "max": 5
+  },
+  "result": "tinkers_advanced:energy_reinforced",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/durability"
+  }
+}

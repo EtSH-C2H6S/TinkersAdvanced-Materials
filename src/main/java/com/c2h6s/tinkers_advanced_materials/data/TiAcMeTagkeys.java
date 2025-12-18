@@ -21,6 +21,9 @@ public class TiAcMeTagkeys {
         public static final TagKey<Fluid> MOLTEN_IRIDIUM = forgeTag("molten_iridium");
         public static final TagKey<Fluid> MOLTEN_ANTIMONY = forgeTag("molten_antimony");
         public static final TagKey<Fluid> MOLTEN_VOID_STEEL = forgeTag("molten_void_steel");
+        public static final TagKey<Fluid> MOLTEN_PRISMALIC_ALLOY = forgeTag("molten_prismalic_alloy");
+        public static final TagKey<Fluid> MOLTEN_STELLAR_ALLOY = forgeTag("molten_stellar_alloy");
+        public static final TagKey<Fluid> MOLTEN_MELODIC_ALLOY = forgeTag("molten_melodic_alloy");
     }
 
     public static class Items{
@@ -41,6 +44,15 @@ public class TiAcMeTagkeys {
         public static final TagKey<Item> IRIDIUM_NUGGET = forgeTag("nuggets/iridium");
         public static final TagKey<Item> IRIDIUM_BLOCK = forgeTag("storage_blocks/iridium");
         public static final TagKey<Item> PLASTIC = tiacTag("plastic");
+//        public static final TagKey<Item> PRIAMALIC_ALLOY_INGOT = forgeTag("ingots/prismalic_alloy");
+//        public static final TagKey<Item> STELLAR_ALLOY_INGOT = forgeTag("ingots/stellar_alloy");
+//        public static final TagKey<Item> MELODIC_ALLOY_INGOT = forgeTag("ingots/melodic_alloy");
+//        public static final TagKey<Item> PRIAMALIC_ALLOY_NUGGET = forgeTag("nuggets/prismalic_alloy");
+//        public static final TagKey<Item> STELLAR_ALLOY_NUGGET = forgeTag("nuggets/stellar_alloy");
+//        public static final TagKey<Item> MELODIC_ALLOY_NUGGET = forgeTag("nuggets/melodic_alloy");
+//        public static final TagKey<Item> PRIAMALIC_ALLOY_BLOCK = forgeTag("storage_blocks/prismalic_alloy");
+//        public static final TagKey<Item> STELLAR_ALLOY_BLOCK = forgeTag("storage_blocks/stellar_alloy");
+//        public static final TagKey<Item> MELODIC_ALLOY_BLOCK = forgeTag("storage_blocks/melodic_alloy");
     }
 
     public static class Modifiers{

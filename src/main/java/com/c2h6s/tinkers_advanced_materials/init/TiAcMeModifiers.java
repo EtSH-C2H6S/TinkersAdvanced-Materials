@@ -5,6 +5,9 @@ import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import com.c2h6s.tinkers_advanced.core.TiAcCrModule;
 import com.c2h6s.tinkers_advanced.core.content.event.TiAcLoadRegistryClassEvent;
 import com.c2h6s.tinkers_advanced.core.content.tool.modifiers.*;
+import com.c2h6s.tinkers_advanced_materials.TiAcMeConfig;
+import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.base.AddInvulnerableTickAfterHitModifier;
+import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.base.SimpleEffectCombatModifier;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.base.SlotAddingModifier;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.combat.*;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.common.*;
@@ -14,6 +17,7 @@ import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.compat.therma
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.defense.*;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.durability.*;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.harvest.*;
+import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.interaction.EnderPearlModifier;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.overslime.*;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -69,6 +73,29 @@ public class TiAcMeModifiers {
     public static final StaticModifier<AnnihilatingSlimeArmor> ANNIHILATING_SLIME_ARMOR = TiAcCrModule.MODIFIERS.register("annihilating_slime_armor", AnnihilatingSlimeArmor::new);
     public static final StaticModifier<NeutroniumAssemble> NEUTRONIUM_ASSEMBLE = TiAcCrModule.MODIFIERS.register("neutronium_assemble", NeutroniumAssemble::new);
     public static final StaticModifier<HeavyMaterial> HEAVY_MATERIAL = TiAcCrModule.MODIFIERS.register("heavy_material",HeavyMaterial::new);
+    public static final StaticModifier<EnergyReinforced> ENERGY_REINFORCED = TiAcCrModule.MODIFIERS.register("energy_reinforced",EnergyReinforced::new);
+    public static final StaticModifier<Superconduct> SUPER_CONDUCT = TiAcCrModule.MODIFIERS.register("super_conduct",Superconduct::new);
+    public static final StaticModifier<LifeMelody> LIFE_MELODY = TiAcCrModule.MODIFIERS.register("life_melody",LifeMelody::new);
+    public static final StaticModifier<Blazing> BLAZING = TiAcCrModule.MODIFIERS.register("blazing",Blazing::new);
+    public static final StaticModifier<SimpleEffectCombatModifier> FROZEN = TiAcCrModule
+            .MODIFIERS.register("frozen",()->new SimpleEffectCombatModifier(()->1,()->0,()->100,()->100,TiAcMeEffects.FROZEN));
+    public static final StaticModifier<Prismatic> PRISMATIC = TiAcCrModule.MODIFIERS.register("prismatic",Prismatic::new);
+    public static final StaticModifier<OceanicWhirl> OCEANIC_WHIRL = TiAcCrModule.MODIFIERS.register("oceanic_whirl",OceanicWhirl::new);
+    public static final StaticModifier<FrostedAttack> FROSTED_ATTACK = TiAcCrModule.MODIFIERS.register("frosted_attack",FrostedAttack::new);
+    public static final StaticModifier<FrostedShield> FROSTED_SHIELD = TiAcCrModule.MODIFIERS.register("frosted_shield",FrostedShield::new);
+    public static final StaticModifier<AddInvulnerableTickAfterHitModifier> DEFENSE_MELODY = TiAcCrModule.MODIFIERS.register("defense_melody",()->new AddInvulnerableTickAfterHitModifier(TiAcMeConfig.COMMON.DEFENSE_MELODY_INVULNERABLE_TICKS));
+    public static final StaticModifier<EnderSuppress> ENDER_SUPRESS = TiAcCrModule.MODIFIERS.register("ender_supress",EnderSuppress::new);
+    public static final StaticModifier<EnderPearlModifier> ENDER_PEARL = TiAcCrModule.MODIFIERS.register("ender_pearl",EnderPearlModifier::new);
+    public static final StaticModifier<EnderProtocol> ENDER_PROTOCOL = TiAcCrModule.MODIFIERS.register("ender_protocol",EnderProtocol::new);
+    public static final StaticModifier<NeuroExcitement> NEURO_EXCITEMENT = TiAcCrModule.MODIFIERS.register("neuro_excitement",NeuroExcitement::new);
+    public static final StaticModifier<FlashAttack> FLASH_ATTACK = TiAcCrModule.MODIFIERS.register("flash_attack",FlashAttack::new);
+    public static final StaticModifier<StarGazing> STAR_GAZING = TiAcCrModule.MODIFIERS.register("star_gazing",StarGazing::new);
+    public static final StaticModifier<EnderBreatheModifier> ENDER_BREATHE = TiAcCrModule.MODIFIERS.register("ender_breathe",EnderBreatheModifier::new);
+    public static final StaticModifier<NightsSlayer> NIGHT_SLAYER = TiAcCrModule.MODIFIERS.register("night_slayer",NightsSlayer::new);
+    public static final StaticModifier<StarHeal> STAR_HEAL = TiAcCrModule.MODIFIERS.register("star_heal",StarHeal::new);
+    public static final StaticModifier<LuminousPiercer> LUMINOUS_PIERCER = TiAcCrModule.MODIFIERS.register("luminous_piercer",LuminousPiercer::new);
+    public static final StaticModifier<Slimeful> SLIMEFUL = TiAcCrModule.MODIFIERS.register("slimeful",Slimeful::new);
+
 
 
 

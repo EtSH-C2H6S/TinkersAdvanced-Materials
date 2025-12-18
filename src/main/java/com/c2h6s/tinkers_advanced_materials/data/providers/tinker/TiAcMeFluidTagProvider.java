@@ -10,6 +10,7 @@ import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.common.TinkerTags;
+import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -23,7 +24,7 @@ public class TiAcMeFluidTagProvider extends FluidTagsProvider {
         tag(TiAcMeTagkeys.Fluids.MOLTEN_BISMUTH).addOptional(TiAcMeFluids.MOLTEN_BISMUTH.getId());
         tag(TiAcMeTagkeys.Fluids.MOLTEN_ANTIMONY).addOptional(TiAcMeFluids.MOLTEN_ANTIMONY.getId());
         tag(TiAcMeTagkeys.Fluids.MOLTEN_IRIDIUM).addOptional(TiAcMeFluids.MOLTEN_IRIDIUM.getId());
-        tag(TinkerTags.Fluids.METAL_TOOLTIPS)
+        var metalTags = tag(TinkerTags.Fluids.METAL_TOOLTIPS)
                 .addOptional(TiAcMeFluids.MOLTEN_IRRADIUM.getId())
                 .addOptional(TiAcMeFluids.MOLTEN_BASALZ_SIGNALUM.getId())
                 .addOptional(TiAcMeFluids.MOLTEN_BLIZZ_ENDERIUM.getId())
@@ -38,10 +39,18 @@ public class TiAcMeFluidTagProvider extends FluidTagsProvider {
                 .addOptional(TiAcMeFluids.MOLTEN_NUTRITIVE_SLIMESTEEL.getId())
                 .addOptional(TiAcMeFluids.MOLTEN_OSGLOGLAS.getId())
                 .addOptional(TiAcMeFluids.MOLTEN_PROTOCITE.getId())
-                .addOptional(TiAcMeFluids.MOLTEN_PINK_SLIME.getId())
-        ;
+                .addOptional(TiAcMeFluids.MOLTEN_PINK_SLIME.getId());
+
+        TiAcMeMaterials.MATERIALS.getEntryMap().values().stream()
+                .filter(object -> object.getFluidObject()!=null && object.getRecipeInfo()!=null &&
+                        object.getRecipeInfo().getCastItemOptional().stream()
+                                .anyMatch(castItemObject -> castItemObject == TinkerSmeltery.ingotCast))
+                .forEach(object -> metalTags.addOptional(object.getFluidObject().getId()));
+
         tag(TiAcMeTagkeys.Fluids.MOLTEN_ANTIMATTER).addOptional(TiAcMeFluids.MOLTEN_ANTIMATTER.getId());
         tag(TiAcMeTagkeys.Fluids.MOLTEN_VOID_STEEL).addOptional(TiAcMeFluids.MOLTEN_VOID_STEEL.getId());
         tag(TinkerTags.Fluids.SLIME_TOOLTIPS).addOptional(TiAcMeFluids.MOLTEN_ANTIMATTER.getId());
+        tag(TiAcMeTagkeys.Fluids.MOLTEN_MELODIC_ALLOY).addOptional(TiAcMeMaterials.MELODIC_ALLOY.getFluidObject().getId());
+        tag(TiAcMeTagkeys.Fluids.MOLTEN_PRISMALIC_ALLOY).addOptional(TiAcMeMaterials.PRISMALIC_ALLOY.getFluidObject().getId());
     }
 }

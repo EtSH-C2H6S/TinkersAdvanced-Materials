@@ -1,7 +1,13 @@
 {
   "values": [
-    "tinkers_advanced:bismuth_nugget",
-    "tinkers_advanced:antimony_nugget",
+    {
+      "id": "tinkers_advanced:bismuth_nugget",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:antimony_nugget",
+      "required": false
+    },
     {
       "id": "tinkers_advanced:blitz_lumium_nugget",
       "required": false

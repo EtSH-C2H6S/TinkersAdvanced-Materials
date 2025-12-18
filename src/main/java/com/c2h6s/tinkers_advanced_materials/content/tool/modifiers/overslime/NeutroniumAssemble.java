@@ -42,7 +42,7 @@ public class NeutroniumAssemble extends MultiArgsDescModifier implements SlotSta
         return true;
     }
 
-    protected static int CFG_CHARGE_PER_ANTI_NEUTRONIUM = 20000;
+    protected static int CFG_CHARGE_PER_ANTI_NEUTRONIUM = 8000;
     protected static int CFG_OVERSLIME_PER_ANTI_NEUTRONIUM = 10;
 
     public static final ResourceLocation KEY_ANTI_NEUTRONIUM = TinkersAdvanced.getLocation("anti_neutronium");
@@ -52,7 +52,7 @@ public class NeutroniumAssemble extends MultiArgsDescModifier implements SlotSta
         if (held.is(TiAcMeMaterials.ANTI_NEUTRONIUM.getItemObject().get())&&slot.allowModification(player)){
             if (!player.level().isClientSide){
                 var toolData = slotTool.getPersistentData();
-                var max = 2000000;
+                var max = 128000*modifier.getLevel();
                 var cur = toolData.getInt(KEY_ANTI_NEUTRONIUM);
                 if (max-cur>=CFG_CHARGE_PER_ANTI_NEUTRONIUM){
                     int count = (max-cur)/CFG_CHARGE_PER_ANTI_NEUTRONIUM;
@@ -117,7 +117,7 @@ public class NeutroniumAssemble extends MultiArgsDescModifier implements SlotSta
 
     @Override
     public Vec2 getBarXYSize(IToolStackView iToolStackView, ModifierEntry modifierEntry, int i) {
-        return new Vec2(1,-CommonMeUtils.getBarLength(iToolStackView.getPersistentData().getInt(KEY_ANTI_NEUTRONIUM),2000000));
+        return new Vec2(1,-CommonMeUtils.getBarLength(iToolStackView.getPersistentData().getInt(KEY_ANTI_NEUTRONIUM),128000));
     }
 
     @Override

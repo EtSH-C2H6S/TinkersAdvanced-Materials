@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "forge:gems/niter"
+    },
+    {
+      "item": "thermal:lightning_charge"
+    },
+    {
+      "item": "thermal:blitz_rod"
+    },
+    {
+      "item": "minecraft:sand"
+    },
+    {
+      "item": "minecraft:red_sand"
+    }
+  ],
+  "level": 1,
+  "result": "tinkers_advanced:blitz_enhance",
+  "tools": {
+    "tag": "tconstruct:modifiable/bonus_slots"
+  }
+}

@@ -63,6 +63,9 @@ public class TiAcMeItemModelProvider extends ItemModelProvider {
                 generateItemModel(object.getItemObject(),"material");
             }
         }
+        TiAcMeItems.EFFECT_STARS.getEntries().forEach(object ->
+                withExistingParent(object.getId().getPath(),PARENT_SIMPLE_ITEM)
+                        .texture("layer0",getItemLocation("broken_star","misc")));
         generateBlockItemModel(TiAcMeItems.STIBNITE_ORE);
     }
 }

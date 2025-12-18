@@ -20,6 +20,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.TConstruct;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.build.ToolStatsModifierHook;
@@ -38,7 +39,7 @@ public class SupremeDensityArmor extends EtSTBaseModifier implements ToolStatsMo
     @Override
     protected void registerHooks(ModuleHookMap.Builder builder) {
         super.registerHooks(builder);
-        builder.addModule(new ArmorLevelModule(key, false, (TagKey)null));
+        builder.addModule(new ArmorLevelModule(key, false, TinkerTags.Items.SHIELDS));
         builder.addHook(this, ModifierHooks.TOOL_STATS);
     }
     @Override

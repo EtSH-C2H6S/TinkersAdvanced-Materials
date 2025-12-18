@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "item": "minecraft:flint"
+    },
+    {
+      "item": "thermal:earth_charge"
+    },
+    {
+      "item": "thermal:basalz_rod"
+    },
+    {
+      "item": "minecraft:deepslate"
+    },
+    {
+      "item": "minecraft:deepslate"
+    }
+  ],
+  "level": 1,
+  "result": "tinkers_advanced:basalz_enhance",
+  "tools": {
+    "tag": "tconstruct:modifiable/bonus_slots"
+  }
+}

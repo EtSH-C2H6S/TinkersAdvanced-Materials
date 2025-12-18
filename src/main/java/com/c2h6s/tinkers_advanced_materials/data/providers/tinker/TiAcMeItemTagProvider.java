@@ -12,6 +12,7 @@ import mekanism.common.registries.MekanismItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -27,7 +28,7 @@ public class TiAcMeItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(TinkerTags.Items.PATTERNS).add(TiAcTItems.DISINTEGRATE_CRYSTAL.get(), TiAcTItems.RESONANCE_CRYSTAL.get(), TiAcTItems.VOLTAIC_CRYSTAL.get());
+
         this.tag(TinkerTags.Items.REUSABLE_PATTERNS).addOptionalTag(ConventionTags.INSCRIBER_PRESSES);
         this.tag(TiAcMeTagkeys.Items.PLASTIC).addOptionalTag(PneumaticCraftTags.Items.PLASTIC_SHEETS.location()).addOptionalTag(IndustrialTags.Items.PLASTIC.location()).addOptional(MekanismItems.HDPE_SHEET.getRegistryName());
         this.tag(TiAcMeTagkeys.Items.ANTIMONY_NUGGET).add(TiAcMeItems.ANTIMONY_NUGGET.get());
@@ -35,7 +36,7 @@ public class TiAcMeItemTagProvider extends ItemTagsProvider {
         this.tag(TiAcMeTagkeys.Items.ANTIMONY_INGOT).add(TiAcMeItems.ANTIMONY_INGOT.get());
         this.tag(TiAcMeTagkeys.Items.BISMUTH_INGOT).add(TiAcMeItems.BISMUTH_INGOT.get());
         this.tag(Tags.Items.INGOTS)
-                .add(TiAcMeItems.ANTIMONY_INGOT.get(), TiAcMeItems.BISMUTH_INGOT.get())
+                .addOptional(TiAcMeItems.ANTIMONY_INGOT.getId()).addOptional(TiAcMeItems.BISMUTH_INGOT.getId())
                 .addOptional(TiAcMeMaterials.DENSIUM.getItemObject().getId())
                 .addOptional(TiAcMeItems.OSGLOGLAS_INGOT.getId())
                 .addOptional(TiAcMeItems.NEUTRONITE_INGOT.getId())
@@ -46,7 +47,7 @@ public class TiAcMeItemTagProvider extends ItemTagsProvider {
                 .addOptional(TiAcMeItems.BLIZZ_ENDERIUM.getId())
                 .addOptional(TiAcMeItems.PNEUMATIC_STEEL.getId());
         this.tag(Tags.Items.NUGGETS)
-                .add(TiAcMeItems.BISMUTH_NUGGET.get(), TiAcMeItems.ANTIMONY_NUGGET.get())
+                .addOptional(TiAcMeItems.BISMUTH_NUGGET.getId()).addOptional(TiAcMeItems.ANTIMONY_NUGGET.getId())
                 .addOptional(TiAcMeItems.BLITZ_LUMIUM_NUGGET.getId());
     }
 }

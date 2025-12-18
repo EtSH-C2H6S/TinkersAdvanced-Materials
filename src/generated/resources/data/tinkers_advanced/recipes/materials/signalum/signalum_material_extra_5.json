@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/signalum"
+  },
+  "material": "tinkers_advanced:signalum",
+  "needed": 1,
+  "value": 9
+}

@@ -1,0 +1,66 @@
+{
+  "condition": {
+    "type": "forge:and",
+    "values": [
+      {
+        "type": "tinkers_advanced:compat_enabled",
+        "is_original": false,
+        "mod_id": "rainbowcompound"
+      },
+      {
+        "type": "forge:mod_loaded",
+        "modid": "rainbowcompound"
+      }
+    ]
+  },
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tconstruct:set_stat",
+      "stat": "tconstruct:harvest_tier",
+      "value": "minecraft:diamond"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 0.1,
+      "operation": "multiply_base",
+      "stat": "tconstruct:attack_damage"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 0.25,
+      "operation": "multiply_base",
+      "stat": "tconstruct:durability"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 0.1,
+      "operation": "multiply_base",
+      "stat": "tconstruct:mining_speed"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 0.05,
+      "operation": "multiply_base",
+      "stat": "tconstruct:velocity"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 0.5,
+      "operation": "add",
+      "stat": "tconstruct:armor_toughness"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 0.025,
+      "operation": "add",
+      "stat": "tconstruct:knockback_resistance"
+    },
+    {
+      "type": "tconstruct:material_repair",
+      "durability": 200,
+      "material": "tconstruct:obsidian"
+    }
+  ],
+  "tooltip_display": "always"
+}

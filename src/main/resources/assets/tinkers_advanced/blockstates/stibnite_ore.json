@@ -1,9 +1,9 @@
 {
   "variants": {
-    "unstable=false": {
+    "tiac_unstable=false": {
       "model": "tinkers_advanced:block/stibnite_ore"
     },
-    "unstable=true": {
+    "tiac_unstable=true": {
       "model": "tinkers_advanced:block/stibnite_ore_unstable"
     }
   }

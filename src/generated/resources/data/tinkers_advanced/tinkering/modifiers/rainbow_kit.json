@@ -1,0 +1,89 @@
+{
+  "condition": {
+    "type": "forge:and",
+    "values": [
+      {
+        "type": "tinkers_advanced:compat_enabled",
+        "is_original": false,
+        "mod_id": "rainbowcompound"
+      },
+      {
+        "type": "forge:mod_loaded",
+        "modid": "rainbowcompound"
+      }
+    ]
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:set_stat",
+      "stat": "tconstruct:harvest_tier",
+      "value": "minecraft:netherite"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 0.4,
+      "operation": "multiply_base",
+      "stat": "tconstruct:attack_damage"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 0.4,
+      "operation": "multiply_base",
+      "stat": "tconstruct:durability"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 0.4,
+      "operation": "multiply_base",
+      "stat": "tconstruct:mining_speed"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 0.2,
+      "operation": "multiply_base",
+      "stat": "tconstruct:velocity"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 2.0,
+      "operation": "add",
+      "stat": "tconstruct:armor_toughness"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 2.0,
+      "operation": "add",
+      "stat": "tconstruct:armor"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 0.1,
+      "operation": "add",
+      "stat": "tconstruct:knockback_resistance"
+    },
+    {
+      "type": "tconstruct:armor_level",
+      "allow_broken": false,
+      "key": "tinkers_advanced:rainbow_kit"
+    },
+    {
+      "type": "tconstruct:mob_effect",
+      "chance": {
+        "flat": 1.0
+      },
+      "effect": "minecraft:glowing",
+      "level": {
+        "flat": 1.0
+      },
+      "time": {
+        "per_level": 200.0
+      }
+    },
+    {
+      "type": "tconstruct:volatile_flag",
+      "flag": "tconstruct:indestructible"
+    }
+  ],
+  "tooltip_display": "always"
+}

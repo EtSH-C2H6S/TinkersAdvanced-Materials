@@ -66,21 +66,23 @@ public class FusionReactorMultiblockDataMixin {
             }
             if (craftCount > 0) {
                 Vec3 posCenter = deathZone.getCenter();
-                BlockUtil.getPosInRange(deathZone.inflate(1)).forEach((blockPos) -> {
-                    BlockState blockState = world.getBlockState(blockPos);
-                    if (blockState.is(GeneratorsBlocks.REACTOR_GLASS.getBlock()) || blockState.is(GeneratorsBlocks.FUSION_REACTOR_PORT.getBlock()) || blockState.is(GeneratorsBlocks.FUSION_REACTOR_FRAME.getBlock()) || blockState.is(GeneratorsBlocks.FUSION_REACTOR_LOGIC_ADAPTER.getBlock()) || blockState.is(GeneratorsBlocks.FUSION_REACTOR_CONTROLLER.getBlock())|| blockState.is(GeneratorsBlocks.LASER_FOCUS_MATRIX.getBlock())) {
-                        world.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState());
-                    }
-                });
-                var radiationManager = RadiationManager.get();
-                radiationManager.radiate(new Coord4D(posCenter.x, posCenter.y, posCenter.z, world.dimension()), 1000);
-                var explosion = world.explode(null, MekanismDamageTypes.RADIATION.source(world), null, posCenter, 24, true, Level.ExplosionInteraction.TNT);
-                explosion.getHitPlayers().forEach(((player, vec3) -> {
-                    player.setDeltaMovement(player.getDeltaMovement().add(vec3.scale(10)));
-                    player.invulnerableTime = 0;
-                    player.hurt(MekanismDamageTypes.RADIATION.source(world), 1024);
-                    radiationManager.radiate(player, 1000);
-                }));
+                try {
+                    BlockUtil.getPosInRange(deathZone.inflate(1)).forEach((blockPos) -> {
+                        BlockState blockState = world.getBlockState(blockPos);
+                        if (blockState.is(GeneratorsBlocks.REACTOR_GLASS.getBlock()) || blockState.is(GeneratorsBlocks.FUSION_REACTOR_PORT.getBlock()) || blockState.is(GeneratorsBlocks.FUSION_REACTOR_FRAME.getBlock()) || blockState.is(GeneratorsBlocks.FUSION_REACTOR_LOGIC_ADAPTER.getBlock()) || blockState.is(GeneratorsBlocks.FUSION_REACTOR_CONTROLLER.getBlock())|| blockState.is(GeneratorsBlocks.LASER_FOCUS_MATRIX.getBlock())) {
+                            world.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState());
+                        }
+                    });
+                    var radiationManager = RadiationManager.get();
+                    radiationManager.radiate(new Coord4D(posCenter.x, posCenter.y, posCenter.z, world.dimension()), 1000);
+                    var explosion = world.explode(null, MekanismDamageTypes.RADIATION.source(world), null, posCenter, 24, true, Level.ExplosionInteraction.TNT);
+                    explosion.getHitPlayers().forEach(((player, vec3) -> {
+                        player.setDeltaMovement(player.getDeltaMovement().add(vec3.scale(10)));
+                        player.invulnerableTime = 0;
+                        player.hurt(MekanismDamageTypes.RADIATION.source(world), 1024);
+                        radiationManager.radiate(player, 1000);
+                    }));
+                } catch (Exception ignored){}
                 int entityCount = craftCount / 64;
                 int leftOver = craftCount % 64;
                 for (int i = 0; i < entityCount; i++) {

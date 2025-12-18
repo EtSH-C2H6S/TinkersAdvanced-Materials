@@ -10,6 +10,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
+import slimeknights.tconstruct.fluids.data.FluidBlockstateModelProvider;
 import slimeknights.tconstruct.fluids.data.FluidBucketModelProvider;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
@@ -46,5 +47,8 @@ public class TiAcMeDataGenerator {
         generator.addProvider(event.includeClient(),blockTags);
         generator.addProvider(event.includeServer(),new TiAcMeItemTagProvider(output,lookupProvider,blockTags.contentsGetter(),helper));
         generator.addProvider(event.includeClient(),new TiAcMeFluidTagProvider(output,lookupProvider,helper));
+
+        generator.addProvider(event.includeClient(),new FluidBlockstateModelProvider(output,TinkersAdvanced.MODID));
+        generator.addProvider(event.includeClient(),new TiAcMeModifierProvider(output));
     }
 }

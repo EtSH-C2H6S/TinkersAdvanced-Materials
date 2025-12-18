@@ -1,0 +1,42 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "thermal:ice_charge"
+    },
+    {
+      "item": "thermal:blizz_rod"
+    },
+    {
+      "item": "minecraft:powder_snow_bucket"
+    },
+    {
+      "item": "minecraft:powder_snow_bucket"
+    }
+  ],
+  "level": 1,
+  "result": "tinkers_advanced:blizz_enhance",
+  "tools": {
+    "tag": "tconstruct:modifiable/bonus_slots"
+  }
+}

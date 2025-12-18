@@ -13,6 +13,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
@@ -32,7 +33,7 @@ public class RadioactiveArmor extends EtSTBaseModifier implements OnAttackedModi
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
         hookBuilder.addHook(this,ModifierHooks.ON_ATTACKED,ModifierHooks.TOOL_STATS);
-        hookBuilder.addModule(new ArmorLevelModule(KEY,false,null));
+        hookBuilder.addModule(new ArmorLevelModule(KEY,false, TinkerTags.Items.SHIELDS));
     }
 
     @SubscribeEvent

@@ -1,0 +1,12 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tinkers_advanced:neuro_excitement"
+    },
+    {
+      "level": 1,
+      "name": "tconstruct:entangled"
+    }
+  ]
+}

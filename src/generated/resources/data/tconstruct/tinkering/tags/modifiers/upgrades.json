@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#tinkers_advanced:obsidianite",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:rainbow_kit",
+      "required": false
+    }
+  ]
+}

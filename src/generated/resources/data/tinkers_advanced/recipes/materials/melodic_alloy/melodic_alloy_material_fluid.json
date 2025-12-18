@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:material_fluid",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermalendergy"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "thermalendergy"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "fluid": {
+    "amount": 90,
+    "fluid": "tinkers_advanced:molten_melodic_alloy"
+  },
+  "output": "tinkers_advanced:melodic_alloy",
+  "temperature": 1500
+}
