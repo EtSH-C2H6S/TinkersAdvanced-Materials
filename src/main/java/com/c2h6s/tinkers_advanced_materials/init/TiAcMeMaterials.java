@@ -181,11 +181,11 @@ public class TiAcMeMaterials {
             .addCompatModId("thermal",false).setUnit()
             .buildMaterial(4,false,ORDER_COMPAT,false).buildStats().setStats(
                     StatlessMaterialStats.BINDING,
-                    new HandleMaterialStats(0.15f,0.15f,0.15f,0.15f),
+                    new HandleMaterialStats(0.15f,0.15f,0.1f,0.1f),
                     new HeadMaterialStats(1890,6.5f, Tiers.NETHERITE,3.75f),
-                    new GripMaterialStats(0.2f,0.1f,3.75f),
+                    new GripMaterialStats(0.2f,0.1f,3.25f),
                     new FluxCoreMaterialStat(5.4f,4.6f),
-                    new LimbMaterialStats(1890,0.2f,0.2f,0.05f),
+                    new LimbMaterialStats(1890,0.1f,0.1f,0.05f),
                     StatlessMaterialStats.MAILLE)
             .setArmorBuilder(armor(40,2f,7f,5f,2f)
                     .toughness(4).knockbackResistance(0.05f)).setAllowShield().build().buildModifiers()
@@ -407,18 +407,18 @@ public class TiAcMeMaterials {
             .registerBurningFluid(1500,false,15,200,7)
             .buildMaterial(5,false,ORDER_COMPAT,true).buildStats().setStats(
                     StatlessMaterialStats.BINDING,
-                    new HandleMaterialStats(0.2f,0.3f,0.55f,0.2f),
-                    new HeadMaterialStats(1440,6f, Tiers.NETHERITE,4.5f),
-                    new GripMaterialStats(0.2f,0,4.5f),
-                    new LimbMaterialStats(1450,0.75f,0.05f,0f),
-                    new FluxCoreMaterialStat(10.9f,12.6f),
+                    new HandleMaterialStats(-0.1f,0.1f,0.35f,0.15f),
+                    new HeadMaterialStats(1440,6f, Tiers.NETHERITE,2.5f),
+                    new GripMaterialStats(-0.1f,0,2.5f),
+                    new LimbMaterialStats(1440,0.45f,0.05f,0f),
+                    new FluxCoreMaterialStat(5.9f,7.6f),
                     StatlessMaterialStats.MAILLE,
                     StatlessMaterialStats.SHIELD_CORE
             )
             .setArmorBuilder(armor(64,3f,8f,6f,3f).knockbackResistance(0.05f).toughness(5))
             .setAllowShield().build().buildModifiers()
-            .buildDefault(entry(ModifierIds.enderclearance),entry(TiAcMeModifiers.ENDER_BREATHE.getId()))
-            .buildPerStat(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.ENDER_SUPRESS.getId()),entry(ModifierIds.enderclearance)).build()
+            .buildDefault(entry(TinkerModifiers.enderference.getId()),entry(TiAcMeModifiers.ENDER_BREATHE.getId()))
+            .buildPerStat(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.ENDER_SUPRESS.getId()),entry(TiAcMeModifiers.METAMORPHIUM.getId())).build()
             .build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
                     0xFFd291bb,2)).build();
     public static final SimpleMaterialObject REFINED_RADIANCE = MATERIALS.buildMaterial("refined_radiance")

@@ -5,7 +5,9 @@ import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityTeleportEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -30,6 +32,8 @@ public class EnderSuppress extends EtSTBaseModifier {
         hookBuilder.addModule(new ArmorLevelModule(KEY_ENDER_SUPPRESS,false, TinkerTags.Items.SHIELDS));
     }
 
+    public static final String KEY_CD = "tiac_ender_supress_cd";
+
     @SubscribeEvent
     public static void stopEnderTeleport(EntityTeleportEvent event){
         if (event.getEntity() instanceof Mob mob&&mob.getTarget()!=null) {
@@ -37,14 +41,20 @@ public class EnderSuppress extends EtSTBaseModifier {
             entity.getCapability(TinkerDataCapability.CAPABILITY).ifPresent(cap -> {
                 var lvl = cap.get(KEY_ENDER_SUPPRESS, 0);
                 if (lvl > 0){
-                    triggers = 0;
                     event.setCanceled(true);
-                    if (entity instanceof Player player &&entity.getMainHandItem().is(TinkerTags.Items.MELEE_PRIMARY)&&triggers<=0){
+                    if (entity.getPersistentData().getInt(KEY_CD)>0) return;
+                    if (entity instanceof Player player &&entity.getMainHandItem().is(TinkerTags.Items.MELEE_PRIMARY)){
                         ToolAttackUtil.attackEntity(entity.getMainHandItem(),player,mob);
-                        triggers++;
+                        player.getPersistentData().putInt(KEY_CD,Math.max(1,(int) (player.getCurrentItemAttackStrengthDelay()*0.5f)));
                     }
                 }
             });
         }
+    }
+    @SubscribeEvent
+    public static void onLivingTick(TickEvent.PlayerTickEvent event){
+        var cd = event.player.getPersistentData().getInt(KEY_CD);
+        if (cd>0)
+            event.player.getPersistentData().putInt(KEY_CD,cd-1);
     }
 }

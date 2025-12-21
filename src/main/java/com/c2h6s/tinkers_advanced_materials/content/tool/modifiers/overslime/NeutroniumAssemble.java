@@ -121,6 +121,10 @@ public class NeutroniumAssemble extends MultiArgsDescModifier implements SlotSta
     }
 
     @Override
+    public boolean isCustomPosition(IToolStackView tool, ModifierEntry entry, int barsHadBeenShown) {
+        return true;
+    }
+    @Override
     public int getBarRGB(IToolStackView iToolStackView, ModifierEntry modifierEntry, int i) {
         return 0xFFFF0000;
     }

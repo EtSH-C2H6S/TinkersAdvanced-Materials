@@ -5,6 +5,7 @@ import com.c2h6s.etstlib.tool.modifiers.base.BasicFEModifier;
 import com.c2h6s.etstlib.util.MathUtil;
 import com.c2h6s.etstlib.util.ToolEnergyUtil;
 import com.c2h6s.tinkers_advanced.TinkersAdvanced;
+import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.base.IHaveConfigToInit;
 import com.c2h6s.tinkers_advanced_materials.network.TiAcMePacketHandler;
 import com.c2h6s.tinkers_advanced_materials.network.packets.PCofhModSwitchC2S;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeModifiers;
@@ -32,7 +33,7 @@ import static com.c2h6s.tinkers_advanced_materials.TiAcMeConfig.Common.*;
 import static net.minecraft.ChatFormatting.*;
 import static cofh.lib.util.helpers.StringHelper.*;
 
-public class FluxInfused extends BasicFEModifier {
+public class FluxInfused extends BasicFEModifier implements IHaveConfigToInit {
     public static final ResourceLocation MODE_LOCATION = TinkersAdvanced.getLocation("cofh_mode");
 
 
@@ -54,8 +55,8 @@ public class FluxInfused extends BasicFEModifier {
         if (descriptionList == null) {
             descriptionList = Arrays.asList(
                     Component.translatable(getTranslationKey() + ".flavor").withStyle(ChatFormatting.ITALIC),
-                    Component.translatable(getTranslationKey() + ".description",
-                            MathUtil.getEnergyString(FLUX_INFUSE_CONSUMPTION.get())).withStyle(ChatFormatting.GRAY));
+                    Component.translatable(getTranslationKey() + ".description",getDescArgs())
+                            .withStyle(ChatFormatting.GRAY));
         }
         return descriptionList;
     }
@@ -124,5 +125,15 @@ public class FluxInfused extends BasicFEModifier {
             return amount-reduce;
         }
         return amount;
+    }
+
+    @Override
+    public Object[] getDescArgs() {
+        return new Object[]{MathUtil.getEnergyString(FLUX_INFUSE_CONSUMPTION.get())};
+    }
+
+    @Override
+    public void refreshConfig() {
+
     }
 }

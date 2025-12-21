@@ -21,7 +21,43 @@
       "required": false
     },
     {
-      "id": "tinkers_advanced:anti_neutronium",
+      "id": "tinkers_advanced:iridium",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:voltaic_crystal",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:chorusite",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:refined_radiance",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:anti_neutronium",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:stellar_alloy",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:netherstar_alloy",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:melodic_alloy",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:densium",
+      "required": false
+    },
+    {
+      "id": "#tinkers_advanced:shadow_steel",
       "required": false
     }
   ]

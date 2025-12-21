@@ -139,6 +139,11 @@ public class TiAcMeConfig {
         public final ForgeConfigSpec.ConfigValue<List<String>> SLIMEFUL_NETHER_ITEMS;
         public final ForgeConfigSpec.ConfigValue<List<String>> SLIMEFUL_END_ITEMS;
 
+        public final ForgeConfigSpec.IntValue AERIAL_PROTECTION_AIR_CONSUMPTION;
+        public final ForgeConfigSpec.DoubleValue AERIAL_PROTECTION_MAX_PROTECTION_LEVEL;
+        public final ForgeConfigSpec.DoubleValue AERIAL_PROTECTION_DAMAGE_BLOCK_AFTER_ARMOR;
+        public final ForgeConfigSpec.DoubleValue AERIAL_PROTECTION_BYPASS_ARMOR_REDUCTION;
+
 
         public final ForgeConfigSpec.BooleanValue ALLOW_BISMUTHINITE;
         public final ForgeConfigSpec.BooleanValue ALLOW_STIBNITE;
@@ -170,53 +175,53 @@ public class TiAcMeConfig {
             builder.comment("Flux Infuse").comment("通量注入");
             FLUX_INFUSE_CONSUMPTION = builder.comment("通量注入抵消耐久消耗需要的能量，默认250FE")
                     .comment("FE required for each durability loss, 250FE by default")
-                    .defineInRange("flux_infuse_consumption",250,0,Integer.MAX_VALUE);
+                    .defineInRange("FluxInfuseConsumption",250,0,Integer.MAX_VALUE);
             builder.comment("Flux Slash").comment("通量赋能-近战");
             FLUX_SLASH_CONSUMPTION = builder.comment("通量斩击的基础消耗（通量伤害消耗采用此值，剑气消耗为此值的2倍），默认250FE")
                     .comment("Basic consumption for Flux Slash, 250FE by default.")
-                    .defineInRange("flux_slash_consumption",250,0,Integer.MAX_VALUE);
-            FLUX_SLASH_FLUX_DAMAGE = builder.comment("通量斩击的额外通量伤害，默认8")
+                    .defineInRange("FluxSlashBasicConsumption",250,0,Integer.MAX_VALUE);
+            FLUX_SLASH_FLUX_DAMAGE = builder.comment("通量斩击的伤害增幅，默认8")
                     .comment("Additional Flux damage for Flux Slash, 8 by default.")
-                    .defineInRange("flux_slash_flux_damage",8f,0,Float.MAX_VALUE);
+                    .defineInRange("FluxSlashExtraDamage",8f,0.1,Float.MAX_VALUE);
             FLUX_SLASH_BASIC_SLASH_DAMAGE = builder.comment("通量斩击的剑气基础伤害，默认8")
                     .comment("Base damage for the slash from Flux Slash, 8 by default.")
-                    .defineInRange("flux_slash_base_slash_damage",8,0,Float.MAX_VALUE);
+                    .defineInRange("FluxSlashEmpoweredSlashBaseDamage",8,0.1,Float.MAX_VALUE);
             FLUX_SLASH_SLASH_DAMAGE_PER_SHARPNESS = builder.comment("通量斩击的剑气受锋利词条的伤害加成，默认1每级")
                     .comment("Sharpness modifier bonus damage for Slash from Flux Slash, 1 by default.")
-                    .defineInRange("flux_slash_damage_per_sharpness",1,0,Float.MAX_VALUE);
+                    .defineInRange("FluxSlashEmpoweredSlashBoostBySharpness",1,0.1,Float.MAX_VALUE);
             FLUX_SLASH_SLASH_DAMAGE_FROM_ATTACK_DAMAGE = builder.comment("通量斩击的剑气继承自工具伤害的伤害比例，默认0.75x")
                     .comment("Damage bonus from tool's attack damage, 0.75x by default.")
-                    .defineInRange("flux_slash_damage_from_attack_damage",0.75,0,Float.MAX_VALUE);
+                    .defineInRange("flux_slash_damage_from_attack_damage",0.75,0.01,Float.MAX_VALUE);
             FLUX_SLASH_DIG_SPEED_BONUS = builder.comment("通量斩击的挖掘加速（注能模式下为此值2倍），默认100%")
                     .comment("Mining boost for Flux Slash, 100% by default.")
-                    .defineInRange("flux_slash_dig_speed_bonus",1,0,Float.MAX_VALUE);
+                    .defineInRange("FluxSlashDigSpeedBonus",1,0.01,Float.MAX_VALUE);
             builder.comment("Flux Arrow").comment("通量赋能-远程");
             FLUX_ARROW_CONSUMPTION = builder.comment("通量箭矢的基础消耗（箭矢增伤消耗采用此值，产生箭矢消耗为此值的2倍，箭矢爆炸为此值的3倍，复制药水箭消耗为此值的4倍），默认250FE")
                     .comment("Basic consumption for Flux Arrow, 250FE by default.")
-                    .defineInRange("flux_arrow_consumption",250,0,Integer.MAX_VALUE);
+                    .defineInRange("FluxArrowConsumption",250,0,Integer.MAX_VALUE);
             FLUX_ARROW_BASE_EXPLOSION_DAMAGE = builder.comment("通量箭矢的爆炸伤害，默认8")
                     .comment("Arrow explosion damage for Flux Arrow, 8 by default.")
-                    .defineInRange("flux_arrow_explosion_damage",8,0,Float.MAX_VALUE);
+                    .defineInRange("FluxArrowExplosionDamage",8,0.1,Float.MAX_VALUE);
             FLUX_ARROW_EXPLOSION_DAMAGE_FROM_DAMAGE = builder.comment("通量箭矢爆炸受到箭矢伤害的增幅，默认0.5x")
                     .comment("Additional damage for the arrow explosion boosted by arrow damage from Flux Arrow, 0.5x by default.")
-                    .defineInRange("flux_arrow_explosion_damage_from_arrow_damage",0.5,0,Float.MAX_VALUE);
+                    .defineInRange("FluxArrowExplosionDamageFromTool",0.5,0.01,Float.MAX_VALUE);
             builder.comment("Flux Armor").comment("通量赋能-护甲");
             FLUX_ARMOR_CONSUMPTION = builder.comment("通量护甲的基础消耗（减伤消耗采用此值，闪避消耗为此值的10倍），默认2000FE")
                     .comment("Basic consumption for Flux Armor, 2000FE by default.")
-                    .defineInRange("flux_armor_consumption",2000,0,Integer.MAX_VALUE);
-            FLUX_ARMOR_DAMAGE_REDUCTION = builder.comment("通量护甲的伤害减免，默认0.3x")
-                    .comment("Damage Reduction for Flux Armor, 0.3x by default.")
-                    .defineInRange("flux_armor_damage_reduction",0.3,0,1f);
+                    .defineInRange("FluxArmorBasicConsumption",2000,0,Integer.MAX_VALUE);
+            FLUX_ARMOR_DAMAGE_REDUCTION = builder.comment("通量护甲的每级独立保护等级，默认5（注：匠魂每级保护增加4%伤害减免，改保护等级与其它保护类属性独立）")
+                    .comment("Damage Reduction for Flux Armor, 5 by default.")
+                    .defineInRange("FluxArmorMaxResistanceLevel",5,1,25f);
             FLUX_ARMOR_DODGE_RATE = builder.comment("通量护甲的闪避率，默认0.1")
-                    .comment("Dodge rate for Flux Armor, 0.05 by default.")
-                    .defineInRange("flux_armor_dodge_rate",0.1,0,1f);
+                    .comment("Dodge rate for Flux Armor, 0.1 by default.")
+                    .defineInRange("FluxArmorDodgeRate",0.1,0.01,1f);
 
             builder.comment("Shaping").comment("塑性");
             this.SHAPING_MAX_SLOT = builder.comment("最大加槽，默认3。")
                     .comment("Max upgrade slot bonus for Shaping modifier, 3 by default.")
-                    .defineInRange("shaping_max_slot",3,1,Integer.MAX_VALUE);
-            this.SHAPING_DAMAGES_EACH_SLOT = builder.comment("How many durability loss is needed for Shaping modifier to gain 1 slot, 500 by default.").comment("磨损多少耐久才加1升级槽，默认500。")
-                    .defineInRange("shaping_damages_each_slot",500,1,Integer.MAX_VALUE);
+                    .defineInRange("shaping_max_slot",2,1,Integer.MAX_VALUE);
+            this.SHAPING_DAMAGES_EACH_SLOT = builder.comment("How many durability loss is needed for Shaping modifier to gain 1 slot, 2500 by default.").comment("磨损多少耐久才加1升级槽，默认2500。")
+                    .defineInRange("shaping_damages_each_slot",2500,1,Integer.MAX_VALUE);
 
             builder.comment("Proto Refining").comment("原体精炼");
             this.PROTO_REFINING_BONUS_LEVEL = builder.comment("每级最大时运增益，默认10。")
@@ -227,18 +232,18 @@ public class TiAcMeConfig {
                     .defineInRange("proto_refining_requirement",5,1,Integer.MAX_VALUE);
 
             builder.comment("Radiation Burning and Radioactive Armor").comment("镭光合金相关");
-            this.IRRADIUM_MAX_BONUS = builder.comment("辐射灼伤最大增益，默认0.75。")
-                    .comment("Max bonus for Radiation Burning, 0.75 by default.")
-                    .defineInRange("irradium_max_bonus",0.75,0,Float.MAX_VALUE);
-            this.IRRADIUM_MAX_BONUS_ARMOR = builder.comment("放射性护甲最大增益，默认0.75。")
-                    .comment("Max bonus for Radioactive Armor, 0.75 by default.")
-                    .defineInRange("irradium_max_bonus_armor",0.75,0,1);
+            this.IRRADIUM_MAX_BONUS = builder.comment("辐射灼伤最大增益，默认1。")
+                    .comment("Max bonus for Radiation Burning, 1 by default.")
+                    .defineInRange("RadiationBurningMaxDamageBoostMul",1,0,Float.MAX_VALUE);
+            this.IRRADIUM_MAX_BONUS_ARMOR = builder.comment("放射性护甲最大增益，默认0.85。")
+                    .comment("Max bonus for Radioactive Armor, 0.85 by default.")
+                    .defineInRange("RadioactiveArmorMaxDamageReduction",0.85,0,1);
             this.IRRADIUM_RADIATION_INFLICT = builder.comment("辐射施加，默认1.0Sv。")
                     .comment("Radiation amount for Radiation Burning and Radioactive Armor each trait level, 1.0 Sv by default.")
-                    .defineInRange("irradium_radiation_inflict",1d,0,Double.MAX_VALUE);
+                    .defineInRange("IrradiumRadiationInflict",1d,0,Double.MAX_VALUE);
             this.IRRADIUM_BONUS_PER_Sv = builder.comment("每Sv辐射造成的增幅，默认0.05。")
                     .comment("Bonus for Radiation Burning and Radioactive Armor each Sv, 0.05 by default.")
-                    .defineInRange("irradium_bonus_per_sv",0.05d,0,1);
+                    .defineInRange("IrradiumBonusPointPerSv",0.05d,0,1);
 
             builder.comment("Fragile").comment("脆性");
             this.FRAGILE_CHANCE = builder
@@ -322,9 +327,9 @@ public class TiAcMeConfig {
                     .comment("Overslime convertion per Anti-Neutronium Ingot")
                     .defineInRange("NeutroniumAssembleOverslimePerAntiNeutronium",10,1,32767);
             this.ANTI_NEUTRONIUM_OVERSLIME_MAX_CONSUMPTION_ARMOR = builder
-                    .comment("湮灭性黏液词条护甲达成减伤需要消耗的黏液覆层量，默认2000。")
-                    .comment("Overslime consumption rate for Anihilating Slime Armor, 2000 by default.")
-                    .defineInRange("AnnihilatingSlimeOverslimeConsumptionArmor",2000,0,Integer.MAX_VALUE);
+                    .comment("湮灭性黏液词条护甲达成减伤需要消耗的黏液覆层量，默认1000。")
+                    .comment("Overslime consumption rate for Anihilating Slime Armor, 1000 by default.")
+                    .defineInRange("AnnihilatingSlimeOverslimeConsumptionArmor",1000,0,Integer.MAX_VALUE);
             this.ANTI_NEUTRONIUM_EXPLOSION_BYPASS_INVUL = builder
                     .comment("将湮灭爆炸的伤害改为无视无敌的类型，默认true。")
                     .comment("Transforms damage source from annihilate explosion to bypass invulnerable source, true by default.")
@@ -501,7 +506,19 @@ public class TiAcMeConfig {
                                     "tconstruct:ender_slime_ball"
                             ), Objects::nonNull);
 
-
+            builder.comment("Aerial Protection").comment("压缩空气防护");
+            this.AERIAL_PROTECTION_AIR_CONSUMPTION = builder
+                    .comment("压缩空气防护的压缩空气消耗，默认20mL，会乘以伤害格挡值。")
+                    .defineInRange("AerialProtectionConsumption",20,0,Integer.MAX_VALUE);
+            this.AERIAL_PROTECTION_BYPASS_ARMOR_REDUCTION = builder
+                    .comment("压缩空气防护对穿甲伤害的独立减免，默认0.6（60%）。")
+                    .defineInRange("AerialProtectionDamageReductionForSpecialSource",0.6,0.01,1);
+            this.AERIAL_PROTECTION_DAMAGE_BLOCK_AFTER_ARMOR = builder
+                    .comment("压缩空气防护的甲后格挡（加算），默认每级2.5。")
+                    .defineInRange("AerialProtectionDamageBlock",2.5,0.1,Float.MAX_VALUE);
+            this.AERIAL_PROTECTION_MAX_PROTECTION_LEVEL = builder
+                    .comment("压缩空气防护的最大保护，默认每级2（注：匠魂每级保护提供4%伤害减免，此词条的保护独立于匠魂的其它保护）。")
+                    .defineInRange("AerialProtectionMaxProtectionLevel",2,0.25,25);
 
 
             builder.comment("Generator Modules").comment("能量模块类强化");

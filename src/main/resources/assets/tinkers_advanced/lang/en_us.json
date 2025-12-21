@@ -46,7 +46,7 @@
 
   "modifier.tinkers_advanced.aerial_protection": "Aerial Protection",
   "modifier.tinkers_advanced.aerial_protection.flavor": "Gaseous shield.",
-  "modifier.tinkers_advanced.aerial_protection.description": "Blocks 5 damage,reduces damage above 5 by 10%.Consumes air.",
+  "modifier.tinkers_advanced.aerial_protection.description": "Blocks %1$s damage, increase protection level as pressure rises.",
 
   "modifier.tinkers_advanced.sensor_interrupt": "Visual Interrupt",
   "modifier.tinkers_advanced.sensor_interrupt.flavor": "Distorting ray trace.",
@@ -98,11 +98,12 @@
 
   "modifier.tinkers_advanced.thermal_slash": "Flux Slash",
   "modifier.tinkers_advanced.thermal_slash.flavor": "Powered by Team CoFH.",
-  "modifier.tinkers_advanced.thermal_slash.description": "+1 Fortune and Looting level.In Activated mode,consumes energy to boost mining speed and deal extra 4 damage on attack.In Empowered mode,fires Elemental Slash on swinging.",
+  "modifier.tinkers_advanced.thermal_slash.description": "+1 Fortune and Looting level.In Activated mode,consumes energy to boost mining speed and attack damage.In Empowered mode,fires Elemental Slash on swinging.",
 
   "modifier.tinkers_advanced.flux_defense": "Flux Shield",
   "modifier.tinkers_advanced.flux_defense.flavor": "Powered by Team CoFH.",
-  "modifier.tinkers_advanced.flux_defense.description": "In Activated mode,5% chance for blocking the damage.In Empowered Mode,consumes energy to cancel up to 20% of damage.",
+  "modifier.tinkers_advanced.flux_defense.description": "In Activated mode,5% chance for blocking the damage.In Empowered Mode,consumes energy to increase protection level.",
+  "modifier.tinkers_advanced.flux_defense.resistance": "Flux Resistance",
 
   "modifier.tinkers_advanced.supreme_density": "Supreme Density",
   "modifier.tinkers_advanced.supreme_density.flavor": "Almost collapsed into black hole.",

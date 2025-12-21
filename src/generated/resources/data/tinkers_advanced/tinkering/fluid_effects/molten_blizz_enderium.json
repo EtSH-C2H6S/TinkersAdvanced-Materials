@@ -41,7 +41,7 @@
       "type": "tconstruct:conditional",
       "effect": {
         "type": "tconstruct:damage",
-        "damage": 4.5,
+        "damage": 5.5,
         "damage_type": {
           "melee": "tconstruct:fluid_cold_melee",
           "ranged": "tconstruct:fluid_cold_ranged"

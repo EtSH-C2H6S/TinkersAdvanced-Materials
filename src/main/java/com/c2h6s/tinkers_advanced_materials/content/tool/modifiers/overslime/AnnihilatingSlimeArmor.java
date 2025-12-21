@@ -22,6 +22,12 @@ public class AnnihilatingSlimeArmor extends MultiArgsDescModifier implements Mod
         super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.MODIFY_DAMAGE,ModifierHooks.TOOL_STATS);
     }
+
+    @Override
+    public int getPriority() {
+        return -1000;
+    }
+
     protected static int CFG_MAX_OVERSLIME_CONSUMPTION = 2000;
     protected static float CONFIG_OVERSLIME_MULTIPLIER = 10;
 

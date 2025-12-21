@@ -54,7 +54,7 @@
 
   "modifier.tinkers_advanced.radioactive_armor": "镭光护甲",
   "modifier.tinkers_advanced.radioactive_armor.flavor": "既产生辐射，也消除辐射",
-  "modifier.tinkers_advanced.radioactive_armor.description": "对攻击者施加辐射，受到带辐射生物的伤害减少，每级获得50%辐射抗性。",
+  "modifier.tinkers_advanced.radioactive_armor.description": "对攻击者施加辐射，受到带辐射生物的伤害减少（仅生效一次，至多减少90%），每级获得50%辐射抗性。",
 
   "modifier.tinkers_advanced.air_slash": "空气斩",
   "modifier.tinkers_advanced.air_slash.flavor": "压缩空气抛射",
@@ -62,7 +62,7 @@
 
   "modifier.tinkers_advanced.aerial_protection": "压缩空气防护",
   "modifier.tinkers_advanced.aerial_protection.flavor": "氮气护盾！",
-  "modifier.tinkers_advanced.aerial_protection.description": "消耗压缩空气格挡5点伤害，对于大于5的伤害提供10%减免。",
+  "modifier.tinkers_advanced.aerial_protection.description": "随护甲的气压增大而增加保护等级，减伤后消耗压缩空气格挡每级至多%1$s点伤害，对穿甲伤害造成%2$s的独立伤害减免。",
 
   "modifier.tinkers_advanced.sensor_interrupt": "视错觉",
   "modifier.tinkers_advanced.sensor_interrupt.flavor": "扰乱了电磁波的传递...",
@@ -74,7 +74,7 @@
 
   "modifier.tinkers_advanced.basalz_defense": "石肤",
   "modifier.tinkers_advanced.basalz_defense.flavor": "岩石的能量让你更加坚固",
-  "modifier.tinkers_advanced.basalz_defense.description": "每级护甲值、护甲韧性+1，增加10%对可减免伤害的保护，获得爆裂抗性效果。",
+  "modifier.tinkers_advanced.basalz_defense.description": "每级护甲值、护甲韧性+1，增加10%对可减免伤害的独立保护，获得爆裂抗性效果。",
 
   "modifier.tinkers_advanced.basalz_inflict": "碎裂",
   "modifier.tinkers_advanced.basalz_inflict.flavor": "震碎护甲！",
@@ -114,15 +114,16 @@
 
   "modifier.tinkers_advanced.flux_arrow": "通量赋能-箭矢",
   "modifier.tinkers_advanced.flux_arrow.flavor": "把通量附加在工具上，红石能转化为机械能！",
-  "modifier.tinkers_advanced.flux_arrow.description": "激活模式下消耗能量存储凭空产生箭矢，箭矢基础伤害+1；注能模式下拉弓速度+50%，能产生药水箭，箭矢在击中时发生爆炸。",
+  "modifier.tinkers_advanced.flux_arrow.description": "激活模式下消耗能量存储凭空产生箭矢，箭矢基础伤害+2；注能模式下拉弓速度+75%，能产生药水箭，箭矢在击中时发生爆炸。",
 
   "modifier.tinkers_advanced.thermal_slash": "通量赋能-近战",
   "modifier.tinkers_advanced.thermal_slash.flavor": "把通量附加在工具上，红石能转化为机械能！",
-  "modifier.tinkers_advanced.thermal_slash.description": "每级+1时运、抢夺等级。激活模式下消耗能量增加挖掘速度并在攻击时附加4点穿甲伤害；注能模式下攻速+50%，挥舞时释放元素剑气。",
+  "modifier.tinkers_advanced.thermal_slash.description": "每级+1时运、抢夺等级。激活模式下消耗能量增加挖掘速度并增加%1$s伤害；注能模式下攻速%2$s，挥舞时释放元素剑气。",
 
   "modifier.tinkers_advanced.flux_defense": "通量赋能-装甲",
   "modifier.tinkers_advanced.flux_defense.flavor": "把通量附加在工具上，红石能转化为机械能！",
-  "modifier.tinkers_advanced.flux_defense.description": "激活模式下有5%的概率消耗能量闪避伤害；注能模式下消耗能量抵消至多20%的伤害。",
+  "modifier.tinkers_advanced.flux_defense.description": "激活模式下有%1$s的概率消耗能量闪避伤害；注能模式下随能量存储增多而增加保护等级并相应消耗能量。",
+  "modifier.tinkers_advanced.flux_defense.resistance": "通量抗性",
 
   "modifier.tinkers_advanced.supreme_density": "极限密度",
   "modifier.tinkers_advanced.supreme_density.flavor": "差一点就坍缩成黑洞...",
@@ -374,12 +375,12 @@
 
   "modifier.tinkers_advanced.night_slayer": "暗夜克星",
   "modifier.tinkers_advanced.night_slayer.flavor": "躲藏在黑暗中的刺客",
-  "modifier.tinkers_advanced.night_slayer.description": "随环境亮度降低而增加伤害和保护等级。",
+  "modifier.tinkers_advanced.night_slayer.description": "随环境亮度降低而增加伤害和独立保护等级。",
   "modifier.tinkers_advanced.night_slayer.resistance": "暗处伤害抗性",
 
   "modifier.tinkers_advanced.luminous_piercer": "耀日穿刺",
   "modifier.tinkers_advanced.luminous_piercer.flavor": "侦测到致命光子流",
-  "modifier.tinkers_advanced.luminous_piercer.description": "随环境亮度增加而增加穿甲和保护等级。",
+  "modifier.tinkers_advanced.luminous_piercer.description": "随环境亮度增加而增加穿甲和独立保护等级。",
   "modifier.tinkers_advanced.luminous_piercer.resistance": "亮处伤害抗性",
 
   "modifier.tinkers_advanced.ender_breathe": "末影之息",

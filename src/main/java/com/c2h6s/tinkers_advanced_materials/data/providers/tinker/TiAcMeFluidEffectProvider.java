@@ -23,6 +23,7 @@ import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.crafting.conditions.OrCondition;
 import slimeknights.mantle.recipe.condition.TagFilledCondition;
+import slimeknights.tconstruct.common.TinkerDamageTypes;
 import slimeknights.tconstruct.common.json.ConfigEnabledCondition;
 import slimeknights.tconstruct.library.data.tinkering.AbstractFluidEffectProvider;
 import slimeknights.tconstruct.library.json.LevelingInt;
@@ -81,7 +82,7 @@ public class TiAcMeFluidEffectProvider extends AbstractFluidEffectProvider {
                 .addBlockEffect(new ClearChunkRadiationFluidEffect(2))
                 .addCondition(modLoaded("mekanism"));
         addFluid(TiAcMeFluids.MOLTEN_BASALZ_SIGNALUM.get(),10)
-                .fireDamage(2.5f)
+                .addDamage(3.5f, TinkerDamageTypes.FLUID_SPIKE)
                 .addEntityEffects(FluidMobEffect.builder()
                         .effect(CoreMobEffects.SUNDERED.get(), 200,3)
                         .buildEntity(TimeAction.ADD))
@@ -105,7 +106,7 @@ public class TiAcMeFluidEffectProvider extends AbstractFluidEffectProvider {
                         .effects()))
                 .addCondition(modLoaded("thermal"));
         addFluid(TiAcMeFluids.MOLTEN_BLIZZ_ENDERIUM.get(),10)
-                .coldDamage(4.5f)
+                .coldDamage(5.5f)
                 .addEntityEffects(FluidMobEffect.builder()
                         .effect(CoreMobEffects.CHILLED.get(), 200,3)
                         .buildEntity(TimeAction.ADD))
@@ -121,8 +122,12 @@ public class TiAcMeFluidEffectProvider extends AbstractFluidEffectProvider {
                         .buildCloud()
                         .effects()))
                 .addCondition(modLoaded("thermal"));
-        addFluid(TiAcMeFluids.MOLTEN_ACTIVATED_CHROMATIC_STEEL.get(),10)
-                .fireDamage(4f).coldDamage(4f)
+        addFluid(TiAcMeFluids.MOLTEN_ACTIVATED_CHROMATIC_STEEL.get(),5)
+                .fireDamage(6f).coldDamage(6f)
+                .addDamage(6, TinkerDamageTypes.EXPLOSION)
+                .addDamage(6, TinkerDamageTypes.FLUID_IMPACT)
+                .addDamage(6, TinkerDamageTypes.FLUID_MAGIC)
+                .addDamage(6, TinkerDamageTypes.FLUID_SPIKE)
                 .addEntityEffects(FluidMobEffect.builder()
                         .effect(CoreMobEffects.CHILLED.get(), 200,2)
                         .buildEntity(TimeAction.ADD))

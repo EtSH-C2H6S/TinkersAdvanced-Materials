@@ -45,7 +45,7 @@ public class FluxArrow extends FluxInfused implements BowAmmoModifierHook {
     @Override
     public void addToolStats(IToolContext iToolContext, ModifierEntry modifierEntry, ModifierStatsBuilder modifierStatsBuilder) {
         super.addToolStats(iToolContext, modifierEntry, modifierStatsBuilder);
-        ToolStats.DRAW_SPEED.percent(modifierStatsBuilder,getMode(iToolContext.getPersistentData())>=2?0.5:0);
+        ToolStats.DRAW_SPEED.percent(modifierStatsBuilder,getMode(iToolContext.getPersistentData())>=2?0.75:0);
     }
 
     @Override
@@ -97,13 +97,13 @@ public class FluxArrow extends FluxInfused implements BowAmmoModifierHook {
             switch (getMode(tool)) {
                 case 1 -> {
                     if (ToolEnergyUtil.extractEnergy(tool,basicConsumption,true)>=basicConsumption) {
-                        arrow.setBaseDamage(arrow.getBaseDamage() + 1);
+                        arrow.setBaseDamage(arrow.getBaseDamage() + 2);
                         arrow.getPersistentData().putInt(KEY_ARROW_CHARGE, getMode(tool));
                     }
                 }
                 case 2->{
                     if (ToolEnergyUtil.extractEnergy(tool,basicConsumption*3,true)>=basicConsumption*3) {
-                        arrow.setBaseDamage(arrow.getBaseDamage() + 1);
+                        arrow.setBaseDamage(arrow.getBaseDamage() + 2);
                         ToolEnergyUtil.extractEnergy(tool,basicConsumption*3,false);
                         arrow.getPersistentData().putInt(KEY_ARROW_CHARGE, getMode(tool));
                     }

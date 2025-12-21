@@ -15,14 +15,19 @@ public class TiAcMeMaterialTagProvider extends AbstractMaterialTagProvider {
 
     @Override
     protected void addTags() {
-        this.tag(TinkerTags.Materials.EXCLUDE_FROM_LOOT).addOptional(
+        var appender = this.tag(TinkerTags.Materials.EXCLUDE_FROM_LOOT).addOptional(
                 TiAcMeMaterialIds.Mekanism.IRRADIUM,
                 TiAcMeMaterialIds.Mekanism.ANTIMATTER,
                 TiAcMeMaterialIds.Mekanism.NEUTRONITE,
                 TiAcMeMaterialIds.Thermal.ACTIVATED_CHROMATIC_STEEL,
                 TiAcMeMaterialIds.Mekanism.PROTOCITE,
-                TiAcMeMaterials.ANTI_NEUTRONIUM.getMaterialId()
+                TiAcMeMaterialIds.IRIDIUM,
+                TiAcMeMaterialIds.VOLTAIC_CRYSTAL
         );
+        for (var obj:TiAcMeMaterials.MATERIALS.getEntryMap().values()){
+            if (obj.getMaterialInfo()!=null&&obj.getMaterialInfo().getTier()>=5)
+                appender.addOptionalTag(obj.getMaterialId());
+        }
         this.tag(TinkerTags.Materials.NETHER).add(TiAcMeMaterialIds.ANTIMONY,TiAcMeMaterialIds.STIBNITE,TiAcMeMaterialIds.BLAZE_NETHERITE);
     }
 

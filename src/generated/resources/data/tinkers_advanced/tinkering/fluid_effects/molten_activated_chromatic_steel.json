@@ -58,7 +58,7 @@
       "type": "tconstruct:conditional",
       "effect": {
         "type": "tconstruct:damage",
-        "damage": 4.0,
+        "damage": 6.0,
         "damage_type": {
           "melee": "tconstruct:fluid_fire_melee",
           "ranged": "tconstruct:fluid_fire_ranged"
@@ -73,13 +73,45 @@
       "type": "tconstruct:conditional",
       "effect": {
         "type": "tconstruct:damage",
-        "damage": 4.0,
+        "damage": 6.0,
         "damage_type": {
           "melee": "tconstruct:fluid_cold_melee",
           "ranged": "tconstruct:fluid_cold_ranged"
         }
       },
       "target": "mantle:can_freeze"
+    },
+    {
+      "type": "tconstruct:damage",
+      "damage": 6.0,
+      "damage_type": {
+        "melee": "tconstruct:explosion_melee",
+        "ranged": "tconstruct:explosion_ranged"
+      }
+    },
+    {
+      "type": "tconstruct:damage",
+      "damage": 6.0,
+      "damage_type": {
+        "melee": "tconstruct:fluid_impact_melee",
+        "ranged": "tconstruct:fluid_impact_ranged"
+      }
+    },
+    {
+      "type": "tconstruct:damage",
+      "damage": 6.0,
+      "damage_type": {
+        "melee": "tconstruct:fluid_magic_melee",
+        "ranged": "tconstruct:fluid_magic_ranged"
+      }
+    },
+    {
+      "type": "tconstruct:damage",
+      "damage": 6.0,
+      "damage_type": {
+        "melee": "tconstruct:fluid_spike_melee",
+        "ranged": "tconstruct:fluid_spike_ranged"
+      }
     },
     {
       "type": "tconstruct:mob_effect",
@@ -104,7 +136,7 @@
     }
   ],
   "fluid": {
-    "amount": 10,
+    "amount": 5,
     "fluid": "tinkers_advanced:molten_activated_chromatic_steel"
   }
 }
