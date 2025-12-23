@@ -41,38 +41,40 @@ public class TiAcMeFluids {
     public static final FluidDeferredRegister THERMAL_FLUIDS = new FluidDeferredRegister(TinkersAdvanced.MODID);
     public static final FluidDeferredRegister IF_FLUIDS = new FluidDeferredRegister(TinkersAdvanced.MODID);
     public static final FluidDeferredRegister CREATE_UTILITIES_FLUIDS = new FluidDeferredRegister(TinkersAdvanced.MODID);
-    protected static Map<FluidObject<ForgeFlowingFluid>,Boolean> FLUID_MAP = new HashMap<>();
+    protected static Map<FluidObject<?>,Boolean> FLUID_MAP = new HashMap<>();
     public static Map<FluidObject<?>,String> FLUID_MODID_MAP = new HashMap<>();
     public static Map<FluidObject<?>,Boolean> FLUID_ORIGINAL_MAP = new HashMap<>();
-    public static Set<FluidObject<ForgeFlowingFluid>> getFluids(){
+    public static Set<FluidObject<?>> getFluids(){
         return FLUID_MAP.keySet();
     }
-    public static Map<FluidObject<ForgeFlowingFluid>,Boolean> getFluidMap(){
+    public static Map<FluidObject<?>,Boolean> getFluidMap(){
         return FLUID_MAP;
     }
-    private static FluidObject<ForgeFlowingFluid> registerHotBurning(String compatModId,boolean isOriginal,FluidDeferredRegister register,String name,int temp,int lightLevel,int burnTime,float damage,boolean gas){
-        FluidObject<ForgeFlowingFluid> object = register.register(name).type(hot(name,temp,gas)).bucket().block(createBurning(MapColor.COLOR_GRAY,lightLevel,burnTime,damage)).commonTag().flowing();
+    private static FluidObject<?> registerHotBurning(String compatModId,boolean isOriginal,FluidDeferredRegister register,String name,int temp,int lightLevel,int burnTime,float damage,boolean gas){
+        var builder = register.register(name).type(hot(name,temp,gas)).bucket().block(createBurning(MapColor.COLOR_GRAY,lightLevel,burnTime,damage)).commonTag();
+        var object = gas?builder.invertedFlowing():builder.flowing();
         FLUID_MAP.put(object,gas);
         FLUID_MODID_MAP.put(object,compatModId);
         FLUID_ORIGINAL_MAP.put(object,isOriginal);
         return object;
     }
-    private static FluidObject<ForgeFlowingFluid> registerFluid(String compatModId,boolean isOriginal,FluidDeferredRegister register, String name,int temp, Function<Supplier<? extends FlowingFluid>, LiquidBlock> blockFunction, boolean gas){
-        FluidObject<ForgeFlowingFluid> object = register.register(name).type(hot(name,temp,gas)).bucket().block(blockFunction).commonTag().flowing();
+    private static FluidObject<?> registerFluid(String compatModId,boolean isOriginal,FluidDeferredRegister register, String name,int temp, Function<Supplier<? extends FlowingFluid>, LiquidBlock> blockFunction, boolean gas){
+        var builder = register.register(name).type(hot(name,temp,gas)).bucket().block(blockFunction).commonTag();
+        var object = gas?builder.invertedFlowing():builder.flowing();
         FLUID_MAP.put(object,gas);
         FLUID_MODID_MAP.put(object,compatModId);
         FLUID_ORIGINAL_MAP.put(object,isOriginal);
         return object;
     }
 
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_BISMUTH = registerHotBurning(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"molten_bismuth",770,1,4,0.5f,false);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_BLAZE_NETHERITE = registerHotBurning(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"molten_blaze_netherite",1920,15,1920,9f,false);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_IRIDIUM = registerHotBurning(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"molten_iridium",1375,10,20,3f,false);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_ANTIMONY = registerHotBurning(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"molten_antimony",970,5,16,2f,false);
+    public static final FluidObject<?> MOLTEN_BISMUTH = registerHotBurning(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"molten_bismuth",770,1,4,0.5f,false);
+    public static final FluidObject<?> MOLTEN_BLAZE_NETHERITE = registerHotBurning(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"molten_blaze_netherite",1920,15,1920,9f,false);
+    public static final FluidObject<?> MOLTEN_IRIDIUM = registerHotBurning(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"molten_iridium",1375,10,20,3f,false);
+    public static final FluidObject<?> MOLTEN_ANTIMONY = registerHotBurning(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"molten_antimony",970,5,16,2f,false);
 
 
-    public static final FluidObject<ForgeFlowingFluid> OVER_HEATED_LAVA = registerHotBurning(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"over_heated_lava",2300,15,200,6.5f,false);
-    public static final FluidObject<ForgeFlowingFluid> GASEOUS_LAVA = registerFluid(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"gaseous_lava",3300, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
+    public static final FluidObject<?> OVER_HEATED_LAVA = registerHotBurning(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"over_heated_lava",2300,15,200,6.5f,false);
+    public static final FluidObject<?> GASEOUS_LAVA = registerFluid(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"gaseous_lava",3300, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
         @Override
         public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
             if (entity instanceof LivingEntity living) {
@@ -81,7 +83,7 @@ public class TiAcMeFluids {
             }
         }
     },true);
-    public static final FluidObject<ForgeFlowingFluid> PLASMATIC_LAVA = registerFluid(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"plasmatic_lava",4300, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
+    public static final FluidObject<?> PLASMATIC_LAVA = registerFluid(TinkersAdvanced.MODID,true,TiAcCrModule.FLUIDS,"plasmatic_lava",4300, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
         @Override
         public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
             if (entity instanceof LivingEntity living) {
@@ -92,8 +94,8 @@ public class TiAcMeFluids {
     },true);
 
 
-    public static final FluidObject<ForgeFlowingFluid> PYROTHEUM = registerHotBurning("thermal",true,THERMAL_FLUIDS,"pyrotheum",3273,15,2560,15f,false);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_BASALZ_SIGNALUM = registerFluid("thermal",true,THERMAL_FLUIDS,"molten_basalz_signalum",950, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 7), 200, 5){
+    public static final FluidObject<?> PYROTHEUM = registerHotBurning("thermal",true,THERMAL_FLUIDS,"pyrotheum",3273,15,2560,15f,false);
+    public static final FluidObject<?> MOLTEN_BASALZ_SIGNALUM = registerFluid("thermal",true,THERMAL_FLUIDS,"molten_basalz_signalum",950, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 7), 200, 5){
         @Override
         public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
             super.entityInside(state, level, pos, entity);
@@ -102,7 +104,7 @@ public class TiAcMeFluids {
             }
         }
     },false);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_BILTZ_LUMIUM = registerFluid("thermal",true,THERMAL_FLUIDS,"molten_biltz_lumium",1440, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 5){
+    public static final FluidObject<?> MOLTEN_BILTZ_LUMIUM = registerFluid("thermal",true,THERMAL_FLUIDS,"molten_biltz_lumium",1440, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 5){
         @Override
         public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
             super.entityInside(state, level, pos, entity);
@@ -111,7 +113,7 @@ public class TiAcMeFluids {
             }
         }
     },false);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_BLIZZ_ENDERIUM = registerFluid("thermal",true,THERMAL_FLUIDS,"molten_blizz_enderium",0, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 0, 0){
+    public static final FluidObject<?> MOLTEN_BLIZZ_ENDERIUM = registerFluid("thermal",true,THERMAL_FLUIDS,"molten_blizz_enderium",0, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 0, 0){
         @Override
         public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
             if (entity instanceof LivingEntity living) {
@@ -119,7 +121,7 @@ public class TiAcMeFluids {
             }
         }
     },false);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_ACTIVATED_CHROMATIC_STEEL = registerFluid("thermal",true,THERMAL_FLUIDS,"molten_activated_chromatic_steel",2440, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 0, 0){
+    public static final FluidObject<?> MOLTEN_ACTIVATED_CHROMATIC_STEEL = registerFluid("thermal",true,THERMAL_FLUIDS,"molten_activated_chromatic_steel",2440, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 0, 0){
         @Override
         public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
             if (entity instanceof LivingEntity living) {
@@ -133,7 +135,7 @@ public class TiAcMeFluids {
     },false);
 
 
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_IRRADIUM = registerFluid("mekanism",true,MEK_FLUIDS,"molten_irradium",2250, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
+    public static final FluidObject<?> MOLTEN_IRRADIUM = registerFluid("mekanism",true,MEK_FLUIDS,"molten_irradium",2250, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
         @Override
         public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
             super.entityInside(state, level, pos, entity);
@@ -142,7 +144,7 @@ public class TiAcMeFluids {
             }
         }
     },false);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_OSGLOGLAS = registerFluid("mekanism",true,MEK_FLUIDS,"molten_osgloglas",1750, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
+    public static final FluidObject<?> MOLTEN_OSGLOGLAS = registerFluid("mekanism",true,MEK_FLUIDS,"molten_osgloglas",1750, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
         @Override
         public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
             super.entityInside(state, level, pos, entity);
@@ -151,8 +153,8 @@ public class TiAcMeFluids {
             }
         }
     },false);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_ANTIMATTER = registerHotBurning("mekanism",false,MEK_FLUIDS,"molten_antimatter",2980,15,16384,17.5f,true);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_NEUTRONITE = registerFluid("mekanism",true,MEK_FLUIDS,"molten_neutronite",9973, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 262144, 15){
+    public static final FluidObject<?> MOLTEN_ANTIMATTER = registerHotBurning("mekanism",false,MEK_FLUIDS,"molten_antimatter",2980,15,16384,17.5f,true);
+    public static final FluidObject<?> MOLTEN_NEUTRONITE = registerFluid("mekanism",true,MEK_FLUIDS,"molten_neutronite",9973, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 262144, 15){
         @Override
         public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
             super.entityInside(state, level, pos, entity);
@@ -163,7 +165,7 @@ public class TiAcMeFluids {
             }
         }
     },false);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_PROTOCITE = registerFluid("mekanism",true,MEK_FLUIDS,"molten_protocite",2250, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
+    public static final FluidObject<?> MOLTEN_PROTOCITE = registerFluid("mekanism",true,MEK_FLUIDS,"molten_protocite",2250, supplier -> new BurningLiquidBlock(supplier, FluidDeferredRegister.createProperties(MapColor.COLOR_GRAY, 15), 200, 8){
         @Override
         public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
             super.entityInside(state, level, pos, entity);
@@ -172,13 +174,13 @@ public class TiAcMeFluids {
             }
         }
     },false);
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_NUTRITIVE_SLIMESTEEL = registerHotBurning("mekanism",true,MEK_FLUIDS,"molten_nutritive_slime",980,7,19,3f,false);
+    public static final FluidObject<?> MOLTEN_NUTRITIVE_SLIMESTEEL = registerHotBurning("mekanism",true,MEK_FLUIDS,"molten_nutritive_slime",980,7,19,3f,false);
 
 
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_PINK_SLIME = registerHotBurning("industrialforegoing",false,IF_FLUIDS,"molten_pink_slime",990,7,20,3f,false);
+    public static final FluidObject<?> MOLTEN_PINK_SLIME = registerHotBurning("industrialforegoing",false,IF_FLUIDS,"molten_pink_slime",990,7,20,3f,false);
 
 
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_VOID_STEEL = registerHotBurning("createutilities",false,CREATE_UTILITIES_FLUIDS,"molten_void_steel",1400,15,100,3f,false);
+    public static final FluidObject<?> MOLTEN_VOID_STEEL = registerHotBurning("createutilities",false,CREATE_UTILITIES_FLUIDS,"molten_void_steel",1400,15,100,3f,false);
 
 
     private static FluidType.Properties hot(String name,int Temp,boolean gas) {

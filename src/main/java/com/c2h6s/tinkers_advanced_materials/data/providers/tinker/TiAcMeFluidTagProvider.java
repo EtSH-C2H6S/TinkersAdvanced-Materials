@@ -45,7 +45,10 @@ public class TiAcMeFluidTagProvider extends FluidTagsProvider {
                 .filter(object -> object.getFluidObject()!=null && object.getRecipeInfo()!=null &&
                         object.getRecipeInfo().getCastItemOptional().stream()
                                 .anyMatch(castItemObject -> castItemObject == TinkerSmeltery.ingotCast))
-                .forEach(object -> metalTags.addOptional(object.getFluidObject().getId()));
+                .forEach(object ->{
+                    metalTags.addOptional(object.getFluidObject().getId());
+                    tag(object.getFluidObject().getCommonTag()).addOptional(object.getFluidObject().getId());
+                });
 
         tag(TiAcMeTagkeys.Fluids.MOLTEN_ANTIMATTER).addOptional(TiAcMeFluids.MOLTEN_ANTIMATTER.getId());
         tag(TiAcMeTagkeys.Fluids.MOLTEN_VOID_STEEL).addOptional(TiAcMeFluids.MOLTEN_VOID_STEEL.getId());

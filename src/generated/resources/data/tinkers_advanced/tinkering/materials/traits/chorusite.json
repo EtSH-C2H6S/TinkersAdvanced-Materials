@@ -2,7 +2,7 @@
   "default": [
     {
       "level": 1,
-      "name": "tconstruct:enderclearance"
+      "name": "tconstruct:enderference"
     },
     {
       "level": 1,
@@ -17,7 +17,7 @@
       },
       {
         "level": 1,
-        "name": "tconstruct:enderclearance"
+        "name": "tinkers_advanced:metamorphium"
       }
     ]
   }

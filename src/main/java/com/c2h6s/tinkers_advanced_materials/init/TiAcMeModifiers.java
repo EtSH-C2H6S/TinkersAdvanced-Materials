@@ -11,6 +11,7 @@ import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.base.SimpleEf
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.base.SlotAddingModifier;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.combat.*;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.common.*;
+import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.compat.eio.CapacitorCapable;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.compat.mekanism.*;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.compat.pnc.*;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.compat.thermal.*;
@@ -34,6 +35,8 @@ public class TiAcMeModifiers {
     public static final ModifierDeferredRegister PNC_MODIFIERS = ModifierDeferredRegister.create(TinkersAdvanced.MODID);
     public static final ModifierDeferredRegister THERMAL_MODIFIERS = ModifierDeferredRegister.create(TinkersAdvanced.MODID);
     public static final ModifierDeferredRegister AE_MODIFIERS = ModifierDeferredRegister.create(TinkersAdvanced.MODID);
+    public static final ModifierDeferredRegister TIACT_MODIFIERS = ModifierDeferredRegister.create(TinkersAdvanced.MODID);
+    public static final ModifierDeferredRegister EIO_MODIFIERS = ModifierDeferredRegister.create(TinkersAdvanced.MODID);
 
     //无联动属性
     //注：只要没有用联动模组的方法或类就算无联动
@@ -95,6 +98,8 @@ public class TiAcMeModifiers {
     public static final StaticModifier<StarHeal> STAR_HEAL = TiAcCrModule.MODIFIERS.register("star_heal",StarHeal::new);
     public static final StaticModifier<LuminousPiercer> LUMINOUS_PIERCER = TiAcCrModule.MODIFIERS.register("luminous_piercer",LuminousPiercer::new);
     public static final StaticModifier<Slimeful> SLIMEFUL = TiAcCrModule.MODIFIERS.register("slimeful",Slimeful::new);
+    public static final StaticModifier<Semiconductor> SEMI_CONDUCTOR = TiAcCrModule.MODIFIERS.register("semiconductor",Semiconductor::new);
+    public static final StaticModifier<Photoelectric> PHOTOELECTRIC = TiAcCrModule.MODIFIERS.register("photoelectric",Photoelectric::new);
 
 
 
@@ -125,5 +130,14 @@ public class TiAcMeModifiers {
 
 
     //AE联动属性
+
+
+
+    //TiAcT联动属性
+
+
+
+    //EIO联动属性
+    public static final StaticModifier<CapacitorCapable> CAPACITOR_CAPABLE = THERMAL_MODIFIERS.register("capacitor_capable", CapacitorCapable::new);
 
 }

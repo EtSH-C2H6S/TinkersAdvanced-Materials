@@ -3,6 +3,10 @@
     {
       "id": "tinkers_advanced:molten_melodic_alloy",
       "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_melodic_alloy",
+      "required": false
     }
   ]
 }

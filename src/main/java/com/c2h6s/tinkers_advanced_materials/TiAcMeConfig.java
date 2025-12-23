@@ -144,6 +144,15 @@ public class TiAcMeConfig {
         public final ForgeConfigSpec.DoubleValue AERIAL_PROTECTION_DAMAGE_BLOCK_AFTER_ARMOR;
         public final ForgeConfigSpec.DoubleValue AERIAL_PROTECTION_BYPASS_ARMOR_REDUCTION;
 
+        public final ForgeConfigSpec.DoubleValue SEMI_CONDUCTOR_DAMAGE_MODIFICATION;
+
+        public final ForgeConfigSpec.IntValue PHOTOELECTRIC_FE_PER_BRIGHT;
+
+        public final ForgeConfigSpec.DoubleValue CAPACITOR_CAPABLE_CAPACITY_STATS_MUL;
+        public final ForgeConfigSpec.DoubleValue CAPACITOR_CAPABLE_GENERAL_STATS_MUL;
+        public final ForgeConfigSpec.DoubleValue CAPACITOR_CAPABLE_POWER_STATS_MUL;
+        public final ForgeConfigSpec.DoubleValue CAPACITOR_CAPABLE_EFFICIENCY_STAT_MUL;
+
 
         public final ForgeConfigSpec.BooleanValue ALLOW_BISMUTHINITE;
         public final ForgeConfigSpec.BooleanValue ALLOW_STIBNITE;
@@ -519,6 +528,30 @@ public class TiAcMeConfig {
             this.AERIAL_PROTECTION_MAX_PROTECTION_LEVEL = builder
                     .comment("压缩空气防护的最大保护，默认每级2（注：匠魂每级保护提供4%伤害减免，此词条的保护独立于匠魂的其它保护）。")
                     .defineInRange("AerialProtectionMaxProtectionLevel",2,0.25,25);
+
+            builder.comment("Semiconductor").comment("半导体");
+            this.SEMI_CONDUCTOR_DAMAGE_MODIFICATION = builder
+                    .comment("半导体词条的伤害修正量，默认每级0.25（25%），越高则造成越高的暴击伤害与越低的非暴击伤害。")
+                    .defineInRange("SemiconductorDamageModification",0.25,0.01,Float.MAX_VALUE);
+
+            builder.comment("Photoelectric").comment("光电效应");
+            this.PHOTOELECTRIC_FE_PER_BRIGHT = builder
+                    .comment("光电效应每级光照带来的产能，默认2FE/t。")
+                    .defineInRange("PhotoElectricFEPerTickEachLightLevel",2,0,Integer.MAX_VALUE);
+
+            builder.comment("Capacitor Capability").comment("可容电容");
+            this.CAPACITOR_CAPABLE_CAPACITY_STATS_MUL = builder
+                    .comment("可容电容对容量属性（默认包括能量、流体、PnC空气）的增幅的定性乘数，默认1。")
+                    .defineInRange("CapacitorCapabilityCapacityStatMultiplier",1,0.0,Float.MAX_VALUE);
+            this.CAPACITOR_CAPABLE_EFFICIENCY_STAT_MUL = builder
+                    .comment("可容电容对效率属性（默认包括TiAcT流体效率）的增幅的定性乘数，默认0.1。")
+                    .defineInRange("CapacitorCapabilityEfficiencyStatMultiplier",0.1,0.0,Float.MAX_VALUE);
+            this.CAPACITOR_CAPABLE_GENERAL_STATS_MUL = builder
+                    .comment("可容电容对常规属性（默认包括攻击速度、攻击伤害、拉弓速度、弹射物速度、耐久、护甲、护甲韧性）的增幅的定性乘数，默认0.1。")
+                    .defineInRange("CapacitorCapabilityGeneralStatMultiplier",0.1,0.0,Float.MAX_VALUE);
+            this.CAPACITOR_CAPABLE_POWER_STATS_MUL = builder
+                    .comment("可容电容对功率属性（默认包括TiAcT范围倍率、TiAcT产出倍率）的增幅的定性乘数，默认1。")
+                    .defineInRange("CapacitorCapabilityPowerStatMultiplier",1,0.0,Float.MAX_VALUE);
 
 
             builder.comment("Generator Modules").comment("能量模块类强化");

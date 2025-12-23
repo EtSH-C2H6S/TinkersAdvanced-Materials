@@ -82,7 +82,11 @@
     "night_slayer": "#3F425E",
     "luminous_piercer": "#E3E7FF",
     "star_heal": "#FAFCA6",
-    "slimeful": "#7AEB8A"
+    "slimeful": "#7AEB8A",
+    "capacitor_capable": "#88F788",
+    "photoelectric": "#F6F787",
+    "semiconductor": "#635A52",
+    "redstone_plated": "#F65B5B"
   },
   "material.tinkers_advanced": {
     "bismuth": "#83798A",
@@ -127,6 +131,8 @@
     "warpedite": "#57CC88",
     "pink_slime_metal": "#E5C7FF",
     "shadow_steel": "#4c4760",
-    "slimeite": "#7AEB8A"
+    "slimeite": "#7AEB8A",
+    "redstone_alloy": "#F65B5B",
+    "copper_alloy": "#F2BA4C"
   }
 }

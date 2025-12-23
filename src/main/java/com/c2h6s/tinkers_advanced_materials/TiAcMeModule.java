@@ -35,5 +35,11 @@ public class TiAcMeModule {
         if (ModList.get().isLoaded("createutilities")){
             TiAcMeFluids.CREATE_UTILITIES_FLUIDS.register(modEventBus);
         }
+        if (ModList.get().isLoaded("tinkers_advanced_tools")){
+            TiAcMeModifiers.TIACT_MODIFIERS.register(modEventBus);
+        }
+        if (ModList.get().isLoaded("enderio")){
+            TiAcMeModifiers.EIO_MODIFIERS.register(modEventBus);
+        }
     }
 }

@@ -319,6 +319,22 @@
   "modifier.tinkers_advanced.slimeful.flavor": "Full of SLIME!!!",
   "modifier.tinkers_advanced.slimeful.description": "Drops extra slime ball on use.",
 
+  "modifier.tinkers_advanced.semiconductor": "Semiconductor",
+  "modifier.tinkers_advanced.semiconductor.flavor": "Conducts half!",
+  "modifier.tinkers_advanced.semiconductor.description": "Increase critical damage and decrease non-critical damage.",
+
+  "modifier.tinkers_advanced.photoelectric": "Photoelectric",
+  "modifier.tinkers_advanced.photoelectric.flavor": "Silicon-based plants?",
+  "modifier.tinkers_advanced.photoelectric.description": "Generate energy when is bright. Needs energy storage to work.",
+
+  "modifier.tinkers_advanced.capacitor_capable": "Capacitor Capable",
+  "modifier.tinkers_advanced.capacitor_capable.flavor": "It \"capacits\" capacitor.",
+  "modifier.tinkers_advanced.capacitor_capable.description": "R-Click tool with a capacitor to install it, improve some stats. R-Click with a yeti wrench to uninstall.",
+
+  "modifier.tinkers_advanced.redstone_plated": "Redstone Plated",
+  "modifier.tinkers_advanced.redstone_plated.flavor": "Alloying with redstone.",
+  "modifier.tinkers_advanced.redstone_plated.description": "Allows repairing with redstone alloy.",
+
 
 
   "material.tinkers_advanced.bismuth": "Bismuth",
@@ -468,6 +484,9 @@
   "material.tinkers_advanced.refined_radiance": "Refined Radiance",
   "material.tinkers_advanced.chorusite": "Chorusite",
   "material.tinkers_advanced.slimeite": "Slimeite",
+
+  "material.tinkers_advanced.copper_alloy": "Copper Alloy",
+  "material.tinkers_advanced.redstone_alloy": "Redstone Alloy",
 
 
   "item.tinkers_advanced.bismuth_ingot": "Bismuth Ingot",
@@ -619,6 +638,12 @@
   "fluid.tinkers_advanced.molten_stellar_alloy": "Molten Stellar Alloy",
   "item.tinkers_advanced.molten_stellar_alloy_bucket": "Molten Stellar Alloy Bucket",
 
+  "fluid.tinkers_advanced.molten_redstone_alloy": "Molten Redstone Alloy",
+  "item.tinkers_advanced.molten_redstone_alloy_bucket": "Molten Redstone Alloy Bucket",
+
+  "fluid.tinkers_advanced.molten_copper_alloy": "Molten Copper Alloy",
+  "item.tinkers_advanced.molten_copper_alloy_bucket": "Molten Copper Alloy Bucket",
+
 
 
   "effect.tinkers_advanced.tetanus": "Tetanus",
@@ -658,6 +683,11 @@
 
   "tooltip.tinkers_advanced.modifiers.shaping": "Current slot bonus :",
   "tooltip.tinkers_advanced.modifiers.frosted_charge": "Frost Charge: ",
+
+  "tooltip.tinkers_advanced.modifiers.capacitor_capable.energy_use": "Capacitor general bonus",
+  "tooltip.tinkers_advanced.modifiers.capacitor_capable.energy_capacity": "Capacitor capacity bonus",
+  "tooltip.tinkers_advanced.modifiers.capacitor_capable.burning_energy_generation": "Capacitor power bonus",
+  "tooltip.tinkers_advanced.modifiers.capacitor_capable.fuel_efficiency": "Capacitor efficiency bonus",
 
 
 

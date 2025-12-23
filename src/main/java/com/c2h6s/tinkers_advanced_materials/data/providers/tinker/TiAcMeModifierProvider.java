@@ -2,6 +2,7 @@ package com.c2h6s.tinkers_advanced_materials.data.providers.tinker;
 
 import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import com.c2h6s.tinkers_advanced.core.data.condition.CompatConfigCondition;
+import com.c2h6s.tinkers_advanced_materials.init.TiAcMeMaterials;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.effect.MobEffects;
@@ -86,6 +87,8 @@ public class TiAcMeModifierProvider extends AbstractModifierProvider {
                                 DamageSourcePredicate.tag(DamageTypeTags.IS_FIRE),
                                 DamageSourcePredicate.tag(DamageTypeTags.IS_EXPLOSION),
                                 DamageSourcePredicate.tag(DamageTypeTags.IS_LIGHTNING))).build());
+        buildModifier(REDSTONE_PLATED).levelDisplay(ModifierLevelDisplay.NO_LEVELS)
+                .addModule(MaterialRepairModule.material(TiAcMeMaterials.REDSTONE_ALLOY.getMaterialId()).constant(200));
 
     }
     public static ICondition modLoaded(String modId, boolean isOriginal){
@@ -106,6 +109,10 @@ public class TiAcMeModifierProvider extends AbstractModifierProvider {
         public static final ModifierId RAINBOW_KIT = new ModifierId(TinkersAdvanced.getLocation("rainbow_kit"));
         public static final ModifierId RESPIRATION_ENHANCED = new ModifierId(TinkersAdvanced.getLocation("respiration_enhanced"));
         public static final ModifierId NETHERSTAR_BLESSING = new ModifierId(TinkersAdvanced.getLocation("netherstar_blessing"));
+        public static final ModifierId REDSTONE_PLATED = new ModifierId(TinkersAdvanced.getLocation("redstone_plated"));
+        public static final ModifierId ATOM_GRADE = new ModifierId(TinkersAdvanced.getLocation("atom_grade"));
+        public static final ModifierId EDGING_TECHNOLOGY = new ModifierId(TinkersAdvanced.getLocation("edging_technology"));
+        public static final ModifierId QUANTUM_TECHNOLOGY = new ModifierId(TinkersAdvanced.getLocation("quantum_technology"));
     }
     public static class DataKeys{
         public static final TinkerDataCapability.TinkerDataKey<Integer> KEY_RAINBOW_KIT = TinkerDataCapability.TinkerDataKey.of(TinkersAdvanced.getLocation("rainbow_kit"));

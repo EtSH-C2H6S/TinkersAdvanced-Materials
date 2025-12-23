@@ -17,7 +17,7 @@ public class TiAcMeModifierTagProvider extends AbstractModifierTagProvider {
     @Override
     protected void addTags() {
         this.tag(TinkerTags.Modifiers.OVERSLIME_FRIEND)
-                .addOptionalTag(
+                .addOptional(
                         RETURN_TO_SLIME.getId(),
                         NUTRITIVE_SLIME.getId(),
                         NEUTRONIUM_ASSEMBLE.getId(),
@@ -25,14 +25,31 @@ public class TiAcMeModifierTagProvider extends AbstractModifierTagProvider {
                         ANNIHILATING_SLIME_ARMOR.getId()
                 );
         this.tag(TinkerTags.Modifiers.SLOTLESS)
-                .addOptionalTag(
+                .addOptional(
                         THERMAL_FOUNDATION,
                         BASALZ_ENHANCE,
                         BLITZ_ENHANCE,
-                        BLIZZ_ENHANCE
+                        BLIZZ_ENHANCE,
+                        TiAcMeModifierProvider.ModifierIds.ATOM_GRADE,
+                        EDGING_TECHNOLOGY,
+                        QUANTUM_TECHNOLOGY
                 );
+        this.tag(TinkerTags.Modifiers.BONUS_SLOTLESS).addOptional(
+                THERMAL_FOUNDATION,
+                BASALZ_ENHANCE,
+                BLITZ_ENHANCE,
+                BLIZZ_ENHANCE,
+                TiAcMeModifierProvider.ModifierIds.ATOM_GRADE,
+                EDGING_TECHNOLOGY,
+                QUANTUM_TECHNOLOGY
+        );
         this.tag(TinkerTags.Modifiers.UPGRADES)
-                .addOptionalTag(
+                .addOptional(
+                        OBSIDIANITE,
+                        RAINBOW_KIT
+                );
+        this.tag(TinkerTags.Modifiers.GENERAL_UPGRADES)
+                .addOptional(
                         OBSIDIANITE,
                         RAINBOW_KIT
                 );

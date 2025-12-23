@@ -8,6 +8,7 @@ import com.c2h6s.tinkers_advanced.core.content.event.TiAcLoadRegistryClassEvent;
 import com.c2h6s.tinkers_advanced.core.library.registry.SimpleMaterialObject;
 import com.c2h6s.tinkers_advanced.core.library.registry.SimpleMaterialWrappedRegister;
 import com.c2h6s.tinkers_advanced.core.content.tool.tinkering.materialStat.FluxCoreMaterialStat;
+import com.c2h6s.tinkers_advanced_materials.data.TiAcMeMaterialIds;
 import com.c2h6s.tinkers_advanced_materials.data.providers.tinker.TiAcMeModifierProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -29,7 +30,6 @@ import net.minecraftforge.event.entity.EntityTeleportEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fml.common.Mod;
-import slimeknights.mantle.block.fluid.BurningLiquidBlock;
 import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
 import slimeknights.tconstruct.library.client.materials.MaterialRenderInfo;
@@ -88,12 +88,12 @@ public class TiAcMeMaterials {
                     "metal"
             },0xFF270053,15)).buildMaterialSprite().ranged().meleeHarvest().armor().fallbacks("metal").colorMapper(GreyToColorMapping.builder()
                     .addARGB(0,0xFF000000)
-                    .addARGB(63,0xFFA500FF)
-                    .addARGB(102,0xFFCD49FF)
-                    .addARGB(140,0xFF000000)
-                    .addARGB(178,0xFF10002B)
-                    .addARGB(216,0xFF210047)
-                    .addARGB(255,0xFF390063).build()).build().build().setFluidCustomTexture();
+                    .addARGB(63,0xFF6000C0)
+                    .addARGB(102,0xFF8000C0)
+                    .addARGB(140,0xFF0B0020)
+                    .addARGB(178,0xFF200040)
+                    .addARGB(216,0xFF400060)
+                    .addARGB(255,0xFF550080).build()).build().build().setFluidCustomTexture();
 
     public static final SimpleMaterialObject ANTI_NEUTRONIUM = MATERIALS.buildMaterial("anti_neutronium")
             .registerItem(()->new Item(new Item.Properties().rarity(Rarity.EPIC))).setItemIngot()
@@ -139,7 +139,7 @@ public class TiAcMeMaterials {
                     new HeadMaterialStats(525,7f, Tiers.IRON,2.9f),
                     new FluxCoreMaterialStat(10.9f,1.6f),
                     StatlessMaterialStats.MAILLE)
-            .setArmorBuilder(armor(24,1f,4f,3f,1f)
+            .setArmorBuilder(armor(30,1f,4f,3f,1f)
                     .toughness(2)).setAllowShield().build().buildModifiers()
             .buildDefault(entry(TiAcMeModifiers.SUPER_CONDUCT.getId()))
             .buildPerStat(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.SENSOR_INTERRUPT.getId())).build()
@@ -163,7 +163,7 @@ public class TiAcMeMaterials {
                     new FluxCoreMaterialStat(0.4f,5.6f),
                     new LimbMaterialStats(798,0.25f,-0.15f,-0.02f),
                     StatlessMaterialStats.MAILLE)
-            .setArmorBuilder(armor(20,1.5f,5f,4f,1.5f)
+            .setArmorBuilder(armor(37,1.5f,5f,4f,1.5f)
                     .toughness(1)).setAllowShield().build().buildModifiers()
             .buildDefault(entry(new ModifierId("etstlib:static_discharge")))
             .buildPerStat(MaterialRegistry.ARMOR,entry(ModifierIds.fortified)).build()
@@ -187,7 +187,7 @@ public class TiAcMeMaterials {
                     new FluxCoreMaterialStat(5.4f,4.6f),
                     new LimbMaterialStats(1890,0.1f,0.1f,0.05f),
                     StatlessMaterialStats.MAILLE)
-            .setArmorBuilder(armor(40,2f,7f,5f,2f)
+            .setArmorBuilder(armor(68,2f,7f,5f,2f)
                     .toughness(4).knockbackResistance(0.05f)).setAllowShield().build().buildModifiers()
             .buildDefault(entry(TiAcMeModifiers.METAMORPHIUM.getId()),entry(TinkerModifiers.enderference.getId()))
             .buildPerStat(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.METAMORPHIUM.getId()),entry(TiAcMeModifiers.VOID_DODGING.getId())).build()
@@ -240,7 +240,7 @@ public class TiAcMeMaterials {
                     .toughness(8)).setAllowShield().build().buildModifiers()
             .buildDefault(entry(TiAcMeModifiers.LIFE_MELODY.getId()),entry(TiAcMeModifiers.METAMORPHIUM.getId()),entry(TinkerModifiers.enderference.getId()))
             .buildPerStat(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.DEFENSE_MELODY.getId()),entry(TiAcMeModifiers.METAMORPHIUM.getId()),entry(TiAcMeModifiers.ENDER_SUPRESS.getId())).build()
-            .build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
+            .setExcludeFromAncients().build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
                     0xFFFAF8D7,10))
             .buildMaterialSprite().armor().meleeHarvest().ranged().fallbacks("metal").colorMapper(GreyToColorMapping.builder()
                     .addARGB(0,0xFF000000)
@@ -265,7 +265,7 @@ public class TiAcMeMaterials {
                     .toughness(12).knockbackResistance(0.1f)).setAllowShield().build().buildModifiers()
             .buildDefault(entry(TiAcMeModifiers.STAR_GAZING.getId()),entry(TiAcMeModifiers.METAMORPHIUM.getId()),entry(EtSTLibModifier.EXTRA_DENSE.getId()))
             .buildPerStat(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.STAR_HEAL.getId()),entry(TiAcMeModifiers.METAMORPHIUM.getId()),entry(EtSTLibModifier.EXTRA_DENSE.getId())).build()
-            .build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
+            .setExcludeFromAncients().build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
                     0xFFFAFCA6,10))
             .buildMaterialSprite().armor().meleeHarvest().ranged().fallbacks("metal").colorMapper(GreyToColorMapping.builder()
                     .addARGB(0,0xFF000000)
@@ -318,7 +318,7 @@ public class TiAcMeMaterials {
                     new FluxCoreMaterialStat(3f,2.2f),
                     StatlessMaterialStats.MAILLE
             )
-            .setArmorBuilder(armor(34,2f,7f,5f,2f).toughness(6))
+            .setArmorBuilder(armor(48,2f,7f,5f,2f).toughness(6))
             .setAllowShield().build().buildModifiers()
             .buildDefault(entry(TiAcMeModifiers.BLAZING.getId())).build()
             .build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
@@ -342,7 +342,7 @@ public class TiAcMeMaterials {
                     StatlessMaterialStats.MAILLE,
                     StatlessMaterialStats.SHIELD_CORE
             )
-            .setArmorBuilder(armor(16,1.5f,6f,4f,1.5f))
+            .setArmorBuilder(armor(45,1.5f,6f,4f,1.5f))
             .setAllowShield().build().buildModifiers()
             .buildDefault(entry(ModifierIds.glowing),entry(ModifierIds.smite))
             .buildPerStat(MaterialRegistry.ARMOR,entry(TinkerModifiers.golden.getId()),entry(ModifierIds.glowing),entry(ModifierIds.consecrated))
@@ -419,7 +419,7 @@ public class TiAcMeMaterials {
             .setAllowShield().build().buildModifiers()
             .buildDefault(entry(TinkerModifiers.enderference.getId()),entry(TiAcMeModifiers.ENDER_BREATHE.getId()))
             .buildPerStat(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.ENDER_SUPRESS.getId()),entry(TiAcMeModifiers.METAMORPHIUM.getId())).build()
-            .build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
+            .setExcludeFromAncients().build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
                     0xFFd291bb,2)).build();
     public static final SimpleMaterialObject REFINED_RADIANCE = MATERIALS.buildMaterial("refined_radiance")
             .addCompatModId("rainbowcompound",false).setUnit()
@@ -436,7 +436,7 @@ public class TiAcMeMaterials {
             .setArmorBuilder(armor(256,3f,8f,6f,3f).knockbackResistance(0.05f).toughness(8))
             .setAllowShield().build().buildModifiers()
             .buildDefault(entry(TiAcMeModifiers.LUMINOUS_PIERCER.getId()),entry(ModifierIds.shiny)).build()
-            .build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
+            .setExcludeFromAncients().build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
                     0xFFF8E9FF,15)).build();
     public static final SimpleMaterialObject SHADOW_STEEL = MATERIALS.buildMaterial("shadow_steel")
             .addCompatModId("rainbowcompound",false).setUnit()
@@ -453,7 +453,7 @@ public class TiAcMeMaterials {
             .setArmorBuilder(armor(256,3f,8f,6f,3f).knockbackResistance(0.05f).toughness(8))
             .setAllowShield().build().buildModifiers()
             .buildDefault(entry(TiAcMeModifiers.NIGHT_SLAYER.getId())).build()
-            .build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
+            .setExcludeFromAncients().build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
                     0xFF4c4760,0)).build();
     public static final SimpleMaterialObject NETHERSTAR_ALLOY = MATERIALS.buildMaterial("netherstar_alloy")
             .addCompatModId("rainbowcompound",false).setUnit()
@@ -473,9 +473,47 @@ public class TiAcMeMaterials {
             .buildPerStat(MaterialRegistry.ARMOR,entry(TiAcMeModifierProvider.ModifierIds.NETHERSTAR_BLESSING),
                     entry(TiAcMeModifierProvider.ModifierIds.RAINBOW_KIT),
                     entry(ModifierIds.shiny)).build()
-            .build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
+            .setExcludeFromAncients().build().setRenderInfo(materialId -> getRenderInfo(materialId,new String[]{"metal"},
                     0xFFE5C7FF,15)).build();
 
+    //EIO联动
+    public static final SimpleMaterialObject COPPER_ALLOY = MATERIALS.buildMaterial("copper_alloy")
+            .addCompatModId("enderio",false).setUnit()
+            .registerBurningFluid(650,false,7,20,3)
+            .buildMaterial(2,false,ORDER_COMPAT,true)
+            .buildStats().setStats(
+                    StatlessMaterialStats.BINDING,
+                    new HandleMaterialStats(0.15f,0.05f,-0.05f,-0.05f),
+                    new HeadMaterialStats(650,6.75f, Tiers.IRON,2.0f),
+                    new GripMaterialStats(0.15f,0.01f,2f),
+                    new LimbMaterialStats(650,-0.05f,-0.05f,0.01f),
+                    new FluxCoreMaterialStat(1.4f,2.3f),
+                    StatlessMaterialStats.MAILLE
+            ).setArmorBuilder(armor(26,2,6,4,2)).setAllowShield().build()
+            .buildModifiers().buildDefault(entry(ModifierIds.maintained)).build().build().setRenderInfo(id ->
+                    getRenderInfo(id,new String[]{"metal"},
+                            0xFFF2BA4C,0)).build();
+    public static final SimpleMaterialObject REDSTONE_ALLOY = MATERIALS.buildMaterial("redstone_alloy")
+            .addCompatModId("enderio",false).setUnit()
+            .registerBurningFluid(500,false,7,20,3)
+            .buildMaterial(2,false,ORDER_COMPAT,true)
+            .buildStats().setStats(
+                    StatlessMaterialStats.BINDING,
+                    new HandleMaterialStats(-0.05f,0.15f,0.05f,-0.05f),
+                    new HeadMaterialStats(262,7.75f, Tiers.IRON,2.0f),
+                    new GripMaterialStats(0.15f,0.01f,2f),
+                    new FluxCoreMaterialStat(1.4f,2.3f),
+                    StatlessMaterialStats.MAILLE
+            ).setArmorBuilder(armor(26,2,6,4,2)).setAllowShield().build()
+            .buildModifiers().buildDefault(entry(TiAcMeModifierProvider.ModifierIds.REDSTONE_PLATED))
+            .buildPerStat(HeadMaterialStats.ID,entry(ModifierIds.haste))
+            .buildPerStat(PlatingMaterialStats.BOOTS.getId(),entry(ModifierIds.haste))
+            .buildPerStat(PlatingMaterialStats.LEGGINGS.getId(),entry(ModifierIds.haste))
+            .buildPerStat(PlatingMaterialStats.CHESTPLATE.getId(),entry(ModifierIds.haste))
+            .buildPerStat(PlatingMaterialStats.HELMET.getId(),entry(ModifierIds.haste))
+            .build().build().setRenderInfo(id ->
+                    getRenderInfo(id,new String[]{"metal"},
+                            0xFFF65B5B,4)).build();
 
     protected static FluidType.Properties hot(String name, int Temp, boolean gas) {
         return FluidType.Properties.create().density(gas ? -2000 : 2000).viscosity(10000).temperature(Temp).descriptionId("fluid.tinkers_advanced." + name).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA).motionScale(0.0023333333333333335).canSwim(false).canDrown(false).pathType(BlockPathTypes.LAVA).adjacentPathType((BlockPathTypes)null);

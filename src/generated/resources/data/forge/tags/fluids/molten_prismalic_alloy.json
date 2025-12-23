@@ -3,6 +3,10 @@
     {
       "id": "tinkers_advanced:molten_prismalic_alloy",
       "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_prismalic_alloy",
+      "required": false
     }
   ]
 }

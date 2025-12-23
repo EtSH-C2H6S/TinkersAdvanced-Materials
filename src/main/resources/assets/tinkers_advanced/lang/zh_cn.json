@@ -395,6 +395,22 @@
   "modifier.tinkers_advanced.slimeful.flavor": "富含史莱姆！",
   "modifier.tinkers_advanced.slimeful.description": "使用工具有概率额外掉落粘液球。",
 
+  "modifier.tinkers_advanced.semiconductor": "半导体",
+  "modifier.tinkers_advanced.semiconductor.flavor": "导了吗？如导",
+  "modifier.tinkers_advanced.semiconductor.description": "增加%1$s暴击伤害，减少%1$s非暴击伤害",
+
+  "modifier.tinkers_advanced.photoelectric": "光电效应",
+  "modifier.tinkers_advanced.photoelectric.flavor": "就像硅基植物",
+  "modifier.tinkers_advanced.photoelectric.description": "在有光照的地方发电。你的工具首先要能存电！",
+
+  "modifier.tinkers_advanced.capacitor_capable": "可容电容",
+  "modifier.tinkers_advanced.capacitor_capable.flavor": "学会“包容”",
+  "modifier.tinkers_advanced.capacitor_capable.description": "使用电容右键工具可以将电容安装在工具上，增幅部分属性。用耶塔扳手右键以拆卸电容。",
+
+  "modifier.tinkers_advanced.redstone_plated": "红石镀层",
+  "modifier.tinkers_advanced.redstone_plated.flavor": "红石合金力量！",
+  "modifier.tinkers_advanced.redstone_plated.description": "工具可以被红石合金修复。",
+
 
 
   "material.tinkers_advanced.bismuth": "铋",
@@ -556,6 +572,8 @@
   "material.tinkers_advanced.refined_radiance": "光辉石",
   "material.tinkers_advanced.chorusite": "紫颂合金",
   "material.tinkers_advanced.slimeite": "粘性合金",
+  "material.tinkers_advanced.copper_alloy": "铜合金",
+  "material.tinkers_advanced.redstone_alloy": "红石合金",
 
 
 
@@ -714,6 +732,12 @@
   "fluid.tinkers_advanced.molten_stellar_alloy": "熔融恒星合金",
   "item.tinkers_advanced.molten_stellar_alloy_bucket": "熔融恒星合金桶",
 
+  "fluid.tinkers_advanced.molten_redstone_alloy": "熔融红石合金",
+  "item.tinkers_advanced.molten_redstone_alloy_bucket": "熔融红石合金桶",
+
+  "fluid.tinkers_advanced.molten_copper_alloy": "熔融铜合金",
+  "item.tinkers_advanced.molten_copper_alloy_bucket": "熔融铜合金桶",
+
 
 
 
@@ -762,6 +786,11 @@
 
   "tooltip.tinkers_advanced.modifiers.shaping": "增加的槽位数量：",
   "tooltip.tinkers_advanced.modifiers.frosted_charge": "结霜：",
+
+  "tooltip.tinkers_advanced.modifiers.capacitor_capable.energy_use": "电容常规属性增幅",
+  "tooltip.tinkers_advanced.modifiers.capacitor_capable.energy_capacity": "电容容量属性增幅",
+  "tooltip.tinkers_advanced.modifiers.capacitor_capable.burning_energy_generation": "电容效率属性增幅",
+  "tooltip.tinkers_advanced.modifiers.capacitor_capable.fuel_efficiency": "电容功率属性增幅",
 
 
   "info.tinkers_advanced.electron_tuner.rapier": "轻剑形态",

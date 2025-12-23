@@ -20,7 +20,7 @@ public class TiAcMeFluidTextureProvider extends AbstractFluidTextureProvider {
     }
     @Override
     public void addTextures() {
-        for (FluidObject<ForgeFlowingFluid> object: TiAcMeFluids.getFluids()){
+        for (FluidObject<?> object: TiAcMeFluids.getFluids()){
             this.commonFluid(object.getType());
         }
         for (SimpleMaterialObject object: TiAcMeMaterials.MATERIALS.getEntryMap().values()){

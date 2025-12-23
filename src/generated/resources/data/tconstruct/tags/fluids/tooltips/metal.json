@@ -65,6 +65,10 @@
       "required": false
     },
     {
+      "id": "tinkers_advanced:molten_redstone_alloy",
+      "required": false
+    },
+    {
       "id": "tinkers_advanced:molten_chorusite",
       "required": false
     },
@@ -82,6 +86,10 @@
     },
     {
       "id": "tinkers_advanced:molten_netherstar_alloy",
+      "required": false
+    },
+    {
+      "id": "tinkers_advanced:molten_copper_alloy",
       "required": false
     },
     {

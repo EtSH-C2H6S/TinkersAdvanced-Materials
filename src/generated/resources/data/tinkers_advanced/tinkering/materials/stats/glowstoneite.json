@@ -27,22 +27,22 @@
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {
       "armor": 1.5,
-      "durability": 208
+      "durability": 585
     },
     "tconstruct:plating_chestplate": {
       "armor": 6.0,
-      "durability": 256
+      "durability": 720
     },
     "tconstruct:plating_helmet": {
       "armor": 1.5,
-      "durability": 176
+      "durability": 495
     },
     "tconstruct:plating_leggings": {
       "armor": 4.0,
-      "durability": 240
+      "durability": 675
     },
     "tconstruct:plating_shield": {
-      "durability": 288
+      "durability": 810
     },
     "tconstruct:shield_core": {},
     "tinkers_advanced:flux_core": {

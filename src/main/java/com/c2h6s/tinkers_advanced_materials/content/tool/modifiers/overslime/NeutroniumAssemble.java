@@ -117,7 +117,7 @@ public class NeutroniumAssemble extends MultiArgsDescModifier implements SlotSta
 
     @Override
     public Vec2 getBarXYSize(IToolStackView iToolStackView, ModifierEntry modifierEntry, int i) {
-        return new Vec2(1,-CommonMeUtils.getBarLength(iToolStackView.getPersistentData().getInt(KEY_ANTI_NEUTRONIUM),128000));
+        return new Vec2(1,-CommonMeUtils.getBarLength(iToolStackView.getPersistentData().getInt(KEY_ANTI_NEUTRONIUM),128000*modifierEntry.getLevel()));
     }
 
     @Override

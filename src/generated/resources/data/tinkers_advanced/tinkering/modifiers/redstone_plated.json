@@ -1,0 +1,11 @@
+{
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tconstruct:material_repair",
+      "durability": 200,
+      "material": "tinkers_advanced:redstone_alloy"
+    }
+  ],
+  "tooltip_display": "always"
+}

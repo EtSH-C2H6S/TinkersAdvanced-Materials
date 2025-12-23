@@ -1,0 +1,29 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "enderio"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "enderio"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "input": "tinkers_advanced:copper_alloy",
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_copper_alloy"
+  },
+  "temperature": 650
+}

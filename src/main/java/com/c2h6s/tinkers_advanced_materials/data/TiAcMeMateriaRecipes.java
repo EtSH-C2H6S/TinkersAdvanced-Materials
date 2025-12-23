@@ -3,12 +3,18 @@ package com.c2h6s.tinkers_advanced_materials.data;
 import cofh.lib.init.tags.ItemTagsCoFH;
 import com.LunaGlaze.rainbowcompound.Projects.Items.Basic.ItemsItemRegistry;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeFluids;
+import com.enderio.base.common.init.EIOBlocks;
+import com.enderio.base.common.init.EIOItems;
+import com.enderio.base.common.tag.EIOTags;
 import com.simibubi.create.AllItems;
 import dev.epicsquid.thermalendergy.registry.ItemRegistry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.registries.ForgeRegistries;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
+
+import java.util.function.Supplier;
 
 import static com.c2h6s.tinkers_advanced_materials.init.TiAcMeMaterials.*;
 
@@ -89,6 +95,20 @@ public class TiAcMeMateriaRecipes {
         NETHERSTAR_ALLOY.addRecipeInfo().setFluidAmount(90).setTemp(2000).setIngot()
                 .setItemIn(null,ItemsItemRegistry.netherstaringot.get()).build();
 
+        recipeInfo = COPPER_ALLOY.addRecipeInfo().setFluidAmount(90).setTemp(650).setIngot()
+                .setFluidIn(COPPER_ALLOY.getFluidObject().getCommonTag(), (Supplier<Fluid>) null)
+                .setItemIn(EIOTags.Items.INGOTS_COPPER_ALLOY, null)
+                .setLeftover(EIOTags.Items.NUGGETS_COPPER_ALLOY, null)
+                .build().getRecipeInfo();
+        recipeInfo.addMetalNugget(EIOTags.Items.NUGGETS_COPPER_ALLOY,null,COPPER_ALLOY)
+                .addMetalBlock(EIOTags.Items.BLOCKS_COPPER_ALLOY, null,COPPER_ALLOY);
 
+        recipeInfo = REDSTONE_ALLOY.addRecipeInfo().setFluidAmount(90).setTemp(600).setIngot()
+                .setFluidIn(REDSTONE_ALLOY.getFluidObject().getCommonTag(), (Supplier<Fluid>) null)
+                .setItemIn(EIOTags.Items.INGOTS_REDSTONE_ALLOY, null)
+                .setLeftover(EIOTags.Items.NUGGETS_REDSTONE_ALLOY,null)
+                .build().getRecipeInfo();
+        recipeInfo.addMetalNugget(EIOTags.Items.NUGGETS_REDSTONE_ALLOY,null,REDSTONE_ALLOY)
+                .addMetalBlock(EIOTags.Items.BLOCKS_REDSTONE_ALLOY, null,REDSTONE_ALLOY);
     }
 }

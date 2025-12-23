@@ -25,7 +25,7 @@ public class TiAcMeMaterialTagProvider extends AbstractMaterialTagProvider {
                 TiAcMeMaterialIds.VOLTAIC_CRYSTAL
         );
         for (var obj:TiAcMeMaterials.MATERIALS.getEntryMap().values()){
-            if (obj.getMaterialInfo()!=null&&obj.getMaterialInfo().getTier()>=5)
+            if (obj.getMaterialInfo()!=null&&(obj.getMaterialInfo().getTier()>=5||obj.getMaterialInfo().isExcludeFromTool()))
                 appender.addOptionalTag(obj.getMaterialId());
         }
         this.tag(TinkerTags.Materials.NETHER).add(TiAcMeMaterialIds.ANTIMONY,TiAcMeMaterialIds.STIBNITE,TiAcMeMaterialIds.BLAZE_NETHERITE);
