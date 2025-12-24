@@ -138,6 +138,6 @@ public class TiAcMeModifiers {
 
 
     //EIO联动属性
-    public static final StaticModifier<CapacitorCapable> CAPACITOR_CAPABLE = THERMAL_MODIFIERS.register("capacitor_capable", CapacitorCapable::new);
+    public static final StaticModifier<CapacitorCapable> CAPACITOR_CAPABLE = EIO_MODIFIERS.register("capacitor_capable", CapacitorCapable::new);
 
 }

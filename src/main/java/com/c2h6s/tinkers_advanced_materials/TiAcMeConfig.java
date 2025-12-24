@@ -244,9 +244,9 @@ public class TiAcMeConfig {
             this.IRRADIUM_MAX_BONUS = builder.comment("辐射灼伤最大增益，默认1。")
                     .comment("Max bonus for Radiation Burning, 1 by default.")
                     .defineInRange("RadiationBurningMaxDamageBoostMul",1,0,Float.MAX_VALUE);
-            this.IRRADIUM_MAX_BONUS_ARMOR = builder.comment("放射性护甲最大增益，默认0.85。")
-                    .comment("Max bonus for Radioactive Armor, 0.85 by default.")
-                    .defineInRange("RadioactiveArmorMaxDamageReduction",0.85,0,1);
+            this.IRRADIUM_MAX_BONUS_ARMOR = builder.comment("放射性护甲最大增益，默认0.8。")
+                    .comment("Max bonus for Radioactive Armor, 0.8 by default.")
+                    .defineInRange("RadioactiveArmorMaxDamageReduction",0.8,0,1);
             this.IRRADIUM_RADIATION_INFLICT = builder.comment("辐射施加，默认1.0Sv。")
                     .comment("Radiation amount for Radiation Burning and Radioactive Armor each trait level, 1.0 Sv by default.")
                     .defineInRange("IrradiumRadiationInflict",1d,0,Double.MAX_VALUE);
