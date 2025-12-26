@@ -218,9 +218,9 @@ public class TiAcMeConfig {
             FLUX_ARMOR_CONSUMPTION = builder.comment("通量护甲的基础消耗（减伤消耗采用此值，闪避消耗为此值的10倍），默认2000FE")
                     .comment("Basic consumption for Flux Armor, 2000FE by default.")
                     .defineInRange("FluxArmorBasicConsumption",2000,0,Integer.MAX_VALUE);
-            FLUX_ARMOR_DAMAGE_REDUCTION = builder.comment("通量护甲的每级独立保护等级，默认5（注：匠魂每级保护增加4%伤害减免，改保护等级与其它保护类属性独立）")
-                    .comment("Damage Reduction for Flux Armor, 5 by default.")
-                    .defineInRange("FluxArmorMaxResistanceLevel",5,1,25f);
+            FLUX_ARMOR_DAMAGE_REDUCTION = builder.comment("通量护甲的每级独立保护等级，默认4（注：匠魂每级保护增加4%伤害减免，改保护等级与其它保护类属性独立）")
+                    .comment("Damage Reduction for Flux Armor, 4 by default.")
+                    .defineInRange("FluxArmorMaxResistanceLevel",4,1,25f);
             FLUX_ARMOR_DODGE_RATE = builder.comment("通量护甲的闪避率，默认0.1")
                     .comment("Dodge rate for Flux Armor, 0.1 by default.")
                     .defineInRange("FluxArmorDodgeRate",0.1,0.01,1f);
@@ -520,8 +520,8 @@ public class TiAcMeConfig {
                     .comment("压缩空气防护的压缩空气消耗，默认20mL，会乘以伤害格挡值。")
                     .defineInRange("AerialProtectionConsumption",20,0,Integer.MAX_VALUE);
             this.AERIAL_PROTECTION_BYPASS_ARMOR_REDUCTION = builder
-                    .comment("压缩空气防护对穿甲伤害的独立减免，默认0.5（50%）。")
-                    .defineInRange("AerialProtectionDamageReductionForSpecialSource",0.5,0.01,1);
+                    .comment("压缩空气防护在胸甲处对穿甲伤害的独立减免，默认0.5（50%）。")
+                    .defineInRange("AerialProtectionChestplateDamageReductionForSpecialSource",0.5,0.01,1);
             this.AERIAL_PROTECTION_DAMAGE_BLOCK_AFTER_ARMOR = builder
                     .comment("压缩空气防护的甲后格挡（加算），默认每级2.5。")
                     .defineInRange("AerialProtectionDamageBlock",2.5,0.1,Float.MAX_VALUE);

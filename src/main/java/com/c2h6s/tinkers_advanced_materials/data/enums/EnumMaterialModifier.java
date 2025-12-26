@@ -16,6 +16,7 @@ import slimeknights.tconstruct.tools.stats.*;
 public enum EnumMaterialModifier {
     ALLOY_ATOMIC(StatlessMaterialStats.BINDING.getIdentifier(),entry(EtSTLibModifierIds.ATOMIC_DECOMPOSE)),
     BISMUTH(null,entry(TiAcMeModifiers.TETANUS.getId()),entry(TiAcMeModifiers.HEAVY_MATERIAL.getId())),
+    BISMUTH_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.TETANUS.getId()),entry(ModifierIds.heavy)),
     BISMUTHINITE(null,entry(TiAcMeModifiers.FRAGILE.getId()),entry(EtSTLibModifier.ANISOTROPY.getId())),
     BISMUTHINITE_FLUX_CORE(FluxCoreMaterialStat.ID,entry(TiAcTModifiers.PIEZOELECTRIC_EFFECT.getId(),2)),
     BISMUTHINITE_AMMO(MaterialRegistry.AMMO,entry(TiAcMeModifiers.AERIAL_UNSTABLE.getId()),entry(ModifierIds.keen)),

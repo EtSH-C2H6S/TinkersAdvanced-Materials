@@ -43,7 +43,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import java.util.List;
 
-public class Unstable extends EtSTBaseModifier implements BreakSpeedModifierHook, BlockBreakModifierHook, IndividualProtectionModifierHook, TooltipModifierHook {
+public class Unstable extends EtSTBaseModifier implements BreakSpeedModifierHook, BlockBreakModifierHook, IndividualProtectionModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
@@ -135,21 +135,14 @@ public class Unstable extends EtSTBaseModifier implements BreakSpeedModifierHook
     }
 
     @Override
-    public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
-        if (tool.hasTag(TinkerTags.Items.ARMOR)||tool.hasTag(TinkerTags.Items.SHIELDS))
-            ProtectionModule.addResistanceTooltip(tool,this,
-                    tool.getPersistentData().getFloat(KEY_RANDOMIZE)*3.75f*modifier.getLevel(),player,tooltip);
-    }
-
-    @Override
     public float getIndividualProtectionModifier(IToolStackView tool, ModifierEntry modifier, EquipmentContext equipmentContext, EquipmentSlot equipmentSlot, DamageSource damageSource, float v) {
         if (!tool.hasTag(TinkerTags.Items.ARMOR)&&!tool.hasTag(TinkerTags.Items.SHIELDS)) return v;
-        return v+ randomizeAndGetNext(tool)*3.75f*modifier.getLevel();
+        return v+ (randomizeAndGetNext(tool)-0.5f)*8f*modifier.getLevel();
     }
 
     @Override
     public float getProtectionModifierForDisplay(IToolStackView tool, ModifierEntry modifier, Player player, float v) {
         if (!tool.hasTag(TinkerTags.Items.ARMOR)&&!tool.hasTag(TinkerTags.Items.SHIELDS)) return v;
-        return v+ randomizeAndGetNext(tool)*3.75f*modifier.getLevel();
+        return v+ (randomizeAndGetNext(tool)-0.5f)*8f*modifier.getLevel();
     }
 }
