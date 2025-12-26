@@ -49,7 +49,7 @@ public class TiAcMeMaterialSpriteProvider extends AbstractMaterialSpriteProvider
                 .addARGB(178,0xFF6054A6)
                 .addARGB(216,0xFFB06FDD)
                 .addARGB(255,0xFFFF80D7).build());
-        this.buildMaterial(TiAcMeMaterialIds.AE2.CERTUS).maille().ranged().meleeHarvest().fallbacks("crystal", "rock", "stick").colorMapper(GreyToColorMapping.builder()
+        this.buildMaterial(TiAcMeMaterialIds.AE2.CERTUS).maille().arrowHead().ranged().meleeHarvest().fallbacks("crystal", "rock", "stick").colorMapper(GreyToColorMapping.builder()
                 .addARGB(0,0xFF000000)
                 .addARGB(63,0xFF466580)
                 .addARGB(102,0xFF6689A9)
@@ -57,7 +57,7 @@ public class TiAcMeMaterialSpriteProvider extends AbstractMaterialSpriteProvider
                 .addARGB(178,0xFF91C5FC)
                 .addARGB(216,0xFFB8D8FC)
                 .addARGB(255,0xFFEEFBFC).build());
-        this.buildMaterial(TiAcMeMaterialIds.BISMUTHINITE).ranged().meleeHarvest().fallbacks("crystal", "rock", "stick").colorMapper(GreyToColorMapping.builder()
+        this.buildMaterial(TiAcMeMaterialIds.BISMUTHINITE).maille().shieldCore().ranged().arrowHead().meleeHarvest().fallbacks("crystal", "rock", "stick").colorMapper(GreyToColorMapping.builder()
                 .addARGB(0,0xFF000000)
                 .addARGB(63,0xFF0D0D0D)
                 .addARGB(102,0xFF1A1A1A)
@@ -65,7 +65,7 @@ public class TiAcMeMaterialSpriteProvider extends AbstractMaterialSpriteProvider
                 .addARGB(178,0xFF303030)
                 .addARGB(216,0xFF525252)
                 .addARGB(255,0xFF929191).build());
-        this.buildMaterial(TiAcMeMaterialIds.STIBNITE).ranged().meleeHarvest().fallbacks("crystal", "rock", "stick").colorMapper(GreyToColorMapping.builder()
+        this.buildMaterial(TiAcMeMaterialIds.STIBNITE).ranged().maille().shieldCore().arrowHead().meleeHarvest().fallbacks("crystal", "rock", "stick").colorMapper(GreyToColorMapping.builder()
                 .addARGB(0,0xFF000000)
                 .addARGB(63,0xFF002000)
                 .addARGB(102,0xFF0c2d00)
@@ -89,7 +89,7 @@ public class TiAcMeMaterialSpriteProvider extends AbstractMaterialSpriteProvider
                 .addARGB(178,0xFFFFFD6D)
                 .addARGB(216,0xFFFEFF8C)
                 .addARGB(255,0xFFFCFFD2).build());
-        this.buildMaterial(TiAcMeMaterialIds.PnC.PNEUMATIC_STEEL).meleeHarvest().armor().fallbacks("metal").colorMapper(GreyToColorMapping.builder()
+        this.buildMaterial(TiAcMeMaterialIds.PnC.PNEUMATIC_STEEL).arrowShaft().arrowHead().meleeHarvest().armor().fallbacks("metal").colorMapper(GreyToColorMapping.builder()
                 .addARGB(0,0xFF000000)
                 .addARGB(63,0xFF4E4E60)
                 .addARGB(102,0xFFA2A2BE)
@@ -202,7 +202,7 @@ public class TiAcMeMaterialSpriteProvider extends AbstractMaterialSpriteProvider
                 .addARGB(178,0xFF5d8b7e)
                 .addARGB(216,0xFF80bfad)
                 .addARGB(255,0xFF93d7c1).build());
-        this.buildMaterial(TiAcMeMaterialIds.CommonIntegration.PLASTIC).maille().meleeHarvest().ranged().fallbacks("metal").colorMapper(GreyToColorMapping.builder()
+        this.buildMaterial(TiAcMeMaterialIds.CommonIntegration.PLASTIC).fletching().maille().meleeHarvest().ranged().fallbacks("metal").colorMapper(GreyToColorMapping.builder()
                 .addARGB(0,0xFF000000)
                 .addARGB(63,0xFF828282)
                 .addARGB(102,0xFF9b9b9b)

@@ -159,7 +159,8 @@
 
   "modifier.tinkers_advanced.unstable": "Unstable",
   "modifier.tinkers_advanced.unstable.flavor": "Handle it carefully!",
-  "modifier.tinkers_advanced.unstable.description": "Randomize attack damage, dig speed and durability cost.",
+  "modifier.tinkers_advanced.unstable.description": "Randomize attack damage, resistance, dig speed and durability cost.",
+  "modifier.tinkers_advanced.unstable.resistance": "Unstabled Resistance",
 
   "modifier.tinkers_advanced.plague": "Plague",
   "modifier.tinkers_advanced.plague.flavor": "The pathogen.",
@@ -334,6 +335,14 @@
   "modifier.tinkers_advanced.redstone_plated": "Redstone Plated",
   "modifier.tinkers_advanced.redstone_plated.flavor": "Alloying with redstone.",
   "modifier.tinkers_advanced.redstone_plated.description": "Allows repairing with redstone alloy.",
+
+  "modifier.tinkers_advanced.aerial_unstable": "Aerial Unstable",
+  "modifier.tinkers_advanced.aerial_unstable.flavor": "Not good at long traveling.",
+  "modifier.tinkers_advanced.aerial_unstable.description": "Randomize projectile's direction shortly after shot .",
+
+  "modifier.tinkers_advanced.chemical_unstable": "Chemical Unstable",
+  "modifier.tinkers_advanced.chemical_unstable.flavor": "Super sensitive!",
+  "modifier.tinkers_advanced.chemical_unstable.description": "Vanish and explode randomly before 2 second.",
 
 
 

@@ -7,9 +7,13 @@
   ],
   "generator": {
     "supported_stats": [
+      "tconstruct:maille",
+      "tconstruct:armor_maille",
+      "tconstruct:shield_core",
+      "tconstruct:repair_kit",
       "tconstruct:limb",
       "tconstruct:grip",
-      "tconstruct:repair_kit",
+      "tconstruct:arrow_head",
       "tconstruct:head",
       "tconstruct:handle",
       "tconstruct:binding"

@@ -1,8 +1,18 @@
 {
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "thermal"
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": true,
+          "mod_id": "thermal"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermal"
+        }
+      ]
     }
   ],
   "type": "thermal:smelter",

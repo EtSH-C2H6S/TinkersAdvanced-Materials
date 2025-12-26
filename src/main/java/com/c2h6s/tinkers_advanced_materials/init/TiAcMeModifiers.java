@@ -10,6 +10,8 @@ import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.base.AddInvul
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.base.SimpleEffectCombatModifier;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.base.SlotAddingModifier;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.combat.*;
+import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.combat.ammo.AerialUnstable;
+import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.combat.ammo.ChemicalUnstable;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.common.*;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.compat.eio.CapacitorCapable;
 import com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.compat.mekanism.*;
@@ -100,6 +102,8 @@ public class TiAcMeModifiers {
     public static final StaticModifier<Slimeful> SLIMEFUL = TiAcCrModule.MODIFIERS.register("slimeful",Slimeful::new);
     public static final StaticModifier<Semiconductor> SEMI_CONDUCTOR = TiAcCrModule.MODIFIERS.register("semiconductor",Semiconductor::new);
     public static final StaticModifier<Photoelectric> PHOTOELECTRIC = TiAcCrModule.MODIFIERS.register("photoelectric",Photoelectric::new);
+    public static final StaticModifier<AerialUnstable> AERIAL_UNSTABLE = TiAcCrModule.MODIFIERS.register("aerial_unstable",AerialUnstable::new);
+    public static final StaticModifier<ChemicalUnstable> CHEMICAL_UNSTABLE = TiAcCrModule.MODIFIERS.register("chemical_unstable",ChemicalUnstable::new);
 
 
 

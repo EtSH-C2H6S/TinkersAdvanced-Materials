@@ -341,10 +341,10 @@ public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRec
         folder = modifierFolder("iso_chrome");
         ModifierRecipeBuilder.modifier(TiAcMeModifiers.ISO_CHROME)
                 .addInput(TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get())
-                .addInput(TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get())
-                .addInput(TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get())
-                .addInput(TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get())
-                .addInput(TiAcMeItems.ACTIVATED_CHROMATIC_STEEL.get()).allowCrystal()
+                .addInput(TiAcMeItems.BASALZ_SIGNALUM.get())
+                .addInput(TiAcMeItems.BLAZE_NETHERITE.get())
+                .addInput(TiAcMeItems.BLITZ_LUMIUM.get())
+                .addInput(TiAcMeItems.BLIZZ_ENDERIUM.get()).allowCrystal()
                 .setTools(TinkerTags.Items.BONUS_SLOTS).setMaxLevel(1).save(conditional,folder);
 
         conditional = withCondition(consumer,modLoaded("rainbowcompound",false));

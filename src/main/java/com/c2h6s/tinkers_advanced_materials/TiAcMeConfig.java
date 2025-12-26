@@ -520,8 +520,8 @@ public class TiAcMeConfig {
                     .comment("压缩空气防护的压缩空气消耗，默认20mL，会乘以伤害格挡值。")
                     .defineInRange("AerialProtectionConsumption",20,0,Integer.MAX_VALUE);
             this.AERIAL_PROTECTION_BYPASS_ARMOR_REDUCTION = builder
-                    .comment("压缩空气防护对穿甲伤害的独立减免，默认0.6（60%）。")
-                    .defineInRange("AerialProtectionDamageReductionForSpecialSource",0.6,0.01,1);
+                    .comment("压缩空气防护对穿甲伤害的独立减免，默认0.5（50%）。")
+                    .defineInRange("AerialProtectionDamageReductionForSpecialSource",0.5,0.01,1);
             this.AERIAL_PROTECTION_DAMAGE_BLOCK_AFTER_ARMOR = builder
                     .comment("压缩空气防护的甲后格挡（加算），默认每级2.5。")
                     .defineInRange("AerialProtectionDamageBlock",2.5,0.1,Float.MAX_VALUE);

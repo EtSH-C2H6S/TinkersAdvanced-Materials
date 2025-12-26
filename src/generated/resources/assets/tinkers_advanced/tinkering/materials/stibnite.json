@@ -10,6 +10,10 @@
       "tconstruct:limb",
       "tconstruct:grip",
       "tconstruct:repair_kit",
+      "tconstruct:maille",
+      "tconstruct:armor_maille",
+      "tconstruct:shield_core",
+      "tconstruct:arrow_head",
       "tconstruct:head",
       "tconstruct:handle",
       "tconstruct:binding"

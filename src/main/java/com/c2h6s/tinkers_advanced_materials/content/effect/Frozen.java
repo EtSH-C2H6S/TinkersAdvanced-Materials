@@ -20,12 +20,12 @@ public class Frozen extends EtSTBaseEffect {
         pLivingEntity.setTicksFrozen(500);
         var it = pLivingEntity.invulnerableTime;
         pLivingEntity.hurt(LegacyDamageSource.any(pLivingEntity.damageSources().freeze()).setBypassInvulnerableTime(),
-                pAmplifier+1);
+                pAmplifier*0.5F);
         pLivingEntity.invulnerableTime = it;
     }
 
     @Override
     public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
-        return pDuration%10==0;
+        return pDuration%10==5;
     }
 }

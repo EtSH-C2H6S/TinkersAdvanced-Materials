@@ -17,10 +17,13 @@ public enum EnumMaterialModifier {
     ALLOY_ATOMIC(StatlessMaterialStats.BINDING.getIdentifier(),entry(EtSTLibModifierIds.ATOMIC_DECOMPOSE)),
     BISMUTH(null,entry(TiAcMeModifiers.TETANUS.getId()),entry(TiAcMeModifiers.HEAVY_MATERIAL.getId())),
     BISMUTHINITE(null,entry(TiAcMeModifiers.FRAGILE.getId()),entry(EtSTLibModifier.ANISOTROPY.getId())),
-    BISMUTHINITE_FLUX_CORE(FluxCoreMaterialStat.ID,entry(TiAcTModifiers.PIEZOELECTRIC_EFFECT.getId(),3)),
+    BISMUTHINITE_FLUX_CORE(FluxCoreMaterialStat.ID,entry(TiAcTModifiers.PIEZOELECTRIC_EFFECT.getId(),2)),
+    BISMUTHINITE_AMMO(MaterialRegistry.AMMO,entry(TiAcMeModifiers.AERIAL_UNSTABLE.getId()),entry(ModifierIds.keen)),
+    BISMUTHINITE_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.FRAGILE.getId()),entry(EtSTLibModifier.CRYSTAL_ARMOR.getId())),
 
     CERTUS_DEFAULT(null,entry(EtSTLibModifier.ANISOTROPY.getId())),
     CERTUS_ARMOR(MaterialRegistry.ARMOR,entry(EtSTLibModifier.CRYSTAL_ARMOR.getId())),
+    CERTUS_AMMO(MaterialRegistry.AMMO,entry(EtSTLibModifier.CRYSTALINE_ARROW.getId())),
 
     FLUIX_ARMOR(MaterialRegistry.ARMOR,entry(EtSTLibModifier.CRYSTAL_ARMOR.getId()),entry(EtSTLibModifier.clearing.getId())),
     FLUIX_GRIP(GripMaterialStats.ID,entry(EtSTLibModifier.ANISOTROPY.getId()),entry(EtSTLibModifier.EtSTLibModifierAE.applied_fixing.getId())),
@@ -29,6 +32,7 @@ public enum EnumMaterialModifier {
     FLUIX_HANDLE(HandleMaterialStats.ID,entry(ModifierIds.looting),entry(EtSTLibModifier.EtSTLibModifierAE.applied_fixing.getId())),
     FLUIX_BINDING(StatlessMaterialStats.BINDING.getIdentifier(),entry(ModifierIds.fortune),entry(EtSTLibModifier.EtSTLibModifierAE.applied_fixing.getId())),
     FLUIX_FLUX_CORE(FluxCoreMaterialStat.ID,entry(ModifierIds.looting),entry(TiAcTModifiers.PIEZOELECTRIC_EFFECT.getId())),
+    FLUIX_AMMO(MaterialRegistry.AMMO,entry(EtSTLibModifier.CRYSTALINE_ARROW.getId(),2),entry(EtSTLibModifier.EtSTLibModifierAE.energetic_attack.getId())),
 
     ANTIMATTER_MELEE(MaterialRegistry.MELEE_HARVEST,entry(TiAcMeModifiers.ANNIHILATE.getId()),entry(EtSTLibModifierIds.ATOMIC_DECOMPOSE)),
     ANTIMATTER_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.REACTIVE_EXPLOSIVE_ARMOR.getId())),
@@ -44,6 +48,7 @@ public enum EnumMaterialModifier {
 
     PNEUMATIC_STEEL_DEFAULT(null,entry(EtSTLibModifier.EtSTLibModifierPnC.aerial_reinforced.getId()),entry(TiAcMeModifiers.AIR_SLASH.getId())),
     PNEUMATIC_STEEL_ARMOR(MaterialRegistry.ARMOR,entry(EtSTLibModifier.EtSTLibModifierPnC.aerial_reinforced.getId()),entry(TiAcMeModifiers.AERIAL_PROTECTION.getId())),
+    PNEUMATIC_STEEL_AMMO(MaterialRegistry.AMMO,entry(EtSTLibModifier.ACCELERATE.getId(),2)),
 
     BASALZ_SIGNALUM_DEFAULT(null,entry(EtSTLibModifier.SHORT_CIRCUIT.getId()),entry(TiAcMeModifiers.BASALZ_INFLICT.getId())),
     BASALZ_SIGNALUM_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.SENSOR_INTERRUPT.getId()),entry(TiAcMeModifiers.BASALZ_DEFENSE.getId())),
@@ -84,6 +89,7 @@ public enum EnumMaterialModifier {
     VOLTAIC_CRYSTAL_DEFAULT(null,entry(EtSTLibModifier.energy_loaded.getId()),entry(TiAcMeModifiers.ELECTRIC.getId())),
 
     PLASTIC_DEFAULT(null,entry(TiAcMeModifiers.ELASTIC.getId()),entry(TiAcMeModifiers.SHAPING.getId())),
+    PLASTIC_AMMO(MaterialRegistry.AMMO,entry(EtSTLibModifier.CHEAP.getId())),
 
     PROTOCITE_DEFAULT(null,entry(TiAcMeModifiers.PROTO_REFINING.getId()),entry(EtSTLibModifier.glowing.getId())),
     PROTOCITE_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.PROTO_DEFENSE.getId()),entry(EtSTLibModifier.glowing.getId())),
@@ -103,6 +109,9 @@ public enum EnumMaterialModifier {
 
     STIBNITE_FLUX_CORE(FluxCoreMaterialStat.ID,entry(TiAcMeModifiers.UNSTABLE.getId()),entry(TiAcTModifiers.PIEZOELECTRIC_EFFECT.getId(),4)),
     STIBNITE_DEFAULT(null,entry(TiAcMeModifiers.UNSTABLE.getId()),entry(EtSTLibModifier.ANISOTROPY.getId(),2)),
+    STIBNITE_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.UNSTABLE.getId()),entry(EtSTLibModifier.CRYSTAL_ARMOR.getId(),2)),
+    STIBNITE_AMMO(MaterialRegistry.AMMO,entry(TiAcMeModifiers.CHEMICAL_UNSTABLE.getId()),entry(ModifierIds.keen,3)),
+
 
     ANTIMONY_DEFAULT(null,entry(TiAcMeModifiers.PLAGUE.getId()),entry(TiAcMeModifiers.STABILIZE.getId())),
     ANTIMONY_ARMOR(MaterialRegistry.ARMOR,entry(TiAcMeModifiers.POISON_DEFENSE.getId()),entry(TiAcMeModifiers.STABILIZE.getId())),

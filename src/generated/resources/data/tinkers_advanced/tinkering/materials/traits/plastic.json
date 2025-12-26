@@ -8,5 +8,13 @@
       "level": 1,
       "name": "tinkers_advanced:shaping"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:ammo": [
+      {
+        "level": 1,
+        "name": "etstlib:cheap"
+      }
+    ]
+  }
 }

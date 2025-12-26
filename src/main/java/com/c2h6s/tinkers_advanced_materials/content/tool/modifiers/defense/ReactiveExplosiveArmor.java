@@ -35,7 +35,7 @@ public class ReactiveExplosiveArmor extends EtSTBaseModifier implements ModifyDa
         if (source.is(DamageTypes.FELL_OUT_OF_WORLD)){
             return amount;
         }
-        float multiplier = (float)Math.max (1- COMMON.REACTIVE_EXPLOSIVE_ARMOR_REDUCTION.get()*2,0.5f);
+        float multiplier = (float)Math.max (1- (COMMON.REACTIVE_EXPLOSIVE_ARMOR_REDUCTION.get()*modifier.getLevel()),0.5f);
         if (multiplier>=1) return amount;
         if (source.is(DamageTypeTags.AVOIDS_GUARDIAN_THORNS)||!direct){
             return amount*multiplier;

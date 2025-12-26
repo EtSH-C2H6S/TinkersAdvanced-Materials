@@ -86,7 +86,9 @@
     "capacitor_capable": "#88F788",
     "photoelectric": "#F6F787",
     "semiconductor": "#635A52",
-    "redstone_plated": "#F65B5B"
+    "redstone_plated": "#F65B5B",
+    "aerial_unstable": "#877E73",
+    "chemical_unstable": "#361414"
   },
   "material.tinkers_advanced": {
     "bismuth": "#83798A",

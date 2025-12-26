@@ -1,8 +1,18 @@
 {
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "pneumaticcraft"
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": true,
+          "mod_id": "pneumaticcraft"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "pneumaticcraft"
+        }
+      ]
     }
   ],
   "type": "pneumaticcraft:heat_frame_cooling",

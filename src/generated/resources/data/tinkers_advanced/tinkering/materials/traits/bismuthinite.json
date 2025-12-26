@@ -10,9 +10,29 @@
     }
   ],
   "perStat": {
+    "tconstruct:ammo": [
+      {
+        "level": 1,
+        "name": "tinkers_advanced:aerial_unstable"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:keen"
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_advanced:fragile"
+      },
+      {
+        "level": 1,
+        "name": "etstlib:crystal_armor"
+      }
+    ],
     "tinkers_advanced:flux_core": [
       {
-        "level": 3,
+        "level": 2,
         "name": "tinkers_advanced:piezoelectric_effect"
       }
     ]

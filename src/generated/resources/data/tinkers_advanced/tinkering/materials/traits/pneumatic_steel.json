@@ -10,6 +10,12 @@
     }
   ],
   "perStat": {
+    "tconstruct:ammo": [
+      {
+        "level": 2,
+        "name": "etstlib:accelerate"
+      }
+    ],
     "tconstruct:armor": [
       {
         "level": 1,

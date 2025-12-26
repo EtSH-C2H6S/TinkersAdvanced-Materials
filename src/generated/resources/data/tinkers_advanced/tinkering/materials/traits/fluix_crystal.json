@@ -1,5 +1,15 @@
 {
   "perStat": {
+    "tconstruct:ammo": [
+      {
+        "level": 2,
+        "name": "etstlib:crystaline_arrow"
+      },
+      {
+        "level": 1,
+        "name": "etstlib:energetic_attack"
+      }
+    ],
     "tconstruct:armor": [
       {
         "level": 1,

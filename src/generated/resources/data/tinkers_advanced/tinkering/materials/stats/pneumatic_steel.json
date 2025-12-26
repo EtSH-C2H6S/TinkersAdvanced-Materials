@@ -1,5 +1,7 @@
 {
   "stats": {
+    "tconstruct:arrow_head": {},
+    "tconstruct:arrow_shaft": {},
     "tconstruct:binding": {},
     "tconstruct:handle": {
       "durability": 0.2,

@@ -8,6 +8,7 @@ import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
+import slimeknights.tconstruct.tools.network.EntityMovementChangePacket;
 
 public class TiAcMePacketHandler {
     private static final String PROTOCOL_VERSION = "1";
@@ -29,6 +30,10 @@ public class TiAcMePacketHandler {
                 .decoder(PInitializeModifierConfigS2C::new)
                 .encoder(PInitializeModifierConfigS2C::toByte)
                 .consumerMainThread(PInitializeModifierConfigS2C::handle).add();
+        INSTANCE.messageBuilder(EntityMovementChangePacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(EntityMovementChangePacket::new)
+                .encoder(EntityMovementChangePacket::encode)
+                .consumerMainThread(EntityMovementChangePacket::handle).add();
     }
 
     public static <MSG> void sendToServer(MSG msg){

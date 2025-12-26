@@ -9,6 +9,7 @@
     "supported_stats": [
       "tconstruct:maille",
       "tconstruct:armor_maille",
+      "tconstruct:arrow_head",
       "tconstruct:limb",
       "tconstruct:grip",
       "tconstruct:repair_kit",

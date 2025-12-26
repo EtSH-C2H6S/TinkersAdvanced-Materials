@@ -5,6 +5,8 @@
   ],
   "generator": {
     "supported_stats": [
+      "tconstruct:arrow_shaft",
+      "tconstruct:arrow_head",
       "tconstruct:head",
       "tconstruct:handle",
       "tconstruct:binding",

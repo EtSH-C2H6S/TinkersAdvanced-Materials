@@ -94,7 +94,8 @@ public class AerialProtection extends BasicPressurizableModifier implements Dama
 
     @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
-        if (source.is(DamageTypeTags.BYPASSES_ARMOR)) amount-=amount*CFG_BYPASS_ARMOR_REDUCTION;
+        if (source.is(DamageTypeTags.BYPASSES_ARMOR)&&slotType==EquipmentSlot.CHEST)
+            amount-=amount*CFG_BYPASS_ARMOR_REDUCTION;
         if (getAir(tool)>0&&!context.getLevel().isClientSide){
             float reduce = Math.min(CFG_DAMAGE_BLOCK*modifier.getLevel(), (float) getAir(tool) /CFG_CONSUMPTION);
             if (reduce>0){

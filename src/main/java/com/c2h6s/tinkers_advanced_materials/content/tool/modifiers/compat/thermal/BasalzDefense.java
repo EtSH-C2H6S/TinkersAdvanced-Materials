@@ -2,6 +2,7 @@ package com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.compat.therm
 
 import cofh.core.init.CoreMobEffects;
 import com.c2h6s.etstlib.tool.modifiers.base.EtSTBaseModifier;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -23,7 +24,7 @@ public class BasalzDefense extends EtSTBaseModifier implements ToolStatsModifier
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.TOOL_STATS);
-        hookBuilder.addModule(ProtectionModule.builder().amount(0,0.1f));
+        hookBuilder.addModule(ProtectionModule.builder().source(DamageSourcePredicate.CAN_PROTECT).amount(0,0.08f));
     }
 
     @Override

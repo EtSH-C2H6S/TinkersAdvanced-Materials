@@ -1,5 +1,8 @@
 package com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.common;
 
+import com.c2h6s.etstlib.register.EtSTLibHooks;
+import com.c2h6s.etstlib.register.EtSTLibModifier;
+import com.c2h6s.etstlib.tool.hooks.IndividualProtectionModifierHook;
 import com.c2h6s.etstlib.tool.modifiers.base.EtSTBaseModifier;
 import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import com.c2h6s.tinkers_advanced_materials.content.block.StibniteOreBlock;
@@ -7,32 +10,45 @@ import com.c2h6s.tinkers_advanced_materials.init.TiAcMeBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import slimeknights.mantle.client.TooltipKey;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.armor.ProtectionModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BlockBreakModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BreakSpeedModifierHook;
+import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
-public class Unstable extends EtSTBaseModifier implements BreakSpeedModifierHook, BlockBreakModifierHook {
+import java.util.List;
+
+public class Unstable extends EtSTBaseModifier implements BreakSpeedModifierHook, BlockBreakModifierHook, IndividualProtectionModifierHook, TooltipModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.BREAK_SPEED,ModifierHooks.BLOCK_BREAK);
+        hookBuilder.addModule(EtSTLibModifier.indiProtectionModule);
+        hookBuilder.addHook(this, ModifierHooks.BREAK_SPEED,ModifierHooks.BLOCK_BREAK, EtSTLibHooks.INDIVIDUAL_PROTECTION);
     }
 
     @Override
@@ -76,6 +92,11 @@ public class Unstable extends EtSTBaseModifier implements BreakSpeedModifierHook
     }
 
     @Override
+    public float onGetProjectileDamage(ModDataNBT persistentData, ModifierEntry entry, ModifierNBT modifiers, Projectile projectile, @Nullable LivingEntity attacker, @NotNull Entity target, float baseDamage, float damage) {
+        return damage+damage*persistentData.getFloat(TinkersAdvanced.getLocation("unstable_damage"));
+    }
+
+    @Override
     public float onGetMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         return damage+damage*getDamageMultiplier(tool,modifier);
     }
@@ -111,5 +132,24 @@ public class Unstable extends EtSTBaseModifier implements BreakSpeedModifierHook
     @Override
     public void afterBlockBreak(IToolStackView tool, ModifierEntry modifier, ToolHarvestContext context) {
         randomize(tool);
+    }
+
+    @Override
+    public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
+        if (tool.hasTag(TinkerTags.Items.ARMOR)||tool.hasTag(TinkerTags.Items.SHIELDS))
+            ProtectionModule.addResistanceTooltip(tool,this,
+                    tool.getPersistentData().getFloat(KEY_RANDOMIZE)*3.75f*modifier.getLevel(),player,tooltip);
+    }
+
+    @Override
+    public float getIndividualProtectionModifier(IToolStackView tool, ModifierEntry modifier, EquipmentContext equipmentContext, EquipmentSlot equipmentSlot, DamageSource damageSource, float v) {
+        if (!tool.hasTag(TinkerTags.Items.ARMOR)&&!tool.hasTag(TinkerTags.Items.SHIELDS)) return v;
+        return v+ randomizeAndGetNext(tool)*3.75f*modifier.getLevel();
+    }
+
+    @Override
+    public float getProtectionModifierForDisplay(IToolStackView tool, ModifierEntry modifier, Player player, float v) {
+        if (!tool.hasTag(TinkerTags.Items.ARMOR)&&!tool.hasTag(TinkerTags.Items.SHIELDS)) return v;
+        return v+ randomizeAndGetNext(tool)*3.75f*modifier.getLevel();
     }
 }

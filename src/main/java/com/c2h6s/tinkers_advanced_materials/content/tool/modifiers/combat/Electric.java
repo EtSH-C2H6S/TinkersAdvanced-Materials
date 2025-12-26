@@ -12,14 +12,19 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
+import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.entity.ProjectileWithPower;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
+import slimeknights.tconstruct.tools.entity.ThrownShuriken;
+import slimeknights.tconstruct.tools.entity.ToolProjectile;
 
 public class Electric extends EtSTBaseModifier {
     @Override
@@ -79,5 +84,37 @@ public class Electric extends EtSTBaseModifier {
                 j++;
             }
         }
+    }
+
+    @Override
+    public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
+        if (!(projectile instanceof AbstractArrow)&& projectile instanceof ProjectileWithPower toolProj&&attacker!=null&&target!=null){
+            int i =0;
+            int j = 0;
+            Entity entityStart;
+            Entity entityEnd = target;
+            IntOpenHashSet blacklist = new IntOpenHashSet();
+            blacklist.add(entityEnd.getId());
+            LegacyDamageSource source =LegacyDamageSource.mobAttack(attacker).setBypassShield().setBypassEnchantment().setBypassMagic().setBypassArmor().setBypassInvulnerableTime().setMsgId("plasma");
+            var damage = toolProj.getDamage();
+            var it = entityEnd.invulnerableTime;
+            entityEnd.hurt(source,damage/2);
+            entityEnd.invulnerableTime = it;
+            while (i<=modifier.getLevel()*2+6&&j<16){
+                entityStart = entityEnd;
+                if (entityStart != null) {
+                    entityEnd = CommonUtil.getNearestEntity(entityStart,modifier.getLevel()*2+2,blacklist,(entity -> !(entity instanceof ItemEntity)&&!(entity instanceof ExperienceOrb)&&!(entity instanceof Player)&&!(entity instanceof ThrowableItemProjectile)&&!entity.isInvulnerableTo(source)));
+                    if (entityEnd!=null){
+                        blacklist.add(entityEnd.getId());
+                        if (entityEnd.hurt(source,damage/2)){
+                            ParticleChainUtil.drawLine(TiAcCrParticleTypes.ELECTRIC.get(), entityStart.position().add(0,entityStart.getBbHeight()/2,0),entityEnd.position().add(0,entityEnd.getBbHeight()/2,0) ,0.2,ParticleChainUtil.EnumParticleFunctions.RANDOM.name,0.005, ParticleChainUtil.EnumParticleFunctions.RANDOM.name,0.2,32,320);
+                        }
+                    }
+                }
+                if (entityEnd instanceof LivingEntity) i++;
+                j++;
+            }
+        }
+        return super.onProjectileHitEntity(modifiers, persistentData, modifier, projectile, hit, attacker, target, notBlocked);
     }
 }

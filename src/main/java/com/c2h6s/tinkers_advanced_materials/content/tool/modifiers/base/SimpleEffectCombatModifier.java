@@ -2,10 +2,13 @@ package com.c2h6s.tinkers_advanced_materials.content.tool.modifiers.base;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -51,6 +54,11 @@ public class SimpleEffectCombatModifier extends MultiArgsDescModifier{
     }
 
     @Override
+    public MutableComponent applyStyle(MutableComponent component) {
+        return component.withStyle(style -> style.withColor(EFFECT.get().getColor()));
+    }
+
+    @Override
     public List<Component> getDescriptionList() {
         if (descriptionList == null) {
             descriptionList = Arrays.asList(
@@ -77,12 +85,15 @@ public class SimpleEffectCombatModifier extends MultiArgsDescModifier{
     }
 
     @Override
-    public void afterArrowHit(ModDataNBT persistentData, ModifierEntry entry, ModifierNBT modifiers, AbstractArrow arrow, @Nullable LivingEntity attacker, @NotNull LivingEntity target, float damageDealt) {
-        target.forceAddEffect(
-                new MobEffectInstance(EFFECT.get(),
-                        (EFFECT_TIME_EACH.get()*entry.getLevel())+EFFECT_TIME_FLAT.get(),
-                        (EFFECT_LEVEL_EACH.get()*entry.getLevel())+EFFECT_LEVEL_FLAT.get()-1
-                ),attacker
-        );
+    public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
+        if (target!=null){
+            target.forceAddEffect(
+                    new MobEffectInstance(EFFECT.get(),
+                            (EFFECT_TIME_EACH.get()*modifier.getLevel())+EFFECT_TIME_FLAT.get(),
+                            (EFFECT_LEVEL_EACH.get()*modifier.getLevel())+EFFECT_LEVEL_FLAT.get()-1
+                    ),attacker
+            );
+        }
+        return super.onProjectileHitEntity(modifiers, persistentData, modifier, projectile, hit, attacker, target, notBlocked);
     }
 }

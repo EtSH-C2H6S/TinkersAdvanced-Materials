@@ -10,6 +10,26 @@
     }
   ],
   "perStat": {
+    "tconstruct:ammo": [
+      {
+        "level": 1,
+        "name": "tinkers_advanced:chemical_unstable"
+      },
+      {
+        "level": 3,
+        "name": "tconstruct:keen"
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_advanced:unstable"
+      },
+      {
+        "level": 2,
+        "name": "etstlib:crystal_armor"
+      }
+    ],
     "tinkers_advanced:flux_core": [
       {
         "level": 1,
