@@ -40,18 +40,6 @@
   "modifier.tinkers_advanced.quantum_technology.flavor": "科技的尽头...是量子！",
   "modifier.tinkers_advanced.quantum_technology.description": "为工具增加能力槽和升级槽各一个。",
 
-  "modifier.tinkers_advanced.deep_catalysis": "深度催化",
-  "modifier.tinkers_advanced.deep_catalysis.flavor": "环保无污染！",
-  "modifier.tinkers_advanced.deep_catalysis.description": "每级减少10%工具使用的流体。",
-
-  "modifier.tinkers_advanced.focusing_array": "聚焦阵列",
-  "modifier.tinkers_advanced.focusing_array.flavor": "为了保证月球的安全，内部不含相控阵。",
-  "modifier.tinkers_advanced.focusing_array.description": "每级增加100%的流体效果作用半径。",
-
-  "modifier.tinkers_advanced.resonance_amplifier": "共振增幅",
-  "modifier.tinkers_advanced.resonance_amplifier.flavor": "你知道怎么利用驻波测定介质长度吗？",
-  "modifier.tinkers_advanced.resonance_amplifier.description": "每级增加10m射程。",
-
   "modifier.tinkers_advanced.radioactive_armor": "镭光护甲",
   "modifier.tinkers_advanced.radioactive_armor.flavor": "既产生辐射，也消除辐射",
   "modifier.tinkers_advanced.radioactive_armor.description": "对攻击者施加辐射，受到带辐射生物的伤害减少（仅生效一次，至多减少90%），每级获得50%辐射抗性。",
@@ -95,10 +83,6 @@
   "modifier.tinkers_advanced.blizz_defense": "坚冰",
   "modifier.tinkers_advanced.blizz_defense.flavor": "冰冷的外表，坚硬的芯",
   "modifier.tinkers_advanced.blizz_defense.description": "获得冰霜抗性，冻结攻击者，受到着火生物的伤害减半。",
-
-  "modifier.tinkers_advanced.over_hold": "超容",
-  "modifier.tinkers_advanced.over_hold.flavor": "这是非法改装！",
-  "modifier.tinkers_advanced.over_hold.description": "+900%流体容量。",
 
   "modifier.tinkers_advanced.flame_adaptive": "渴燃",
   "modifier.tinkers_advanced.flame_adaptive.flavor": "“摸起来很热”",
@@ -181,33 +165,9 @@
   "modifier.tinkers_advanced.ender_tuner.flavor": "真正的“可改进”",
   "modifier.tinkers_advanced.ender_tuner.description": "攻击时造成抑影效果，获得50kFE能量存储，损伤时优先消耗能量而非耐久。Shift-右键以打开一个调整页面，可以调节工具的性质。",
 
-  "modifier.tinkers_advanced.combustion_generator": "燃烧室能量模块",
-  "modifier.tinkers_advanced.combustion_generator.flavor": "这只是个开始。",
-  "modifier.tinkers_advanced.combustion_generator.description": "你的工具能通过燃烧熔炉燃料来产生能量。每级+200FE/t基础产出速率，燃料燃烧时间影响总产能。",
-
-  "modifier.tinkers_advanced.overslime_generator": "凝胶电化学能量模块",
-  "modifier.tinkers_advanced.overslime_generator.flavor": "黏液胶质形成的特殊空间网状结构是天然的离子交换介质。",
-  "modifier.tinkers_advanced.overslime_generator.description": "你的工具能通过消耗黏液覆层来产生能量。每级+250FE/t基础产出速率，每点黏液覆层能产生5kFE。",
-
   "modifier.tinkers_advanced.piezoelectric_effect": "压电效应",
   "modifier.tinkers_advanced.piezoelectric_effect.flavor": "晶格变形的兆示。",
   "modifier.tinkers_advanced.piezoelectric_effect.description": "攻击敌人后根据伤害恢复少量能量。提供每级+100FE/t的基础产出速率，每点伤害产生10FE。",
-
-  "modifier.tinkers_advanced.electric_food": "充电饱",
-  "modifier.tinkers_advanced.electric_food.flavor": "你连合金都吃了，吃点能量怎么了？",
-  "modifier.tinkers_advanced.electric_food.description": "消耗能量恢复饱食度和饱和度。提供每级+100FE/t的能量消耗，恢复每点饱食度需要25kFE。",
-
-  "modifier.tinkers_advanced.platinoid_catalyst": "铂系催化剂",
-  "modifier.tinkers_advanced.platinoid_catalyst.flavor": "铂系催化剂很贵，所以不怎么常用。",
-  "modifier.tinkers_advanced.platinoid_catalyst.description": "增加能量产生/消耗的速率。但是减少最大能量产出，增加最大能量消耗。每级25%效果。",
-
-  "modifier.tinkers_advanced.transition_catalyst": "过渡金属催化剂",
-  "modifier.tinkers_advanced.transition_catalyst.flavor": "普普通通的过渡金属催化剂。",
-  "modifier.tinkers_advanced.transition_catalyst.description": "增加能量产生总量，减少能量消耗总量。每级25%效果。",
-
-  "modifier.tinkers_advanced.smeltery_generator": "冶炼炉能量模块",
-  "modifier.tinkers_advanced.smeltery_generator.flavor": "热能发电？",
-  "modifier.tinkers_advanced.smeltery_generator.description": "你的工具能通过消耗冶炼炉燃料产生能量。每级+250FE/t的基础产出速率，受燃料温度成比例加成（熔岩为1x）。",
 
   "modifier.tinkers_advanced.unstable": "不稳定",
   "modifier.tinkers_advanced.unstable.flavor": "轻拿轻放！",
@@ -221,30 +181,6 @@
   "modifier.tinkers_advanced.poison_defense": "百毒不侵",
   "modifier.tinkers_advanced.poison_defense.flavor": "我已炼成毒体...",
   "modifier.tinkers_advanced.poison_defense.description": "免疫中毒和凋零效果。",
-
-  "modifier.tinkers_advanced.extra_capacity": "额外电容",
-  "modifier.tinkers_advanced.extra_capacity.flavor": "根据 W=0.5CU² 可知电容增加则相同电压下电容存储的电能增加。",
-  "modifier.tinkers_advanced.extra_capacity.description": "每级增加20%能量容量。",
-
-  "modifier.tinkers_advanced.compressed_air_generator": "压缩空气能量模块",
-  "modifier.tinkers_advanced.compressed_air_generator.flavor": "气压其实是一种分子势能的体现。",
-  "modifier.tinkers_advanced.compressed_air_generator.description": "你的工具能通过消耗压缩空气发电。每级+压力*50FE/t的基础产出速率，能量转换率与压缩空气能源炉相当。",
-
-  "modifier.tinkers_advanced.swift_strike_ex": "强力迅捷打击",
-  "modifier.tinkers_advanced.swift_strike_ex.flavor": "魔法宝石的奇妙力量。",
-  "modifier.tinkers_advanced.swift_strike_ex.description": "每级增加25%攻击速度。",
-
-  "modifier.tinkers_advanced.energy_bin": "能量垃圾桶",
-  "modifier.tinkers_advanced.energy_bin.flavor": "我不确定FE能不能被扔进熔岩...",
-  "modifier.tinkers_advanced.energy_bin.description": "每tick销毁工具存储的所有能量。",
-
-  "modifier.tinkers_advanced.player_locating": "玩家定位器",
-  "modifier.tinkers_advanced.player_locating.flavor": "但是，有什么用呢？",
-  "modifier.tinkers_advanced.player_locating.description": "在背包中用纸右键时将你的ID写入工具。",
-
-  "modifier.tinkers_advanced.energy_distributor": "能量分配器",
-  "modifier.tinkers_advanced.energy_distributor.flavor": "就像一个充电宝。",
-  "modifier.tinkers_advanced.energy_distributor.description": "将工具存储的能量分配到玩家的快捷栏、副手物品和护甲栏。",
 
   "modifier.tinkers_advanced.void_dodging": "末影闪避",
   "modifier.tinkers_advanced.void_dodging.flavor": "身上装了个末影人？",

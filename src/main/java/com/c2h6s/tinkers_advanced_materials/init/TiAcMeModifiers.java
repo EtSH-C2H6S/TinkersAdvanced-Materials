@@ -74,9 +74,6 @@ public class TiAcMeModifiers {
     public static final StaticModifier<SlotAddingModifier> EXTRA_ENHANCE = TiAcCrModule.MODIFIERS.register("extra_enhance",()-> new SlotAddingModifier(
             i -> SlotAddingModifier.slot(SlotType.ABILITY,i)
     ));
-    public static final StaticModifier<AnnihilatingSlime> ANNIHILATING_SLIME = TiAcCrModule.MODIFIERS.register("annihilating_slime", AnnihilatingSlime::new);
-    public static final StaticModifier<AnnihilatingSlimeArmor> ANNIHILATING_SLIME_ARMOR = TiAcCrModule.MODIFIERS.register("annihilating_slime_armor", AnnihilatingSlimeArmor::new);
-    public static final StaticModifier<NeutroniumAssemble> NEUTRONIUM_ASSEMBLE = TiAcCrModule.MODIFIERS.register("neutronium_assemble", NeutroniumAssemble::new);
     public static final StaticModifier<HeavyMaterial> HEAVY_MATERIAL = TiAcCrModule.MODIFIERS.register("heavy_material",HeavyMaterial::new);
     public static final StaticModifier<EnergyReinforced> ENERGY_REINFORCED = TiAcCrModule.MODIFIERS.register("energy_reinforced",EnergyReinforced::new);
     public static final StaticModifier<Superconduct> SUPER_CONDUCT = TiAcCrModule.MODIFIERS.register("super_conduct",Superconduct::new);
@@ -112,7 +109,9 @@ public class TiAcMeModifiers {
     public static final StaticModifier<RadioactiveArmor> RADIOACTIVE_ARMOR = MEK_MODIFIERS.register("radioactive_armor", RadioactiveArmor::new);
     public static final StaticModifier<AtomGrade> ATOM_GRADE = MEK_MODIFIERS.register("atom_grade", AtomGrade::new);
     public static final StaticModifier<RadiationBurning> RADIATION_BURNING = MEK_MODIFIERS.register("radiation_burning", RadiationBurning::new);
-
+    public static final StaticModifier<AnnihilatingSlime> ANNIHILATING_SLIME = MEK_MODIFIERS.register("annihilating_slime", AnnihilatingSlime::new);
+    public static final StaticModifier<AnnihilatingSlimeArmor> ANNIHILATING_SLIME_ARMOR = MEK_MODIFIERS.register("annihilating_slime_armor", AnnihilatingSlimeArmor::new);
+    public static final StaticModifier<NeutroniumAssemble> NEUTRONIUM_ASSEMBLE = MEK_MODIFIERS.register("neutronium_assemble", NeutroniumAssemble::new);
 
     //PnC联动属性
     public static final StaticModifier<AirSlash> AIR_SLASH = PNC_MODIFIERS.register("air_slash", AirSlash::new);
