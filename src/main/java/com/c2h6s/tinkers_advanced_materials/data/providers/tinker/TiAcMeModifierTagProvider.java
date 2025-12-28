@@ -1,5 +1,6 @@
 package com.c2h6s.tinkers_advanced_materials.data.providers.tinker;
 
+import com.c2h6s.etstlib.register.EtSTLibModifier;
 import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -32,7 +33,8 @@ public class TiAcMeModifierTagProvider extends AbstractModifierTagProvider {
                         BLIZZ_ENHANCE,
                         TiAcMeModifierProvider.ModifierIds.ATOM_GRADE,
                         EDGING_TECHNOLOGY,
-                        QUANTUM_TECHNOLOGY
+                        QUANTUM_TECHNOLOGY,
+                        ISO_CHROME.getId()
                 );
         this.tag(TinkerTags.Modifiers.BONUS_SLOTLESS).addOptional(
                 THERMAL_FOUNDATION,
@@ -41,7 +43,8 @@ public class TiAcMeModifierTagProvider extends AbstractModifierTagProvider {
                 BLIZZ_ENHANCE,
                 TiAcMeModifierProvider.ModifierIds.ATOM_GRADE,
                 EDGING_TECHNOLOGY,
-                QUANTUM_TECHNOLOGY
+                QUANTUM_TECHNOLOGY,
+                ISO_CHROME.getId()
         );
         this.tag(TinkerTags.Modifiers.UPGRADES)
                 .addOptional(
@@ -52,6 +55,22 @@ public class TiAcMeModifierTagProvider extends AbstractModifierTagProvider {
                 .addOptional(
                         OBSIDIANITE,
                         RAINBOW_KIT
+                );
+        this.tag(TinkerTags.Modifiers.DEFENSE)
+                .addOptional(
+                        EtSTLibModifier.EtSTLibModifierMek.radiation_shielding.getId()
+                );
+        this.tag(TinkerTags.Modifiers.SPECIAL_DEFENSE)
+                .addOptional(
+                        EtSTLibModifier.EtSTLibModifierMek.radiation_shielding.getId()
+                );
+        this.tag(TinkerTags.Modifiers.ABILITIES)
+                .addOptional(
+                        RADIATION_REMOVAL.getId()
+                );
+        this.tag(TinkerTags.Modifiers.GENERAL_ABILITIES)
+                .addOptional(
+                        RADIATION_REMOVAL.getId()
                 );
     }
 

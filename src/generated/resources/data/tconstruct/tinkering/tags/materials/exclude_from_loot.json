@@ -29,6 +29,10 @@
       "required": false
     },
     {
+      "id": "#tinkers_advanced:stellarium",
+      "required": false
+    },
+    {
       "id": "#tinkers_advanced:chorusite",
       "required": false
     },
@@ -41,15 +45,11 @@
       "required": false
     },
     {
-      "id": "#tinkers_advanced:stellar_alloy",
-      "required": false
-    },
-    {
       "id": "#tinkers_advanced:netherstar_alloy",
       "required": false
     },
     {
-      "id": "#tinkers_advanced:melodic_alloy",
+      "id": "#tinkers_advanced:melodium",
       "required": false
     },
     {

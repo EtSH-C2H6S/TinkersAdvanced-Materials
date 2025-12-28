@@ -27,7 +27,7 @@ public class TiAcMeMaterialRenderInfoProvider extends AbstractMaterialRenderInfo
         buildRenderInfo(TiAcMeMaterialIds.ANTIMONY).color(0xFFC7D6CC).fallbacks("metal");
         buildRenderInfo(TiAcMeMaterialIds.STIBNITE).color(0xFF728c39).fallbacks("crystal", "rock", "stick");
         buildRenderInfo(TiAcMeMaterialIds.AE2.CERTUS).color(0xFFB8D8FC).fallbacks("crystal", "rock", "stick");
-        buildRenderInfo(TiAcMeMaterialIds.AE2.FLUIX).color(0xFFB8D8FC).fallbacks("crystal", "rock", "stick").luminosity(5);
+        buildRenderInfo(TiAcMeMaterialIds.AE2.FLUIX).color(0xFFAA71ED).fallbacks("crystal", "rock", "stick").luminosity(5);
         buildRenderInfo(TiAcMeMaterialIds.Mekanism.ALLOY_ATOMIC).color(0xFFD896FF).fallbacks("crystal", "metal").luminosity(6);
         buildRenderInfo(TiAcMeMaterialIds.Mekanism.REFINED_GLOWSTONE).color(0xFFFEFF8C).fallbacks("metal").luminosity(15);
         buildRenderInfo(TiAcMeMaterialIds.Mekanism.REFINED_OBSIDIAN).color(0xFF391375).fallbacks("metal");

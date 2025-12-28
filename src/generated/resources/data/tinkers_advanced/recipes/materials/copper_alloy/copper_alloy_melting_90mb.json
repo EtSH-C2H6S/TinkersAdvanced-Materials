@@ -5,17 +5,26 @@
       "type": "forge:and",
       "values": [
         {
-          "type": "forge:mod_loaded",
-          "modid": "enderio"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "enderio"
+            },
+            {
+              "type": "tinkers_advanced:compat_enabled",
+              "is_original": false,
+              "mod_id": "enderio"
+            },
+            {
+              "type": "tinkers_advanced:config",
+              "prop": "allow_original_materials"
+            }
+          ]
         },
         {
-          "type": "tinkers_advanced:compat_enabled",
-          "is_original": false,
-          "mod_id": "enderio"
-        },
-        {
-          "type": "tinkers_advanced:config",
-          "prop": "allow_original_materials"
+          "type": "mantle:tag_filled",
+          "tag": "forge:ingots/copper_alloy"
         }
       ]
     }

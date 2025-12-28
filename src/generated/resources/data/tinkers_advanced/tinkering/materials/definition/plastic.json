@@ -7,9 +7,8 @@
         "tag": "tinkers_advanced:plastic"
       },
       {
-        "type": "tinkers_advanced:compat_enabled",
-        "is_original": false,
-        "mod_id": "tinkers_advanced"
+        "type": "tinkers_advanced:general_material_enabled",
+        "name": "plastic"
       }
     ]
   },

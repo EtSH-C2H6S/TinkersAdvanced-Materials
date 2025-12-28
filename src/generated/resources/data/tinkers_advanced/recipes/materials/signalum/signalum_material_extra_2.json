@@ -1,21 +1,30 @@
 {
-  "type": "tconstruct:melting",
+  "type": "tconstruct:material",
   "conditions": [
     {
       "type": "forge:and",
       "values": [
         {
-          "type": "forge:mod_loaded",
-          "modid": "thermal"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "thermal"
+            },
+            {
+              "type": "tinkers_advanced:compat_enabled",
+              "is_original": false,
+              "mod_id": "thermal"
+            },
+            {
+              "type": "tinkers_advanced:config",
+              "prop": "allow_original_materials"
+            }
+          ]
         },
         {
-          "type": "tinkers_advanced:compat_enabled",
-          "is_original": false,
-          "mod_id": "thermal"
-        },
-        {
-          "type": "tinkers_advanced:config",
-          "prop": "allow_original_materials"
+          "type": "mantle:tag_filled",
+          "tag": "forge:nuggets/signalum"
         }
       ]
     }
@@ -23,10 +32,7 @@
   "ingredient": {
     "tag": "forge:nuggets/signalum"
   },
-  "result": {
-    "amount": 10,
-    "tag": "forge:molten_signalum"
-  },
-  "temperature": 999,
-  "time": 66
+  "material": "tinkers_advanced:signalum",
+  "needed": 9,
+  "value": 1
 }

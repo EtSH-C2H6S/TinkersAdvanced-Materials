@@ -153,6 +153,9 @@ public class TiAcMeConfig {
         public final ForgeConfigSpec.DoubleValue CAPACITOR_CAPABLE_POWER_STATS_MUL;
         public final ForgeConfigSpec.DoubleValue CAPACITOR_CAPABLE_EFFICIENCY_STAT_MUL;
 
+        public final ForgeConfigSpec.DoubleValue RADIATION_REMOVAL_DECAY_SPEED;
+
+
 
         public final ForgeConfigSpec.BooleanValue ALLOW_BISMUTHINITE;
         public final ForgeConfigSpec.BooleanValue ALLOW_STIBNITE;
@@ -552,6 +555,12 @@ public class TiAcMeConfig {
             this.CAPACITOR_CAPABLE_POWER_STATS_MUL = builder
                     .comment("可容电容对功率属性（默认包括TiAcT范围倍率、TiAcT产出倍率）的增幅的定性乘数，默认1。")
                     .defineInRange("CapacitorCapabilityPowerStatMultiplier",1,0.0,Float.MAX_VALUE);
+
+            builder.comment("Radiation Removal").comment("消辐");
+            this.RADIATION_REMOVAL_DECAY_SPEED = builder
+                    .comment("消辐的衰变常数，每tick令身上的辐射水平乘以此值，默认0.99。")
+                    .comment("原版的默认衰变常数为0.9995，0.99的衰变常数相当于每刻衰变20次，设置成0则会瞬间消除辐射。词条等级的增加会指数级叠加衰变速率。")
+                    .defineInRange("RadiationRemovalDecaySpeed",0.99d,0.0,0.9995);
 
 
             builder.comment("Generator Modules").comment("能量模块类强化");

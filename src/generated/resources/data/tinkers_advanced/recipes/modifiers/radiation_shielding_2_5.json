@@ -1,0 +1,39 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "mekanism"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "mekanism"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "forge:ingots/lead"
+    },
+    {
+      "tag": "forge:dyes/orange"
+    },
+    {
+      "tag": "forge:ingots/lead"
+    }
+  ],
+  "level": {
+    "max": 5,
+    "min": 2
+  },
+  "result": "etstlib:radiation_shielding",
+  "tools": {
+    "tag": "tconstruct:modifiable/armor"
+  }
+}

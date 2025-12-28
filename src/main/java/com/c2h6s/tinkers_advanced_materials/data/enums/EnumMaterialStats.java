@@ -82,6 +82,7 @@ public enum EnumMaterialStats {
             StatlessMaterialStats.BINDING,
             StatlessMaterialStats.MAILLE,
             StatlessMaterialStats.SHIELD_CORE,
+            StatlessMaterialStats.ARROW_HEAD,
             new HandleMaterialStats(0.05f,0.05f,0.05f,0.05f),
             new HeadMaterialStats(396,6.5f, Tiers.IRON,2.5f),
             new GripMaterialStats(0.05f,0.1f,2.5f),

@@ -1,0 +1,43 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/gear"
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "thermalendergy"
+            },
+            {
+              "type": "tinkers_advanced:compat_enabled",
+              "is_original": false,
+              "mod_id": "thermalendergy"
+            },
+            {
+              "type": "tinkers_advanced:config",
+              "prop": "allow_original_materials"
+            }
+          ]
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "forge:gears/melodium"
+        }
+      ]
+    }
+  ],
+  "cooling_time": 80,
+  "fluid": {
+    "amount": 360,
+    "tag": "forge:molten_melodium"
+  },
+  "result": {
+    "tag": "forge:gears/melodium"
+  }
+}

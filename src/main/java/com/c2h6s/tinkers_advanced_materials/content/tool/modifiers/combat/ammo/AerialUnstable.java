@@ -31,13 +31,11 @@ public class AerialUnstable extends Modifier implements ScheduledProjectileTaskM
 
     @Override
     public void onScheduledProjectileTask(IToolStackView tool, ModifierEntry modifier, ItemStack ammo, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, int task) {
-        if (!projectile.isRemoved()&&task==0) {
+        if (!projectile.isRemoved()&&task==0&&!projectile.level().isClientSide) {
             var vec3 = projectile.getDeltaMovement();
             float factor = (float) (vec3.length() * 0.2f * modifier.getLevel());
             projectile.setDeltaMovement(vec3.offsetRandom(RandomSource.create(), factor));
-            if (projectile.level() instanceof ServerLevel serverLevel){
-                TiAcMePacketHandler.sendToClient(new EntityMovementChangePacket(projectile));
-            }
+            TiAcMePacketHandler.sendToClient(new EntityMovementChangePacket(projectile));
         }
     }
 }

@@ -9,17 +9,26 @@
       "type": "forge:and",
       "values": [
         {
-          "type": "forge:mod_loaded",
-          "modid": "thermal"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "thermal"
+            },
+            {
+              "type": "tinkers_advanced:compat_enabled",
+              "is_original": false,
+              "mod_id": "thermal"
+            },
+            {
+              "type": "tinkers_advanced:config",
+              "prop": "allow_original_materials"
+            }
+          ]
         },
         {
-          "type": "tinkers_advanced:compat_enabled",
-          "is_original": false,
-          "mod_id": "thermal"
-        },
-        {
-          "type": "tinkers_advanced:config",
-          "prop": "allow_original_materials"
+          "type": "mantle:tag_filled",
+          "tag": "forge:ingots/lumium"
         }
       ]
     }

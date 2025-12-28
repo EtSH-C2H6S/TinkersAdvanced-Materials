@@ -356,6 +356,10 @@
   "modifier.tinkers_advanced.chemical_unstable.flavor": "化学不稳定",
   "modifier.tinkers_advanced.chemical_unstable.description": "弹射物出射后2秒内的任意时刻有概率在爆炸中消失。",
 
+  "modifier.tinkers_advanced.radiation_removal": "消辐",
+  "modifier.tinkers_advanced.radiation_removal.flavor": "让时间抚平伤口",
+  "modifier.tinkers_advanced.radiation_removal.description": "装备时增加身上辐射的自然衰变速率。",
+
 
 
   "material.tinkers_advanced.bismuth": "铋",
@@ -499,12 +503,12 @@
   "material.tinkers_advanced.enderium": "末影",
   "material.tinkers_advanced.enderium.flavor": "一种高强度材料，广泛用于制作机器组件。",
 
-  "material.tinkers_advanced.prismalic_alloy": "海晶",
-  "material.tinkers_advanced.prismalic_alloy.flavor": "凝聚了海洋之力的工业材料。",
-  "material.tinkers_advanced.melodic_alloy": "旋律",
-  "material.tinkers_advanced.melodic_alloy.flavor": "其中蕴含的能量有规律地跳动。",
-  "material.tinkers_advanced.stellar_alloy": "恒星",
-  "material.tinkers_advanced.stellar_alloy.flavor": "更为坚固的材料，是你所期望的产物吗？",
+  "material.tinkers_advanced.prismalium": "海晶",
+  "material.tinkers_advanced.prismalium.flavor": "凝聚了海洋之力的工业材料。",
+  "material.tinkers_advanced.melodium": "旋律",
+  "material.tinkers_advanced.melodium.flavor": "其中蕴含的能量有规律地跳动。",
+  "material.tinkers_advanced.stellarium": "恒星",
+  "material.tinkers_advanced.stellarium.flavor": "更为坚固的材料，是你所期望的产物吗？",
 
   "material.tinkers_advanced.frostite": "霜冻合金",
   "material.tinkers_advanced.glowstoneite": "荧石合金",
@@ -641,11 +645,11 @@
   "fluid.tinkers_advanced.molten_anti_neutronium": "熔融反中子",
   "item.tinkers_advanced.molten_anti_neutronium_bucket": "熔融反中子桶",
 
-  "fluid.tinkers_advanced.molten_melodic_alloy": "熔融旋律合金",
-  "item.tinkers_advanced.molten_melodic_alloy_bucket": "熔融旋律合金桶",
+  "fluid.tinkers_advanced.molten_melodium": "熔融旋律合金",
+  "item.tinkers_advanced.molten_melodium_bucket": "熔融旋律合金桶",
 
-  "fluid.tinkers_advanced.molten_prismalic_alloy": "熔融海晶合金",
-  "item.tinkers_advanced.molten_prismalic_alloy_bucket": "熔融海晶合金桶",
+  "fluid.tinkers_advanced.molten_prismalium": "熔融海晶合金",
+  "item.tinkers_advanced.molten_prismalium_bucket": "熔融海晶合金桶",
 
   "fluid.tinkers_advanced.molten_frostite": "熔融霜冻合金",
   "item.tinkers_advanced.molten_frostite_bucket": "熔融霜冻合金桶",
@@ -674,8 +678,8 @@
   "fluid.tinkers_advanced.molten_netherstar_alloy": "熔融下界之星合金",
   "item.tinkers_advanced.molten_netherstar_alloy_bucket": "熔融下界之星合金桶",
 
-  "fluid.tinkers_advanced.molten_stellar_alloy": "熔融恒星合金",
-  "item.tinkers_advanced.molten_stellar_alloy_bucket": "熔融恒星合金桶",
+  "fluid.tinkers_advanced.molten_stellarium": "熔融恒星合金",
+  "item.tinkers_advanced.molten_stellarium_bucket": "熔融恒星合金桶",
 
   "fluid.tinkers_advanced.molten_redstone_alloy": "熔融红石合金",
   "item.tinkers_advanced.molten_redstone_alloy_bucket": "熔融红石合金桶",

@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "etstlib:radiation_shielding",
+      "required": false
+    }
+  ]
+}

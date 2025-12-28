@@ -112,6 +112,7 @@ public class TiAcMeModifiers {
     public static final StaticModifier<AnnihilatingSlime> ANNIHILATING_SLIME = MEK_MODIFIERS.register("annihilating_slime", AnnihilatingSlime::new);
     public static final StaticModifier<AnnihilatingSlimeArmor> ANNIHILATING_SLIME_ARMOR = MEK_MODIFIERS.register("annihilating_slime_armor", AnnihilatingSlimeArmor::new);
     public static final StaticModifier<NeutroniumAssemble> NEUTRONIUM_ASSEMBLE = MEK_MODIFIERS.register("neutronium_assemble", NeutroniumAssemble::new);
+    public static final StaticModifier<RadiationRemoval> RADIATION_REMOVAL = MEK_MODIFIERS.register("radiation_removal", RadiationRemoval::new);
 
     //PnC联动属性
     public static final StaticModifier<AirSlash> AIR_SLASH = PNC_MODIFIERS.register("air_slash", AirSlash::new);

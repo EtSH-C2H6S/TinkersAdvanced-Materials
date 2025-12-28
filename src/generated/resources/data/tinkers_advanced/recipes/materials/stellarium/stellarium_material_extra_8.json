@@ -1,0 +1,30 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "thermalendergy"
+        },
+        {
+          "type": "tinkers_advanced:compat_enabled",
+          "is_original": false,
+          "mod_id": "thermalendergy"
+        },
+        {
+          "type": "tinkers_advanced:config",
+          "prop": "allow_original_materials"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "item": "thermalendergy:stellarium_block"
+  },
+  "leftover": "thermalendergy:stellarium_ingot",
+  "material": "tinkers_advanced:stellarium",
+  "needed": 1,
+  "value": 9
+}

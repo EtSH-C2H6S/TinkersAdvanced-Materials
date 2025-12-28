@@ -41,7 +41,7 @@ public class TiAcMeMaterialSpriteProvider extends AbstractMaterialSpriteProvider
                 .addARGB(178,0xFF6D397F)
                 .addARGB(216,0xFFB661D0)
                 .addARGB(255,0xFFD479E5).build());
-        this.buildMaterial(TiAcMeMaterialIds.AE2.FLUIX).maille().ranged().meleeHarvest().fallbacks("crystal", "rock", "stick").colorMapper(GreyToColorMapping.builder()
+        this.buildMaterial(TiAcMeMaterialIds.AE2.FLUIX).maille().shieldCore().ranged().meleeHarvest().fallbacks("crystal", "rock", "stick").colorMapper(GreyToColorMapping.builder()
                 .addARGB(0,0xFF000000)
                 .addARGB(63,0xFF1A172F)
                 .addARGB(102,0xFF212040)

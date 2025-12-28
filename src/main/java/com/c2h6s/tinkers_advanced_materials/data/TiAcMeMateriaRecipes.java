@@ -3,8 +3,6 @@ package com.c2h6s.tinkers_advanced_materials.data;
 import cofh.lib.init.tags.ItemTagsCoFH;
 import com.LunaGlaze.rainbowcompound.Projects.Items.Basic.ItemsItemRegistry;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeFluids;
-import com.enderio.base.common.init.EIOBlocks;
-import com.enderio.base.common.init.EIOItems;
 import com.enderio.base.common.tag.EIOTags;
 import com.simibubi.create.AllItems;
 import dev.epicsquid.thermalendergy.registry.ItemRegistry;
@@ -32,47 +30,52 @@ public class TiAcMeMateriaRecipes {
         recipeInfo = SIGNALUM.addRecipeInfo().setFluidAmount(90).setTemp(999).setIngot().setItemIn(ItemTagsCoFH.INGOTS_SIGNALUM,null)
                 .setFluidIn(TinkerFluids.moltenSignalum.getCommonTag(), TinkerFluids.moltenSignalum::get)
                 .setLeftover(ItemTagsCoFH.NUGGETS_SIGNALUM,null).build().getRecipeInfo();
-        recipeInfo.addMetalNugget(ItemTagsCoFH.NUGGETS_SIGNALUM,null,SIGNALUM)
-                .addMetalBlock(ItemTagsCoFH.STORAGE_BLOCKS_SIGNALUM,null,SIGNALUM);
+        recipeInfo.addMetalNugget(ItemTagsCoFH.NUGGETS_SIGNALUM,null,SIGNALUM,true)
+                .addMetalBlock(ItemTagsCoFH.STORAGE_BLOCKS_SIGNALUM,null,SIGNALUM,true);
         recipeInfo = LUMIUM.addRecipeInfo().setFluidAmount(90).setTemp(1050).setIngot().setItemIn(ItemTagsCoFH.INGOTS_LUMIUM,null)
                 .setFluidIn(TinkerFluids.moltenLumium.getCommonTag(), TinkerFluids.moltenLumium::get)
                 .setLeftover(ItemTagsCoFH.NUGGETS_LUMIUM,null).build().getRecipeInfo();
-        recipeInfo.addMetalNugget(ItemTagsCoFH.NUGGETS_LUMIUM,null,LUMIUM)
-                .addMetalBlock(ItemTagsCoFH.STORAGE_BLOCKS_LUMIUM,null,LUMIUM);
+        recipeInfo.addMetalNugget(ItemTagsCoFH.NUGGETS_LUMIUM,null,LUMIUM,true)
+                .addMetalBlock(ItemTagsCoFH.STORAGE_BLOCKS_LUMIUM,null,LUMIUM,true);
         recipeInfo = ENDERIUM.addRecipeInfo().setFluidAmount(90).setTemp(1350).setIngot().setItemIn(ItemTagsCoFH.INGOTS_ENDERIUM,null)
                 .setFluidIn(TinkerFluids.moltenEnderium.getCommonTag(), TinkerFluids.moltenEnderium::get)
                 .setLeftover(ItemTagsCoFH.NUGGETS_ENDERIUM,null).build().getRecipeInfo();
-        recipeInfo.addMetalNugget(ItemTagsCoFH.NUGGETS_ENDERIUM,null,ENDERIUM)
-                .addMetalBlock(ItemTagsCoFH.STORAGE_BLOCKS_ENDERIUM,null,ENDERIUM);
+        recipeInfo.addMetalNugget(ItemTagsCoFH.NUGGETS_ENDERIUM,null,ENDERIUM,true)
+                .addMetalBlock(ItemTagsCoFH.STORAGE_BLOCKS_ENDERIUM,null,ENDERIUM,true);
         recipeInfo = PRISMALIC_ALLOY.addRecipeInfo().setFluidAmount(90).setTemp(1250).setIngot()
+                .setFluidIn(PRISMALIC_ALLOY.getFluidObject().getCommonTag(), (Supplier<Fluid>) null)
                 .setItemIn(null,ItemRegistry.INSTANCE.getPrismaliumIngot())
                 .setLeftover(null, ForgeRegistries.ITEMS.
                         getValue(new ResourceLocation("thermalendergy:prismalium_nugget"))).
                 build().getRecipeInfo();
         recipeInfo.addMetalNugget(null,()->
                         ForgeRegistries.ITEMS.getValue(new ResourceLocation("thermalendergy:prismalium_nugget")),
-                        PRISMALIC_ALLOY)
-                .addMetalBlock(null,ItemRegistry.INSTANCE::getPrismaliumBlock,PRISMALIC_ALLOY);
+                        PRISMALIC_ALLOY,false)
+                .addMetalBlock(null,ItemRegistry.INSTANCE::getPrismaliumBlock,PRISMALIC_ALLOY,false);
 
         recipeInfo = MELODIC_ALLOY.addRecipeInfo().setFluidAmount(90).setTemp(1500).setIngot()
+                .setFluidIn(MELODIC_ALLOY.getFluidObject().getCommonTag(),(Supplier<Fluid>) null)
                 .setItemIn(null,ItemRegistry.INSTANCE.getMelodiumIngot())
                 .setLeftover(null, ForgeRegistries.ITEMS.
                         getValue(new ResourceLocation("thermalendergy:melodium_nugget"))).
                 build().getRecipeInfo();
         recipeInfo.addMetalNugget(null,()->
                         ForgeRegistries.ITEMS.getValue(new ResourceLocation("thermalendergy:melodium_nugget")),
-                        MELODIC_ALLOY)
-                .addMetalBlock(null, ItemRegistry.INSTANCE::getMelodiumBlock,MELODIC_ALLOY);
+                        MELODIC_ALLOY,false)
+                .addMetalBlock(null, ItemRegistry.INSTANCE::getMelodiumBlock,MELODIC_ALLOY,false)
+                .addGeneralRecipes("melodium");
 
         recipeInfo = STELLAR_ALLOY.addRecipeInfo().setFluidAmount(90).setTemp(2000).setIngot()
+                .setFluidIn(STELLAR_ALLOY.getFluidObject().getCommonTag(), (Supplier<Fluid>) null)
                 .setItemIn(null,ItemRegistry.INSTANCE.getStellariumIngot())
                 .setLeftover(null, ForgeRegistries.ITEMS.
                         getValue(new ResourceLocation("thermalendergy:stellarium_nugget"))).
                 build().getRecipeInfo();
         recipeInfo.addMetalNugget(null,()->
                                 ForgeRegistries.ITEMS.getValue(new ResourceLocation("thermalendergy:stellarium_nugget")),
-                        STELLAR_ALLOY)
-                .addMetalBlock(null, ItemRegistry.INSTANCE::getStellariumBlock,STELLAR_ALLOY);
+                        STELLAR_ALLOY,false)
+                .addMetalBlock(null, ItemRegistry.INSTANCE::getStellariumBlock,STELLAR_ALLOY,false)
+                .addGeneralRecipes("stellarium");
 
         FROSTITE.addRecipeInfo().setFluidAmount(90).setTemp(550).setIngot()
                 .setItemIn(null,ItemsItemRegistry.frostiteingot.get()).build();
@@ -100,15 +103,15 @@ public class TiAcMeMateriaRecipes {
                 .setItemIn(EIOTags.Items.INGOTS_COPPER_ALLOY, null)
                 .setLeftover(EIOTags.Items.NUGGETS_COPPER_ALLOY, null)
                 .build().getRecipeInfo();
-        recipeInfo.addMetalNugget(EIOTags.Items.NUGGETS_COPPER_ALLOY,null,COPPER_ALLOY)
-                .addMetalBlock(EIOTags.Items.BLOCKS_COPPER_ALLOY, null,COPPER_ALLOY);
+        recipeInfo.addMetalNugget(EIOTags.Items.NUGGETS_COPPER_ALLOY,null,COPPER_ALLOY,false)
+                .addMetalBlock(EIOTags.Items.BLOCKS_COPPER_ALLOY, null,COPPER_ALLOY,false);
 
         recipeInfo = REDSTONE_ALLOY.addRecipeInfo().setFluidAmount(90).setTemp(600).setIngot()
                 .setFluidIn(REDSTONE_ALLOY.getFluidObject().getCommonTag(), (Supplier<Fluid>) null)
                 .setItemIn(EIOTags.Items.INGOTS_REDSTONE_ALLOY, null)
                 .setLeftover(EIOTags.Items.NUGGETS_REDSTONE_ALLOY,null)
                 .build().getRecipeInfo();
-        recipeInfo.addMetalNugget(EIOTags.Items.NUGGETS_REDSTONE_ALLOY,null,REDSTONE_ALLOY)
-                .addMetalBlock(EIOTags.Items.BLOCKS_REDSTONE_ALLOY, null,REDSTONE_ALLOY);
+        recipeInfo.addMetalNugget(EIOTags.Items.NUGGETS_REDSTONE_ALLOY,null,REDSTONE_ALLOY,false)
+                .addMetalBlock(EIOTags.Items.BLOCKS_REDSTONE_ALLOY, null,REDSTONE_ALLOY,false);
     }
 }

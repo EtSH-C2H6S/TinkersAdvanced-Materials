@@ -1,31 +1,42 @@
 {
-  "type": "tconstruct:casting_basin",
+  "type": "tconstruct:material",
   "conditions": [
     {
       "type": "forge:and",
       "values": [
         {
-          "type": "forge:mod_loaded",
-          "modid": "enderio"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "enderio"
+            },
+            {
+              "type": "tinkers_advanced:compat_enabled",
+              "is_original": false,
+              "mod_id": "enderio"
+            },
+            {
+              "type": "tinkers_advanced:config",
+              "prop": "allow_original_materials"
+            }
+          ]
         },
         {
-          "type": "tinkers_advanced:compat_enabled",
-          "is_original": false,
-          "mod_id": "enderio"
-        },
-        {
-          "type": "tinkers_advanced:config",
-          "prop": "allow_original_materials"
+          "type": "mantle:tag_filled",
+          "tag": "forge:storage_blocks/copper_alloy"
         }
       ]
     }
   ],
-  "cooling_time": 166,
-  "fluid": {
-    "amount": 90,
-    "tag": "forge:molten_copper_alloy"
-  },
-  "result": {
+  "ingredient": {
     "tag": "forge:storage_blocks/copper_alloy"
-  }
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/copper_alloy"
+  },
+  "material": "tinkers_advanced:copper_alloy",
+  "needed": 1,
+  "value": 9
 }

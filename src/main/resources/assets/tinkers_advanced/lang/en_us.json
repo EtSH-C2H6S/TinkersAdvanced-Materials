@@ -344,6 +344,10 @@
   "modifier.tinkers_advanced.chemical_unstable.flavor": "Super sensitive!",
   "modifier.tinkers_advanced.chemical_unstable.description": "Vanish and explode randomly before 2 second.",
 
+  "modifier.tinkers_advanced.radiation_removal": "Decay Speedup",
+  "modifier.tinkers_advanced.radiation_removal.flavor": "Let time heals you.",
+  "modifier.tinkers_advanced.radiation_removal.description": "Increase radiation decay speed when equipped.",
+
 
 
   "material.tinkers_advanced.bismuth": "Bismuth",
@@ -479,8 +483,8 @@
   "material.tinkers_advanced.enderium": "Enderium",
 
   "material.tinkers_advanced.prismalic_alloy": "Prismalium",
-  "material.tinkers_advanced.melodic_alloy": "Melodium",
-  "material.tinkers_advanced.stellar_alloy": "Stellarium",
+  "material.tinkers_advanced.melodium": "Melodium",
+  "material.tinkers_advanced.stellarium": "Stellarium",
 
   "material.tinkers_advanced.frostite": "Frostite",
   "material.tinkers_advanced.glowstoneite": "Glowstoneite",
@@ -611,11 +615,11 @@
   "fluid.tinkers_advanced.molten_anti_neutronium": "Molten Anti-Neutronium",
   "item.tinkers_advanced.molten_anti_neutronium_bucket": "Molten Anti-Neutronium Bucket",
 
-  "fluid.tinkers_advanced.molten_melodic_alloy": "Molten Melodium",
-  "item.tinkers_advanced.molten_melodic_alloy_bucket": "Molten Melodium Bucket",
+  "fluid.tinkers_advanced.molten_melodium": "Molten Melodium",
+  "item.tinkers_advanced.molten_melodium_bucket": "Molten Melodium Bucket",
 
-  "fluid.tinkers_advanced.molten_prismalic_alloy": "Molten Prismalium",
-  "item.tinkers_advanced.molten_prismalic_alloy_bucket": "Molten Prismalium Bucket",
+  "fluid.tinkers_advanced.molten_prismalium": "Molten Prismalium",
+  "item.tinkers_advanced.molten_prismalium_bucket": "Molten Prismalium Bucket",
 
   "fluid.tinkers_advanced.molten_frostite": "Molten Frostite",
   "item.tinkers_advanced.molten_frostite_bucket": "Molten Frostite Bucket",
@@ -644,8 +648,8 @@
   "fluid.tinkers_advanced.molten_netherstar_alloy": "Molten Netherstar Alloy",
   "item.tinkers_advanced.molten_netherstar_alloy_bucket": "Molten Netherstar Alloy Bucket",
 
-  "fluid.tinkers_advanced.molten_stellar_alloy": "Molten Stellar Alloy",
-  "item.tinkers_advanced.molten_stellar_alloy_bucket": "Molten Stellar Alloy Bucket",
+  "fluid.tinkers_advanced.molten_stellarium": "Molten Stellar Alloy",
+  "item.tinkers_advanced.molten_stellarium_bucket": "Molten Stellar Alloy Bucket",
 
   "fluid.tinkers_advanced.molten_redstone_alloy": "Molten Redstone Alloy",
   "item.tinkers_advanced.molten_redstone_alloy_bucket": "Molten Redstone Alloy Bucket",

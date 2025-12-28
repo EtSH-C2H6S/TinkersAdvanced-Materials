@@ -1,21 +1,30 @@
 {
-  "type": "tconstruct:material",
+  "type": "tconstruct:melting",
   "conditions": [
     {
       "type": "forge:and",
       "values": [
         {
-          "type": "forge:mod_loaded",
-          "modid": "enderio"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "enderio"
+            },
+            {
+              "type": "tinkers_advanced:compat_enabled",
+              "is_original": false,
+              "mod_id": "enderio"
+            },
+            {
+              "type": "tinkers_advanced:config",
+              "prop": "allow_original_materials"
+            }
+          ]
         },
         {
-          "type": "tinkers_advanced:compat_enabled",
-          "is_original": false,
-          "mod_id": "enderio"
-        },
-        {
-          "type": "tinkers_advanced:config",
-          "prop": "allow_original_materials"
+          "type": "mantle:tag_filled",
+          "tag": "forge:storage_blocks/copper_alloy"
         }
       ]
     }
@@ -23,7 +32,10 @@
   "ingredient": {
     "tag": "forge:storage_blocks/copper_alloy"
   },
-  "material": "tinkers_advanced:copper_alloy",
-  "needed": 1,
-  "value": 9
+  "result": {
+    "amount": 810,
+    "tag": "forge:molten_copper_alloy"
+  },
+  "temperature": 650,
+  "time": 55
 }

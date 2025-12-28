@@ -1,29 +1,40 @@
 {
-  "type": "tconstruct:material",
+  "type": "tconstruct:casting_basin",
   "conditions": [
     {
       "type": "forge:and",
       "values": [
         {
-          "type": "forge:mod_loaded",
-          "modid": "enderio"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "enderio"
+            },
+            {
+              "type": "tinkers_advanced:compat_enabled",
+              "is_original": false,
+              "mod_id": "enderio"
+            },
+            {
+              "type": "tinkers_advanced:config",
+              "prop": "allow_original_materials"
+            }
+          ]
         },
         {
-          "type": "tinkers_advanced:compat_enabled",
-          "is_original": false,
-          "mod_id": "enderio"
-        },
-        {
-          "type": "tinkers_advanced:config",
-          "prop": "allow_original_materials"
+          "type": "mantle:tag_filled",
+          "tag": "forge:storage_blocks/redstone_alloy"
         }
       ]
     }
   ],
-  "ingredient": {
-    "tag": "forge:nuggets/redstone_alloy"
+  "cooling_time": 160,
+  "fluid": {
+    "amount": 810,
+    "tag": "forge:molten_redstone_alloy"
   },
-  "material": "tinkers_advanced:redstone_alloy",
-  "needed": 9,
-  "value": 1
+  "result": {
+    "tag": "forge:storage_blocks/redstone_alloy"
+  }
 }

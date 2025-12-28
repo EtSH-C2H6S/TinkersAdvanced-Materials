@@ -3,6 +3,7 @@ package com.c2h6s.tinkers_advanced_materials.data.enums;
 import appeng.datagen.providers.tags.ConventionTags;
 import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import com.c2h6s.tinkers_advanced.core.data.condition.CompatConfigCondition;
+import com.c2h6s.tinkers_advanced.core.data.condition.GeneralMaterialConfigCondition;
 import com.c2h6s.tinkers_advanced.core.init.TiAcCrConditions;
 import com.c2h6s.tinkers_advanced_materials.data.TiAcMeMaterialIds;
 import com.c2h6s.tinkers_advanced_materials.data.TiAcMeTagkeys;
@@ -43,7 +44,7 @@ public enum EnumMaterial {
     DISINTEGRATE_CRYSTAL(true,TiAcMeMaterialIds.DISINTEGRATE_CRYSTAL,4,true,false,EnumMaterialStats.DISINTEGRATE_CRYSTAL,modLoaded("tinkers_advanced_tools",true),DISINTEGRATE_CRYSTAL_DEFAULT),
     RESONANCE_CRYSTAL(true,TiAcMeMaterialIds.RESONANCE_CRYSTAL,4,true,false,EnumMaterialStats.RESONANCE_CRYSTAL,modLoaded("tinkers_advanced_tools",true),RESONATE_CRYSTAL_ARMOR,RESONATE_CRYSTAL_DEFAULT),
     VOLTAIC_CRYSTAL(true,TiAcMeMaterialIds.VOLTAIC_CRYSTAL,5,true,false,EnumMaterialStats.VOLTAIC_CRYSTAL,modLoaded("tinkers_advanced_tools",true),VOLTAIC_CRYSTAL_DEFAULT),
-    PLASTIC(TiAcMeMaterialIds.CommonIntegration.PLASTIC,2,true,false,EnumMaterialStats.PLASTIC,tagFilled(TiAcMeTagkeys.Items.PLASTIC,TinkersAdvanced.MODID,false),PLASTIC_DEFAULT,PLASTIC_AMMO),
+    PLASTIC(TiAcMeMaterialIds.CommonIntegration.PLASTIC,2,true,false,EnumMaterialStats.PLASTIC,generalTag(TiAcMeTagkeys.Items.PLASTIC,"plastic"),PLASTIC_DEFAULT,PLASTIC_AMMO),
     PROTOCITE(true,TiAcMeMaterialIds.Mekanism.PROTOCITE,5,false,false,EnumMaterialStats.PROTOCITE,modLoaded("mekanism",true),PROTOCITE_ARMOR,PROTOCITE_DEFAULT),
     COMPRESSED_IRON(TiAcMeMaterialIds.PnC.COMPRESSED_IRON,2,true,false,EnumMaterialStats.COMPRESSED_IRON,tagFilled(PneumaticCraftTags.Items.INGOTS_COMPRESSED_IRON,"pneumaticcraft",false),COMPRESSED_IRON_ARMOR,COMPRESSED_IRON_DEFAULT),
     PINK_SLIME_STEEL(TiAcMeMaterialIds.IndustrialForgoing.PINK_SLIME_METAL,3,false,false,EnumMaterialStats.PINK_SLIME_METAL,modLoaded("industrialforegoing",true),PINK_SLIME_METAL),
@@ -77,6 +78,9 @@ public enum EnumMaterial {
     }
     public static ICondition tagFilled(TagKey<Item> tagKey,String modId,boolean isOriginal){
         return new AndCondition( new TagFilledCondition<>(tagKey),new CompatConfigCondition(modId,isOriginal));
+    }
+    public static ICondition generalTag(TagKey<Item> tagKey,String name){
+        return new AndCondition( new TagFilledCondition<>(tagKey),new GeneralMaterialConfigCondition(name));
     }
     public static ICondition noopCompat(boolean isOriginal){
         return new AndCondition(new CompatConfigCondition(TinkersAdvanced.MODID,isOriginal));

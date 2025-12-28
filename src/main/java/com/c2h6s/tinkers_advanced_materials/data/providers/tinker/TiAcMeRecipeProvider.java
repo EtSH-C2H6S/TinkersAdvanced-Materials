@@ -4,8 +4,10 @@ import appeng.datagen.providers.tags.ConventionTags;
 import cofh.lib.init.tags.ItemTagsCoFH;
 import com.LunaGlaze.rainbowcompound.Projects.Items.Basic.ItemsItemRegistry;
 import com.buuz135.industrial.module.ModuleCore;
+import com.c2h6s.etstlib.register.EtSTLibModifier;
 import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import com.c2h6s.tinkers_advanced.core.data.condition.CompatConfigCondition;
+import com.c2h6s.tinkers_advanced.core.data.condition.GeneralMaterialConfigCondition;
 import com.c2h6s.tinkers_advanced_materials.data.TiAcMeMaterialIds;
 import com.c2h6s.tinkers_advanced_materials.data.TiAcMeTagkeys;
 import com.c2h6s.tinkers_advanced_materials.init.TiAcMeFluids;
@@ -21,6 +23,8 @@ import mekanism.common.recipe.ingredient.creator.ItemStackIngredientCreator;
 import mekanism.common.registries.MekanismFluids;
 import mekanism.common.registries.MekanismGases;
 import mekanism.common.registries.MekanismItems;
+import mekanism.common.resource.PrimaryResource;
+import mekanism.common.resource.ResourceType;
 import mekanism.common.tags.MekanismTags;
 import mekanism.generators.common.registries.GeneratorsFluids;
 import net.minecraft.data.PackOutput;
@@ -323,7 +327,7 @@ public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRec
         melt9Ingot(TiAcMeTagkeys.Fluids.MOLTEN_VOID_STEEL, ForgeRegistries.ITEMS.getValue(new ResourceLocation("createutilities", "void_steel_block")),1400,conditional,folder);
         //Common Integration
         folder = namedFolder("plastic");
-        conditional = withCondition(consumer, tagFilled(TiAcMeTagkeys.Items.PLASTIC,TinkersAdvanced.MODID,false));
+        conditional = withCondition(consumer, generalTag(TiAcMeTagkeys.Items.PLASTIC,"plastic"));
         materialRecipe(TiAcMeMaterialIds.CommonIntegration.PLASTIC, Ingredient.of(TiAcMeTagkeys.Items.PLASTIC), 1, 1, conditional, folder);
 
         //Modifiers
@@ -360,6 +364,34 @@ public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRec
                 .addInput(ItemsItemRegistry.rainbowupgradekit.get())
                 .setSlots(SlotType.UPGRADE,1).allowCrystal().setMaxLevel(1)
                 .setTools(TinkerTags.Items.DURABILITY).save(conditional,folder);
+
+        conditional = withCondition(consumer,modLoaded("mekanism",false));
+        ModifierRecipeBuilder.modifier(EtSTLibModifier.EtSTLibModifierMek.radiation_shielding)
+                .addInput(ItemTagsCoFH.STORAGE_BLOCKS_LEAD)
+                .addInput(Tags.Items.DYES_ORANGE)
+                .addInput(ItemTagsCoFH.STORAGE_BLOCKS_LEAD)
+                .setSlots(SlotType.DEFENSE,1)
+                .setMaxLevel(1).useSalvageMax()
+                .setTools(TinkerTags.Items.ARMOR)
+                .disallowCrystal()
+                .saveSalvage(conditional,salvageFolder("radiation_shielding"))
+                .save(conditional,modifierFolder("radiation_shielding"));
+        ModifierRecipeBuilder.modifier(EtSTLibModifier.EtSTLibModifierMek.radiation_shielding)
+                .addInput(ItemTagsCoFH.INGOTS_LEAD)
+                .addInput(Tags.Items.DYES_ORANGE)
+                .addInput(ItemTagsCoFH.INGOTS_LEAD)
+                .setLevelRange(2,5)
+                .setTools(TinkerTags.Items.ARMOR)
+                .save(conditional,modifierFolder("radiation_shielding_2_5"));
+        ModifierRecipeBuilder.modifier(TiAcMeModifiers.RADIATION_REMOVAL)
+                .addInput(MekanismTags.Items.PROCESSED_RESOURCES.get(ResourceType.CRYSTAL, PrimaryResource.LEAD),16)
+                .addInput(MekanismTags.Items.CIRCUITS_ULTIMATE,4)
+                .addInput(TinkerFluids.moltenLead.getBucket())
+                .setTools(TinkerTags.Items.MODIFIABLE)
+                .setSlots(SlotType.ABILITY,1)
+                .setMaxLevel(10)
+                .saveSalvage(conditional,salvageFolder("radiation_removal"))
+                .save(conditional,modifierFolder("radiation_removal"));
     }
 
     public void melt1B(Fluid fluid, ItemLike ingredient, int temperature, Consumer<FinishedRecipe> consumer, ResourceLocation location){
@@ -485,6 +517,9 @@ public class TiAcMeRecipeProvider extends RecipeProvider implements ISmelteryRec
     }
     public static ICondition tagFilled(TagKey<Item> tagKey,String modId,boolean isOriginal){
         return new AndCondition(new CompatConfigCondition(modId,isOriginal), new TagFilledCondition<>(tagKey));
+    }
+    public static ICondition generalTag(TagKey<Item> tagKey,String name){
+        return new AndCondition(new GeneralMaterialConfigCondition(name), new TagFilledCondition<>(tagKey));
     }
 
 

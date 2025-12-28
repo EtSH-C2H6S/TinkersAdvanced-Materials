@@ -27,6 +27,10 @@
     {
       "id": "tinkers_advanced:quantum_technology",
       "required": false
+    },
+    {
+      "id": "tinkers_advanced:iso_chrome",
+      "required": false
     }
   ]
 }

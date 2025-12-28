@@ -1,0 +1,41 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "thermalendergy"
+            },
+            {
+              "type": "tinkers_advanced:compat_enabled",
+              "is_original": false,
+              "mod_id": "thermalendergy"
+            },
+            {
+              "type": "tinkers_advanced:config",
+              "prop": "allow_original_materials"
+            }
+          ]
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "forge:plates/stellarium"
+        }
+      ]
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:plates/stellarium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_stellarium"
+  },
+  "temperature": 2000,
+  "time": 93
+}

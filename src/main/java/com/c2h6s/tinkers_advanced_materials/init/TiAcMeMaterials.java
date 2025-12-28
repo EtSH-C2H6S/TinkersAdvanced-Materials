@@ -202,7 +202,7 @@ public class TiAcMeMaterials {
                     .addARGB(216,0xFF1D7D8A)
                     .addARGB(255,0xFF2BA6AD).build()).build().build().setFluidCustomTexture();
 
-    public static final SimpleMaterialObject PRISMALIC_ALLOY = MATERIALS.buildMaterial("prismalic_alloy")
+    public static final SimpleMaterialObject PRISMALIC_ALLOY = MATERIALS.buildMaterial("prismalium")
             .addCompatModId("thermalendergy",false).setUnit()
             .registerBurningFluid(1250,false,15,100,3)
             .buildMaterial(4,false,ORDER_COMPAT,false).buildStats().setStats(
@@ -225,7 +225,7 @@ public class TiAcMeMaterials {
                     .addARGB(178,0xFF8FC0AA)
                     .addARGB(216,0xFFA2CFC0)
                     .addARGB(255,0xFFB3E2D2).build()).build().build();
-    public static final SimpleMaterialObject MELODIC_ALLOY = MATERIALS.buildMaterial("melodic_alloy")
+    public static final SimpleMaterialObject MELODIC_ALLOY = MATERIALS.buildMaterial("melodium")
             .addCompatModId("thermalendergy",false).setUnit()
             .registerBurningFluid(1500,false,15,150,4)
             .buildMaterial(5,false,ORDER_COMPAT,false).buildStats().setStats(
@@ -250,7 +250,7 @@ public class TiAcMeMaterials {
                     .addARGB(178,0xFFD2A2F1)
                     .addARGB(216,0xFFF7C7E5)
                     .addARGB(255,0xFFFAF8D7).build()).build().build().setFluidCustomTexture();
-    public static final SimpleMaterialObject STELLAR_ALLOY = MATERIALS.buildMaterial("stellar_alloy")
+    public static final SimpleMaterialObject STELLAR_ALLOY = MATERIALS.buildMaterial("stellarium")
             .addCompatModId("thermalendergy",false).setUnit()
             .registerBurningFluid(2000,false,15,300,10)
             .buildMaterial(5,false,ORDER_COMPAT,false).buildStats().setStats(
